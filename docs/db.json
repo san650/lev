@@ -2809,6 +2809,29 @@
       "saga": null,
       "score": 9,
       "review": ""
+    },
+    {
+      "id": 94,
+      "title": "La conjura de los necios",
+      "subtitle": "",
+      "original_title": "A confederacy of dunces",
+      "first_publishing_date": "1980",
+      "author_ids": [
+        23
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/94-la-conjura-de-los-necios.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 10,
+      "review": ""
     }
   ],
   "publishers": [
