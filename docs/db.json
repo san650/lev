@@ -409,6 +409,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 59,
+      "name": "Douglas Coupland",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2746,6 +2753,32 @@
       "saga": null,
       "score": 7,
       "review": ""
+    },
+    {
+      "id": 92,
+      "title": "Microserfs",
+      "subtitle": "",
+      "original_title": "Microserfs",
+      "first_publishing_date": "1995",
+      "author_ids": [
+        59
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_10",
+          "value": "0060391480"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/92-microserfs.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Perennial",
+      "saga": null,
+      "score": 7,
+      "review": ""
     }
   ],
   "publishers": [
@@ -2773,6 +2806,7 @@
     "Nova",
     "Nørdica Libros",
     "Penguin Random House",
+    "Perennial",
     "Planeta",
     "Rayo",
     "Salamandra",
