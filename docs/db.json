@@ -402,6 +402,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 58,
+      "name": "Arturo Pérez Reverte",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2715,6 +2722,29 @@
       "publisher": "Nova",
       "saga": null,
       "score": 8,
+      "review": ""
+    },
+    {
+      "id": 91,
+      "title": "El húsar",
+      "subtitle": "",
+      "original_title": "El húsar",
+      "first_publishing_date": "1983",
+      "author_ids": [
+        58
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/91-el-husar.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 7,
       "review": ""
     }
   ],
