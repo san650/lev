@@ -395,6 +395,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 57,
+      "name": "Woody Allen",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2610,6 +2617,29 @@
       "publisher": "",
       "saga": null,
       "score": 8,
+      "review": ""
+    },
+    {
+      "id": 87,
+      "title": "Cuentos sin plumas",
+      "subtitle": "",
+      "original_title": "Without Feathers",
+      "first_publishing_date": "1975",
+      "author_ids": [
+        57
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/87-cuentos-sin-plumas.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 7,
       "review": ""
     }
   ],
