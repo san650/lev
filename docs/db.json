@@ -2664,6 +2664,32 @@
       "saga": null,
       "score": 8,
       "review": ""
+    },
+    {
+      "id": 89,
+      "title": "Cuentos Completos I (Spanish Edition)",
+      "subtitle": "",
+      "original_title": "The Complete Stories",
+      "first_publishing_date": "2009",
+      "author_ids": [
+        9
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788498722581"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/89-cuentos-completos-i-_spanish-edition.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Nova",
+      "saga": null,
+      "score": 9,
+      "review": ""
     }
   ],
   "publishers": [
