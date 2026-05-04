@@ -2641,6 +2641,29 @@
       "saga": null,
       "score": 7,
       "review": ""
+    },
+    {
+      "id": 88,
+      "title": "Cómo acabar de una vez por todas con la cultura",
+      "subtitle": "",
+      "original_title": "Getting Even",
+      "first_publishing_date": "1971",
+      "author_ids": [
+        57
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/88-como-acabar-de-una-vez-por-todas-con-la-cultura.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 8,
+      "review": ""
     }
   ],
   "publishers": [
