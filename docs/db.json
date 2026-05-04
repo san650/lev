@@ -416,6 +416,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 60,
+      "name": "Harper Lee",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2778,6 +2785,29 @@
       "publisher": "Perennial",
       "saga": null,
       "score": 7,
+      "review": ""
+    },
+    {
+      "id": 93,
+      "title": "Matar Un Ruisenor",
+      "subtitle": "",
+      "original_title": "To Kill a Mockingbird",
+      "first_publishing_date": "1960",
+      "author_ids": [
+        60
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/93-matar-un-ruisenor.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 9,
       "review": ""
     }
   ],
