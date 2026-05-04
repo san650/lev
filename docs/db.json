@@ -2690,6 +2690,32 @@
       "saga": null,
       "score": 9,
       "review": ""
+    },
+    {
+      "id": 90,
+      "title": "Cuentos completos II",
+      "subtitle": "",
+      "original_title": "The Complete Stories",
+      "first_publishing_date": "1992",
+      "author_ids": [
+        9
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788498722598"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/90-cuentos-completos-ii.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Nova",
+      "saga": null,
+      "score": 8,
+      "review": ""
     }
   ],
   "publishers": [
