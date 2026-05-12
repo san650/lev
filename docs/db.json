@@ -442,7 +442,7 @@
 
       ],
       "publisher": "DeBolsillo",
-      "score": 5,
+      "score": 4,
       "review": "",
       "saga": null,
       "author_ids": [
@@ -470,7 +470,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": "",
       "author_ids": [
         6
@@ -528,7 +528,7 @@
         "name": "Ringworld series",
         "order": 1
       },
-      "score": 5,
+      "score": 4,
       "review": "Típica novela de ciencia ficción de la década de los 70. Entretenida pero no envejeción bien. El final es abrupto ya que es parte de una saga.",
       "author_ids": [
         12
@@ -554,7 +554,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": "",
       "author_ids": [
         17
@@ -583,7 +583,7 @@
         "name": "Boudica, Reina Guerrera de los Celtas",
         "order": 1
       },
-      "score": 8,
+      "score": 9,
       "review": "",
       "author_ids": [
         14
@@ -609,7 +609,7 @@
         "name": "Boudica, Reina Guerrera de los Celtas",
         "order": 2
       },
-      "score": 8,
+      "score": 9,
       "review": "",
       "author_ids": [
         14
@@ -638,7 +638,7 @@
         "name": "Boudica, Reina Guerrera de los Celtas",
         "order": 3
       },
-      "score": 8,
+      "score": 9,
       "review": "",
       "author_ids": [
         14
@@ -667,7 +667,7 @@
         "name": "Boudica, Reina Guerrera de los Celtas",
         "order": 4
       },
-      "score": 7,
+      "score": 9,
       "review": "",
       "author_ids": [
         14
@@ -693,7 +693,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": "",
       "author_ids": [
         2
@@ -719,7 +719,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": "",
       "author_ids": [
         11
@@ -745,7 +745,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": "",
       "author_ids": [
         1
@@ -771,7 +771,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         8
@@ -797,7 +797,7 @@
       ],
       "publisher": "Rayo",
       "saga": null,
-      "score": 2,
+      "score": 1,
       "review": "",
       "author_ids": [
         16
@@ -823,7 +823,7 @@
       ],
       "publisher": "Sudamericana",
       "saga": null,
-      "score": 7,
+      "score": 8,
       "review": "",
       "author_ids": [
         18
@@ -849,7 +849,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         8
@@ -875,7 +875,7 @@
       ],
       "publisher": "Sudamericana",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": "",
       "author_ids": [
         15
@@ -901,7 +901,7 @@
       ],
       "publisher": "Nova",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": "",
       "author_ids": [
         5
@@ -927,7 +927,7 @@
       ],
       "publisher": "Penguin Random House",
       "saga": null,
-      "score": 9,
+      "score": 10,
       "review": "",
       "author_ids": [
         13
@@ -976,7 +976,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         8
@@ -1002,7 +1002,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         4
@@ -1031,7 +1031,7 @@
         "name": "Dune",
         "order": 1
       },
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         7
@@ -1086,7 +1086,7 @@
       ],
       "publisher": "Emecé",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         3
@@ -1115,7 +1115,7 @@
         "name": "Mundodisco",
         "order": 1
       },
-      "score": 5,
+      "score": 4,
       "review": "",
       "author_ids": [
         20
@@ -1144,7 +1144,7 @@
         "name": "Mundodisco",
         "order": 5
       },
-      "score": 5,
+      "score": 4,
       "review": "",
       "author_ids": [
         20
@@ -1202,7 +1202,7 @@
         "name": "Mundodisco",
         "order": 4
       },
-      "score": 6,
+      "score": 5,
       "review": "",
       "author_ids": [
         20
@@ -1257,7 +1257,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 7,
+      "score": 8,
       "review": ""
     },
     {
@@ -1283,7 +1283,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": ""
     },
     {
@@ -1309,7 +1309,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1335,7 +1335,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1387,7 +1387,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1413,7 +1413,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": ""
     },
     {
@@ -1468,7 +1468,7 @@
       ],
       "publisher": "Lumen",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -1494,7 +1494,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1520,7 +1520,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1546,7 +1546,7 @@
       ],
       "publisher": "Alianza",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1575,7 +1575,7 @@
         "name": "Relatos del piloto Pirx",
         "order": 1
       },
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1605,7 +1605,7 @@
       ],
       "publisher": "Alianza",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -1631,7 +1631,7 @@
       ],
       "publisher": "Alianza",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -1657,7 +1657,7 @@
       ],
       "publisher": "Nørdica Libros",
       "saga": null,
-      "score": 3,
+      "score": 1,
       "review": ""
     },
     {
@@ -1683,7 +1683,7 @@
       ],
       "publisher": "Nørdica Libros",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": ""
     },
     {
@@ -1709,7 +1709,7 @@
       ],
       "publisher": "Editorial Impedimenta",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1735,7 +1735,7 @@
       ],
       "publisher": "Nørdica Libros",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1784,7 +1784,7 @@
       ],
       "publisher": "Alianza",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": ""
     },
     {
@@ -1807,7 +1807,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": ""
     },
     {
@@ -1833,7 +1833,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -1859,7 +1859,7 @@
       ],
       "publisher": "Cátedra",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1882,7 +1882,7 @@
       ],
       "publisher": "Edhasa",
       "saga": null,
-      "score": 9,
+      "score": 8,
       "review": ""
     },
     {
@@ -1911,7 +1911,7 @@
         "name": "Trilogía de los Tres Cuerpos",
         "order": 1
       },
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1934,7 +1934,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1957,7 +1957,7 @@
       ],
       "publisher": "Duomo",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -1983,7 +1983,7 @@
       ],
       "publisher": "Alianza",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": ""
     },
     {
@@ -2009,7 +2009,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": ""
     },
     {
@@ -2035,7 +2035,7 @@
       ],
       "publisher": "Nordica Libros",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": ""
     },
     {
@@ -2058,7 +2058,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2084,7 +2084,7 @@
       ],
       "publisher": "Mestas Ediciones",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2107,7 +2107,7 @@
       ],
       "publisher": "Editorial Impedimenta",
       "saga": null,
-      "score": 3,
+      "score": 2,
       "review": ""
     },
     {
@@ -2133,7 +2133,7 @@
       ],
       "publisher": "Booket",
       "saga": null,
-      "score": 9,
+      "score": 10,
       "review": ""
     },
     {
@@ -2159,7 +2159,7 @@
       ],
       "publisher": "LOSADA",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2182,7 +2182,7 @@
       ],
       "publisher": "La Bestia Equilátera",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": ""
     },
     {
@@ -2231,7 +2231,7 @@
         "name": "Claudio",
         "order": 1
       },
-      "score": 9,
+      "score": 10,
       "review": ""
     },
     {
@@ -2257,7 +2257,7 @@
         "name": "Claudio",
         "order": 2
       },
-      "score": 9,
+      "score": 10,
       "review": ""
     },
     {
@@ -2280,7 +2280,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 9,
+      "score": 8,
       "review": ""
     },
     {
@@ -2303,7 +2303,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 9,
+      "score": 8,
       "review": ""
     },
     {
@@ -2349,7 +2349,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2372,7 +2372,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 8,
+      "score": 9,
       "review": ""
     },
     {
@@ -2398,7 +2398,7 @@
         "name": "Guía del autoestopista galáctico",
         "order": 1
       },
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -2421,7 +2421,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -2447,7 +2447,7 @@
         "name": "El Señor de los Anillos",
         "order": 1
       },
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -2473,7 +2473,7 @@
         "name": "El Señor de los Anillos",
         "order": 2
       },
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -2499,7 +2499,7 @@
         "name": "El Señor de los Anillos",
         "order": 3
       },
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -2522,7 +2522,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 4,
+      "score": 3,
       "review": ""
     },
     {
@@ -2545,7 +2545,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2565,7 +2565,7 @@
       ],
       "publisher": "Ediciones de la Banda Oriental",
       "saga": null,
-      "score": 9,
+      "score": 8,
       "review": ""
     },
     {
@@ -2591,7 +2591,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -2614,7 +2614,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": ""
     },
     {
@@ -2637,7 +2637,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 7,
+      "score": 9,
       "review": ""
     },
     {
@@ -2660,7 +2660,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2683,7 +2683,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": ""
     },
     {
@@ -2709,7 +2709,7 @@
       ],
       "publisher": "Nova",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -2735,7 +2735,7 @@
       ],
       "publisher": "Nova",
       "saga": null,
-      "score": 7,
+      "score": 6,
       "review": ""
     },
     {
@@ -2758,7 +2758,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2784,7 +2784,7 @@
       ],
       "publisher": "Perennial",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2807,7 +2807,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 8,
+      "score": 7,
       "review": ""
     },
     {
@@ -2830,7 +2830,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 9,
+      "score": 8,
       "review": ""
     }
   ],
