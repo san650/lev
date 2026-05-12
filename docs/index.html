@@ -29,10 +29,14 @@
     <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link shrink-0">Stats</a>
   </nav>
   <div class="bg-orange accent-strip"></div>
-  <div class="list-meta bg-surface-alt flex items-center justify-between px-3 py-2 max-w-app mx-auto w-full">
+  <div class="list-meta bg-surface-alt flex items-center justify-between flex-wrap gap-3 px-3 py-2 max-w-app mx-auto w-full">
     <output id="book-count" class="color-mid font-mono text-xs fw-700 tracking-wide uppercase"></output>
-    <button id="group-toggle" class="group-toggle font-mono text-xs fw-700 tracking-wide uppercase" type="button"></button>
-    <span class="color-mid font-mono text-xs fw-700 tracking-wide uppercase">My Score</span>
+    <nav id="sort-toggle" class="sort-toggle" aria-label="Sort books">
+      <button type="button" data-sort="title" class="sort-btn font-mono text-xs fw-700 uppercase tracking-wide">Title</button>
+      <button type="button" data-sort="author" class="sort-btn font-mono text-xs fw-700 uppercase tracking-wide">Author</button>
+      <button type="button" data-sort="score" class="sort-btn font-mono text-xs fw-700 uppercase tracking-wide">Score</button>
+      <button type="button" data-sort="year" class="sort-btn font-mono text-xs fw-700 uppercase tracking-wide">Year</button>
+    </nav>
   </div>
 </div>
 

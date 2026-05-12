@@ -23,7 +23,7 @@ author:
 	ruby scripts/edit_author.rb
 
 score:
-	ruby scripts/score_books.rb
+	ruby scripts/score_books.rb $(filter-out $@,$(MAKECMDGOALS))
 
 distribution:
 	ruby scripts/distribution.rb

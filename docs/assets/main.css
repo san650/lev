@@ -193,15 +193,16 @@
   .h-6 { height: 1.5rem; }
   .max-w-app { max-width: 640px; }
 
-  /* List cover: fills the column edge-to-edge while preserving the source
-     image's aspect ratio. The 2:3 fallback applies to placeholder divs
-     and pre-load img sizing. */
+  /* List cover: every cover occupies the entire 88×132 column, stretching
+     to fill (object-fit: fill) so all covers render at identical size
+     regardless of source aspect ratio. The 2:3 aspect-ratio is a fallback
+     for placeholders and pre-load sizing. */
   .cover-sm {
     width: 100%;
     height: 100%;
     aspect-ratio: 2 / 3;
     display: block;
-    object-fit: contain;
+    object-fit: fill;
   }
   .cover-lg { width: 132px; height: 198px; aspect-ratio: 2 / 3; object-fit: contain; }
   .score-col-w { width: 64px; }
@@ -210,6 +211,7 @@
 
   .object-cover { object-fit: cover; }
   .object-contain { object-fit: contain; }
+  .object-fill { object-fit: fill; }
   .min-w-0 { min-width: 0; }
   .relative { position: relative; }
 }
@@ -221,25 +223,28 @@
   .toolbar-sticky { position: sticky; top: 0; z-index: 10; }
   .accent-strip { height: 4px; }
 
-  .list-meta {
-    display: grid;
-    grid-template-columns: 1fr auto 65px;
-    column-gap: var(--sp-5);
-    row-gap: var(--sp-2);
+  .sort-toggle {
+    display: inline-flex;
+    gap: 2px;
   }
 
-  .group-toggle {
+  .sort-btn {
     background: transparent;
-    color: var(--c-orange);
-    padding: 0;
-    text-align: left;
+    color: var(--c-purple);
+    border: none;
+    padding: var(--sp-1) var(--sp-2);
+    cursor: pointer;
     transition: background 0.1s, color 0.1s;
-    &:hover,
-    &:focus-visible {
-      background: var(--c-yellow);
-      color: var(--c-deep);
-      outline: none;
-    }
+  }
+  .sort-btn:not([aria-pressed="true"]):hover,
+  .sort-btn:not([aria-pressed="true"]):focus-visible {
+    background: var(--c-yellow);
+    color: var(--c-deep);
+    outline: none;
+  }
+  .sort-btn[aria-pressed="true"] {
+    background: var(--c-orange);
+    color: var(--c-white);
   }
 
   .nav-link {

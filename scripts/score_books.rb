@@ -9,7 +9,7 @@ trap("INT") do
 end
 
 begin
-  score_books_cli
+  score_books_cli(ARGV)
 rescue Interrupt
   puts "\n\nCancelled."
   exit 1

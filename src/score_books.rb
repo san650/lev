@@ -150,8 +150,39 @@ def review_disagreements(comparisons, db, books)
   changed
 end
 
-def score_books_cli
+def parse_score_range(argv)
+  return nil if argv.nil? || argv.empty?
+
+  unless argv.size == 2
+    abort "Usage: make score [MIN MAX] — provide both lower and upper bounds (inclusive)."
+  end
+
+  min, max = argv.map do |arg|
+    unless arg.to_s =~ /\A\d+\z/
+      abort "Invalid score '#{arg}'. Scores must be whole numbers between 1 and 10."
+    end
+    arg.to_i
+  end
+
+  unless (1..10).cover?(min) && (1..10).cover?(max)
+    abort "Score range out of bounds. Scores must be between 1 and 10."
+  end
+
+  abort "Invalid range: MIN (#{min}) must be ≤ MAX (#{max})." if min > max
+
+  min..max
+end
+
+def filter_books_by_score_range(books, range)
+  return books unless range
+
+  books.select { |b| numeric_score?(b) && range.cover?(b["score"]) }
+end
+
+def score_books_cli(argv = ARGV)
   section "Lev — Score books"
+
+  range = parse_score_range(argv)
 
   db = load_db
   books = db["books"]
@@ -161,10 +192,20 @@ def score_books_cli
     exit 0
   end
 
-  selected = select_books_to_update(books, db)
+  pool = filter_books_by_score_range(books, range)
+
+  if range
+    UI.current.say "\nRestricting to books with scores between #{range.min} and #{range.max} (inclusive): #{pool.size} book#{"s" if pool.size != 1}."
+    if pool.empty?
+      UI.current.say "No books in range; nothing to do."
+      exit 0
+    end
+  end
+
+  selected = select_books_to_update(pool, db)
   changed = update_selected_scores(selected, db)
 
-  scored = books.select { |b| numeric_score?(b) }
+  scored = pool.select { |b| numeric_score?(b) }
   if scored.size >= 2
     comparisons = run_comparisons(scored, db, COMPARISON_COUNT)
     changed = review_disagreements(comparisons, db, books) || changed

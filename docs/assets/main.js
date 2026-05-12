@@ -18,7 +18,8 @@
   const bookList = document.getElementById('book-list');
   const bookCount = document.getElementById('book-count');
   const searchInput = document.getElementById('search');
-  const groupToggle = document.getElementById('group-toggle');
+  const sortToggle = document.getElementById('sort-toggle');
+  const sortButtons = sortToggle.querySelectorAll('[data-sort]');
   const detailDialog = document.getElementById('book-detail');
   const helpDialog = document.getElementById('help');
   const detailTitle = document.getElementById('detail-title');
@@ -33,22 +34,22 @@
   const detailReview = document.getElementById('detail-review');
 
   // --- State ---
-  const GROUP_MODE_STORAGE_KEY = 'lev.groupMode';
-  const GROUP_MODES = { TITLE: 'title', AUTHOR: 'author' };
+  const SORT_MODE_STORAGE_KEY = 'lev.sortMode';
+  const SORT_MODES = { TITLE: 'title', AUTHOR: 'author', SCORE: 'score', YEAR: 'year' };
+  const VALID_SORT_MODES = new Set(Object.values(SORT_MODES));
 
-  const readGroupMode = () => {
+  const readSortMode = () => {
     try {
-      return localStorage.getItem(GROUP_MODE_STORAGE_KEY) === GROUP_MODES.AUTHOR
-        ? GROUP_MODES.AUTHOR
-        : GROUP_MODES.TITLE;
+      const v = localStorage.getItem(SORT_MODE_STORAGE_KEY);
+      return VALID_SORT_MODES.has(v) ? v : SORT_MODES.TITLE;
     } catch {
-      return GROUP_MODES.TITLE;
+      return SORT_MODES.TITLE;
     }
   };
 
-  const storeGroupMode = (mode) => {
+  const storeSortMode = (mode) => {
     try {
-      localStorage.setItem(GROUP_MODE_STORAGE_KEY, mode);
+      localStorage.setItem(SORT_MODE_STORAGE_KEY, mode);
     } catch {
       // Persistence is a nice-to-have; rendering still works without it.
     }
@@ -56,7 +57,7 @@
 
   let displayedBooks = [];
   let selectedIndex = -1;
-  let groupMode = readGroupMode();
+  let sortMode = readSortMode();
 
   // --- Fuzzy search (trigram + accent normalization) ---
   const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -138,6 +139,56 @@
     return entries;
   };
 
+  const buildScoreEntries = (books) => {
+    const groups = new Map();
+    for (const book of books) {
+      const key = book.score != null ? book.score : 'unscored';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(book);
+    }
+    for (const list of groups.values()) {
+      list.sort((a, b) => a.title.localeCompare(b.title, 'es'));
+    }
+    const entries = [];
+    for (let s = 10; s >= 1; s--) {
+      if (groups.has(s)) entries.push({ type: 'score', name: String(s), books: groups.get(s) });
+    }
+    if (groups.has('unscored')) entries.push({ type: 'score', name: 'Unscored', books: groups.get('unscored') });
+    return entries;
+  };
+
+  const yearOf = (book) => {
+    const d = book.first_publishing_date;
+    if (d == null) return null;
+    const m = String(d).match(/-?\d{1,4}/);
+    return m ? parseInt(m[0], 10) : null;
+  };
+
+  const buildYearEntries = (books) => {
+    const groups = new Map();
+    for (const book of books) {
+      const y = yearOf(book);
+      const key = y != null ? Math.floor(y / 10) * 10 : 'undated';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(book);
+    }
+    for (const list of groups.values()) {
+      list.sort((a, b) => {
+        const ay = yearOf(a) ?? 0;
+        const by = yearOf(b) ?? 0;
+        if (ay !== by) return by - ay;
+        return a.title.localeCompare(b.title, 'es');
+      });
+    }
+    const entries = [];
+    const decades = [...groups.keys()].filter(k => typeof k === 'number').sort((a, b) => b - a);
+    for (const d of decades) {
+      entries.push({ type: 'year', name: `${d}s`, books: groups.get(d) });
+    }
+    if (groups.has('undated')) entries.push({ type: 'year', name: 'Undated', books: groups.get('undated') });
+    return entries;
+  };
+
   const buildAuthorEntries = (books) => {
     const authors = new Map();
 
@@ -193,13 +244,14 @@
 
   const createCoverEl = (book, size = 'sm') => {
     const cls = size === 'sm' ? 'cover-sm' : 'cover-lg';
+    const fit = size === 'sm' ? 'object-fill' : 'object-contain';
     const defaultCover = book.covers?.find(c => c.default);
 
     if (defaultCover) {
       const img = document.createElement('img');
       img.src = defaultCover.file;
       img.alt = '';
-      img.className = `${cls} object-contain`;
+      img.className = `${cls} ${fit}`;
       img.onerror = () => img.replaceWith(buildPlaceholder(book, cls));
       return img;
     }
@@ -274,8 +326,19 @@
     return frag;
   };
 
-  const updateGroupToggle = () => {
-    groupToggle.textContent = groupMode === GROUP_MODES.AUTHOR ? 'List by title' : 'Group by author';
+  const updateSortButtons = () => {
+    for (const btn of sortButtons) {
+      btn.setAttribute('aria-pressed', btn.dataset.sort === sortMode ? 'true' : 'false');
+    }
+  };
+
+  const buildEntriesForMode = (books) => {
+    switch (sortMode) {
+      case SORT_MODES.AUTHOR: return buildAuthorEntries(books);
+      case SORT_MODES.SCORE:  return buildScoreEntries(books);
+      case SORT_MODES.YEAR:   return buildYearEntries(books);
+      default:                return buildTitleEntries(books);
+    }
   };
 
   const visibleBooksForQuery = () => {
@@ -312,11 +375,9 @@
     selectedIndex = -1;
     bookList.replaceChildren();
 
-    updateGroupToggle();
+    updateSortButtons();
 
-    const entries = groupMode === GROUP_MODES.AUTHOR
-      ? buildAuthorEntries(books)
-      : buildTitleEntries(books);
+    const entries = buildEntriesForMode(books);
 
     // Build flat list for keyboard nav and dialog lookup
     const flat = [];
@@ -343,7 +404,7 @@
       }
     }
 
-    const countLabel = groupMode === GROUP_MODES.AUTHOR ? 'row' : 'book';
+    const countLabel = sortMode === SORT_MODES.AUTHOR ? 'row' : 'book';
     bookCount.textContent = `${flat.length} ${flat.length === 1 ? countLabel : `${countLabel}s`}`;
 
   };
@@ -353,9 +414,13 @@
     renderBooks(visibleBooksForQuery());
   });
 
-  groupToggle.addEventListener('click', () => {
-    groupMode = groupMode === GROUP_MODES.AUTHOR ? GROUP_MODES.TITLE : GROUP_MODES.AUTHOR;
-    storeGroupMode(groupMode);
+  sortToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-sort]');
+    if (!btn) return;
+    const mode = btn.dataset.sort;
+    if (!VALID_SORT_MODES.has(mode) || mode === sortMode) return;
+    sortMode = mode;
+    storeSortMode(sortMode);
     renderBooks(visibleBooksForQuery());
   });
 
