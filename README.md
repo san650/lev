@@ -56,11 +56,19 @@ Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 | Command | Description |
 |---------|-------------|
-| `make server` | Start a local dev server on port 8000 |
-| `make add` | Add a new book — searches Goodreads, scrapes metadata, downloads cover |
-| `make edit` | Edit an existing book — refetch metadata, update fields |
-| `make review` | Write or edit a review — opens your `$EDITOR` |
-| `make format` | Run the pre-commit formatter on `db.json` |
+| `make server` | Start a local dev server on port 8000, serving `docs/` |
+| `make add` | Add a new book — search Google Books / Open Library / Goodreads, pick metadata field-by-field, download cover |
+| `make edit` (alias: `make update`) | Edit an existing book — refetch metadata, update fields one at a time |
+| `make review` | Pick a book and write/edit its review in your `$EDITOR` |
+| `make author` | Manage authors — edit name, manage aliases, merge duplicates, delete |
+| `make score` | Pairwise score-consistency check — compare random pairs and flag rating inconsistencies |
+| `make import` | Import books from `queue/*.json` (barcode-scanner exports) — one book at a time, skips duplicates by ISBN, prompts to delete each file when finished |
+| `make lookup <isbn-or-text>` | Debug tool — fetch metadata from Google Books, Open Library, Goodreads, and Wikipedia. Does not mutate `db.json` |
+| `make format` | Run the pre-commit formatter on `db.json` (sorts collections, normalizes shape) |
+| `make test` | Run the Ruby test suite under `test/` |
+| `make help` | List available targets |
+
+All write commands (`add`, `edit`, `review`, `author`, `score`, `import`) auto-commit each change to git with a descriptive message.
 
 ### Project structure
 
