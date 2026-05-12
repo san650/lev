@@ -745,7 +745,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 6,
+      "score": 7,
       "review": "",
       "author_ids": [
         1
@@ -771,7 +771,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": "",
       "author_ids": [
         8
@@ -849,7 +849,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": "",
       "author_ids": [
         8
@@ -976,7 +976,7 @@
       ],
       "publisher": "HUM",
       "saga": null,
-      "score": 5,
+      "score": 7,
       "review": "",
       "author_ids": [
         8
@@ -1031,7 +1031,7 @@
         "name": "Dune",
         "order": 1
       },
-      "score": 5,
+      "score": 6,
       "review": "",
       "author_ids": [
         7
@@ -1086,7 +1086,7 @@
       ],
       "publisher": "Emecé",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": "",
       "author_ids": [
         3
@@ -1202,7 +1202,7 @@
         "name": "Mundodisco",
         "order": 4
       },
-      "score": 5,
+      "score": 6,
       "review": "",
       "author_ids": [
         20
@@ -1231,7 +1231,7 @@
       ],
       "publisher": "Anagrama",
       "saga": null,
-      "score": 6,
+      "score": 8,
       "review": ""
     },
     {
@@ -1442,7 +1442,7 @@
         "name": "Guía del autoestopista galáctico",
         "order": 2
       },
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1709,7 +1709,7 @@
       ],
       "publisher": "Editorial Impedimenta",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -1735,7 +1735,7 @@
       ],
       "publisher": "Nørdica Libros",
       "saga": null,
-      "score": 5,
+      "score": 4,
       "review": ""
     },
     {
@@ -1934,7 +1934,7 @@
       ],
       "publisher": "Minotauro",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -1957,7 +1957,7 @@
       ],
       "publisher": "Duomo",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2058,7 +2058,7 @@
       ],
       "publisher": "DeBolsillo",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2084,7 +2084,7 @@
       ],
       "publisher": "Mestas Ediciones",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2159,7 +2159,7 @@
       ],
       "publisher": "LOSADA",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2614,7 +2614,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 6,
+      "score": 5,
       "review": ""
     },
     {
@@ -2660,7 +2660,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2758,7 +2758,7 @@
       ],
       "publisher": "",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
@@ -2784,7 +2784,7 @@
       ],
       "publisher": "Perennial",
       "saga": null,
-      "score": 5,
+      "score": 6,
       "review": ""
     },
     {
