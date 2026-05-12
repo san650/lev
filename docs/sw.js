@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lev-v5'
+const CACHE_NAME = 'lev-v6'
 
 const SHELL_ASSETS = [
   '/',
@@ -11,6 +11,7 @@ const SHELL_ASSETS = [
   '/assets/logo.svg',
   '/assets/icon-192.png',
   '/assets/icon-512.png',
+  '/assets/splash-iphone12.png',
   '/assets/space-mono-700.woff2',
   '/assets/dm-serif-display-400.woff2',
   '/assets/work-sans-400.woff2',
