@@ -1,7 +1,7 @@
-.PHONY: server add edit update review author score format lookup import test help
+.PHONY: server add edit update review author score distribution format lookup import test help
 
 # Order matters for the help / unknown-target message — keep it readable.
-LEV_TARGETS := server add edit update review author score format lookup import test
+LEV_TARGETS := server add edit update review author score distribution format lookup import test
 
 help:
 	@echo "Lev — available make targets:"
@@ -24,6 +24,9 @@ author:
 
 score:
 	ruby scripts/score_books.rb
+
+distribution:
+	ruby scripts/distribution.rb
 
 format:
 	ruby scripts/precommit.rb

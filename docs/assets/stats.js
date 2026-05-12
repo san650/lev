@@ -42,6 +42,15 @@
     return counts; // index 0 = score 1, ..., index 9 = score 10
   };
 
+  // 4b. Score distribution stats — mean and deviation from scale midpoint.
+  const computeScoreStats = (books) => {
+    const scores = books.map(b => b.score).filter(s => typeof s === 'number');
+    if (scores.length === 0) return null;
+    const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
+    const midpoint = 5.5;
+    return { mean, midpoint, delta: mean - midpoint };
+  };
+
   // 5. Highest-ranked authors — Bayesian weighted
   // weight(n, mean) = mean * (1 - exp(-n/3))
   const computeRankedAuthors = (books, authors, top = 5) => {
@@ -142,6 +151,13 @@
       li.append(mark, title, author);
       ul.appendChild(li);
     }
+  };
+
+  const renderScoreStats = (stats) => {
+    const el = $('score-stats');
+    if (!stats) { el.textContent = ''; return; }
+    const sign = stats.delta >= 0 ? '+' : '';
+    el.textContent = `mean ${stats.mean.toFixed(2)} · midpoint ${stats.midpoint.toFixed(2)} · Δ ${sign}${stats.delta.toFixed(2)}`;
   };
 
   const renderScoreChart = (counts) => {
@@ -281,6 +297,7 @@
   const renderAll = () => {
     renderHero(computeHero(books, authors));
     renderPerfectTens(computePerfectTens(books));
+    renderScoreStats(computeScoreStats(books));
     renderScoreChart(computeScoreDistribution(books));
     renderRankedAuthors(computeRankedAuthors(books, authors));
     renderMostRead(computeMostRead(books, authors));
