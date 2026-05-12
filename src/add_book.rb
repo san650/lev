@@ -14,6 +14,34 @@ require_relative "book_form/collectors"
 require_relative "book_form/pickers"
 require_relative "book_form/cli_picker"
 require_relative "book_form/author_resolution"
+require_relative "lookup/standardize"
+
+# Collect normalized ISBN candidates from the original query (if it is an
+# ISBN) plus every identifier returned by the lookup sources.
+def collect_candidate_isbns(query, pairs)
+  isbns = []
+  q = normalize_isbn(query)
+  isbns << q if q
+  pairs.each do |_source, record|
+    (record["identifiers"] || []).each do |id|
+      cleaned = normalize_isbn(id["value"])
+      isbns << cleaned if cleaned
+    end
+  end
+  isbns.uniq
+end
+
+def find_existing_book(books, title:, isbns:)
+  needle = title.to_s.downcase
+  books.find do |b|
+    next true if b["title"].to_s.downcase == needle
+
+    (b["identifiers"] || []).any? do |id|
+      cleaned = normalize_isbn(id["value"])
+      cleaned && isbns.include?(cleaned)
+    end
+  end
+end
 
 # Cover download — tries the chosen URL first, then falls back to the
 # OpenLibrary ISBN cover endpoint.
@@ -59,10 +87,12 @@ def add_book(db:, query:, http: DEFAULT_HTTP, picker: CLIPicker.new, save: true,
     pairs = flatten_lookup(result)
   end
 
+  candidate_isbns = collect_candidate_isbns(query, pairs)
+
   title_candidates = collect_field(pairs, exclude_context: :title) { |r| r["title"] }
   title = picker.single("Title", title_candidates, required: true)
 
-  existing = books.find { |b| b["title"].downcase == title.downcase }
+  existing = find_existing_book(books, title: title, isbns: candidate_isbns)
   return { existing: existing } if existing
 
   subtitle_candidates = collect_field(pairs) { |r| r["subtitle"] }
