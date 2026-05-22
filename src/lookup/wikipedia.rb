@@ -69,10 +69,14 @@ rescue StandardError => e
   nil
 end
 
+LANGUAGE_CODE_MAP = { "eng" => "en", "spa" => "es" }.freeze
+
 def detect_language(records)
   records.flatten.compact.each do |rec|
-    lang = rec["language"]
-    return lang if lang && %w[es en].include?(lang)
+    raw = rec["language"]
+    next unless raw
+    lang = LANGUAGE_CODE_MAP[raw] || raw
+    return lang if %w[es en].include?(lang)
   end
   "es"
 end

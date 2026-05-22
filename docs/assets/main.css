@@ -4,6 +4,9 @@
 /* ========================================
    @font-face & Design Tokens (outside layers)
    ======================================== */
+/* font-display: SpaceMono is short, ornamental masthead/eyebrow copy — `swap`
+   is fine. The other three render across many rows; on a PWA with SW
+   precache, `optional` skips the font-swap reflow that drives CLS. */
 @font-face {
   font-family: 'SpaceMono';
   src: url('space-mono-700.woff2') format('woff2');
@@ -16,28 +19,28 @@
   src: url('dm-serif-display-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'WorkSans';
   src: url('work-sans-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'WorkSans';
   src: url('work-sans-600.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'JetBrainsMono';
   src: url('jetbrains-mono-700.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 :root {
@@ -222,6 +225,10 @@
 @layer component {
   .toolbar-sticky { position: sticky; top: 0; z-index: 10; }
   .accent-strip { height: 4px; }
+
+  /* Bottom safe-area: keep the footer content above the iPhone home
+     indicator on installed PWAs. The inset is 0 in browser mode. */
+  footer { padding-bottom: calc(var(--sp-3) + env(safe-area-inset-bottom, 0px)); }
 
   .sort-toggle {
     display: inline-flex;
@@ -415,10 +422,15 @@
   dialog {
     border: none;
     padding: 0;
+    position: fixed;
+    inset: 0;
+    margin: auto;
     max-width: 640px;
     width: 100%;
-    margin: auto;
-    overflow: hidden;
+    height: max-content;
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: var(--c-white);
     &::backdrop { background: rgba(30,16,78,0.6); }
     opacity: 1;
@@ -683,6 +695,7 @@
       margin: 0;
       overflow-y: auto;
       overscroll-behavior: contain;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     .detail-grid { grid-template-columns: 1fr; }
     .detail-score-strip { flex-direction: column; }

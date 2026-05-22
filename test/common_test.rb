@@ -34,12 +34,12 @@ class MemoryCacheTest < Test::Unit::TestCase
   end
 
   def test_read_miss_returns_nil
-    assert_nil @cache.read("googlebooks", "missing")
+    assert_nil @cache.read("openlibrary", "missing")
   end
 
   def test_round_trip
-    @cache.write("googlebooks", "abc", { "title" => "Foo" })
-    assert_equal({ "title" => "Foo" }, @cache.read("googlebooks", "abc"))
+    @cache.write("openlibrary", "abc", { "title" => "Foo" })
+    assert_equal({ "title" => "Foo" }, @cache.read("openlibrary", "abc"))
   end
 
   def test_does_not_cache_nil
@@ -86,8 +86,8 @@ class DiskCacheTest < Test::Unit::TestCase
   end
 
   def test_round_trip_persists_to_disk
-    @cache.write("googlebooks", "9788445078259", { "title" => "Crónicas marcianas" })
-    expected_path = File.join(@tmp, "googlebooks", "9788445078259.json")
+    @cache.write("openlibrary", "9788445078259", { "title" => "Crónicas marcianas" })
+    expected_path = File.join(@tmp, "openlibrary", "9788445078259.json")
     assert File.exist?(expected_path), "wrote fixture to disk"
 
     payload = JSON.parse(File.read(expected_path))

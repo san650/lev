@@ -16,7 +16,7 @@ make add      # ruby scripts/add_book.rb — search Goodreads, scrape metadata, 
 make edit     # ruby scripts/edit_book.rb — refetch metadata from Goodreads, field-by-field update
 make review   # ruby scripts/add_review.rb — select book, edit review via $EDITOR
 make author   # ruby scripts/edit_author.rb — manage authors: edit name, aliases, merge, delete
-make lookup   # ruby scripts/lookup.rb <ISBN-or-text-query> — fetch metadata from Google Books, Open Library, Goodreads, and Wikipedia (debug tool, does not mutate db.json)
+make lookup   # ruby scripts/lookup.rb <ISBN-or-text-query> — fetch metadata from Open Library, Goodreads, and Wikipedia (debug tool, does not mutate db.json)
 ```
 
 All scripts auto-commit to git after changes: "Add/Edit/Review &lt;title&gt; - &lt;author&gt; book".

@@ -63,15 +63,5 @@
     "code": "200",
     "path": "www.goodreads.com/b99f21b72c18a700.html",
     "kind": "raw"
-  },
-  "https://www.googleapis.com/books/v1/volumes?q=isbn:9788445078259": {
-    "code": "200",
-    "path": "www.googleapis.com/a8d710b0b6b3e3ee.json",
-    "kind": "raw"
-  },
-  "https://www.googleapis.com/books/v1/volumes?q=the+martian+chronicles+bradbury&maxResults=5": {
-    "code": "200",
-    "path": "www.googleapis.com/2b5035cd8cb517e3.json",
-    "kind": "raw"
   }
 }

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lev-v6'
+const CACHE_NAME = 'lev-v7'
 
 const SHELL_ASSETS = [
   '/',
@@ -8,10 +8,10 @@ const SHELL_ASSETS = [
   '/assets/main.css',
   '/assets/main.js',
   '/assets/stats.js',
+  '/assets/register-sw.js',
   '/assets/logo.svg',
   '/assets/icon-192.png',
   '/assets/icon-512.png',
-  '/assets/splash-iphone12.png',
   '/assets/space-mono-700.woff2',
   '/assets/dm-serif-display-400.woff2',
   '/assets/work-sans-400.woff2',
@@ -19,11 +19,15 @@ const SHELL_ASSETS = [
   '/assets/jetbrains-mono-700.woff2'
 ]
 
-// Install: precache app shell
+// Install: precache app shell. cache: 'reload' bypasses the HTTP cache so a
+// version bump within GitHub Pages' max-age=600 window can't pull stale
+// shell into the new cache.
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(SHELL_ASSETS))
+      .then(cache => cache.addAll(
+        SHELL_ASSETS.map(url => new Request(url, { cache: 'reload' }))
+      ))
       .then(() => self.skipWaiting())
   )
 })
@@ -38,6 +42,10 @@ self.addEventListener('activate', e => {
       .then(() => self.clients.claim())
   )
 })
+
+// Cacheable only when the response is a successful, same-origin, basic
+// response — otherwise 404s and opaque redirects poison the cache.
+const isCacheable = (res) => res && res.ok && res.type === 'basic'
 
 // Compute a short hex fingerprint of a string. Web Crypto exposes SHA-1
 // natively (MD5 is not available in browsers); we keep the first 16 hex
@@ -69,7 +77,7 @@ async function handleDbJson(request) {
 
   const networkPromise = fetch(request, { cache: 'no-store' })
     .then(async response => {
-      if (!response.ok) return null
+      if (!isCacheable(response)) return null
       const text = await response.clone().text()
       const newHash = await fingerprint(text)
 
@@ -94,6 +102,10 @@ async function handleDbJson(request) {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url)
 
+  // Don't intercept cross-origin requests — they're not in our cache and we
+  // don't want to store opaque responses.
+  if (url.origin !== self.location.origin) return
+
   if (url.pathname === '/db.json') {
     e.respondWith(handleDbJson(e.request))
     return
@@ -105,8 +117,10 @@ self.addEventListener('fetch', e => {
       caches.match(e.request).then(cached => {
         if (cached) return cached
         return fetch(e.request).then(response => {
-          const clone = response.clone()
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone))
+          if (isCacheable(response)) {
+            const clone = response.clone()
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone)).catch(() => {})
+          }
           return response
         })
       })

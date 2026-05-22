@@ -17,7 +17,6 @@ require_relative "display"
 require_relative "git"
 
 require_relative "lookup/standardize"
-require_relative "lookup/google_books"
 require_relative "lookup/open_library"
 require_relative "lookup/goodreads"
 require_relative "lookup/wikipedia"

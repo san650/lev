@@ -513,8 +513,11 @@
   detailNext.addEventListener('click', () => navigateDetail(1));
 
   // --- Dialog: close on backdrop click ---
-  detailDialog.addEventListener('click', (e) => { if (e.target === detailDialog) detailDialog.close(); });
-  helpDialog.addEventListener('click', (e) => { if (e.target === helpDialog) helpDialog.close(); });
+  // iOS only dispatches `click` on non-button elements when `onclick` is set
+  // as a property OR `cursor: pointer` is on the element. Using the property
+  // form makes the backdrop tap fire reliably in installed iOS PWA.
+  detailDialog.onclick = (e) => { if (e.target === detailDialog) detailDialog.close(); };
+  helpDialog.onclick = (e) => { if (e.target === helpDialog) helpDialog.close(); };
 
   // Close buttons
   document.getElementById('detail-close').addEventListener('click', () => detailDialog.close());
@@ -633,20 +636,15 @@
   // The SW serves db.json stale-while-revalidate; when the background
   // fetch turns up a different payload it posts `db-updated`, so we
   // re-fetch (cache is now fresh) and re-render without a page reload.
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-
-    navigator.serviceWorker.addEventListener('message', async (event) => {
-      if (event.data?.type !== 'db-updated') return;
-
-      try {
-        db = await (await fetch('db.json')).json();
-        allBooks = Array.isArray(db?.books) ? db.books : [];
-        allAuthors = Array.isArray(db?.authors) ? db.authors : [];
-        authorById = new Map(allAuthors.map(a => [a.id, a]));
-        renderBooks(visibleBooksForQuery());
-      } catch (err) {
-        console.warn('Failed to refresh db.json after SW update:', err);
-      }
-    });
-  }
+  const { registerServiceWorker } = await import('./register-sw.js');
+  registerServiceWorker(async () => {
+    try {
+      db = await (await fetch('db.json')).json();
+      allBooks = Array.isArray(db?.books) ? db.books : [];
+      allAuthors = Array.isArray(db?.authors) ? db.authors : [];
+      authorById = new Map(allAuthors.map(a => [a.id, a]));
+      renderBooks(visibleBooksForQuery());
+    } catch (err) {
+      console.warn('Failed to refresh db.json after SW update:', err);
+    }
+  });

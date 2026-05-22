@@ -122,43 +122,6 @@ class ExtractYearTest < Test::Unit::TestCase
   end
 end
 
-class FetchGoogleBooksISBNTest < Test::Unit::TestCase
-  def setup
-    setup_memory_cache
-    @http = fixture_http_client
-  end
-
-  def test_returns_record_for_known_isbn
-    record = fetch_google_books_isbn("9788445078259", http: @http)
-    refute_nil record, "expected a record for the recorded ISBN"
-    assert_kind_of Hash, record
-    assert_equal "9788445078259", record["identifiers"].find { |i| i["type"] == "ISBN_13" }["value"]
-    refute_empty record["title"]
-    refute_empty record["authors"]
-  end
-
-  def test_caches_result
-    fetch_google_books_isbn("9788445078259", http: @http)
-    pre_count = @http.requests.size
-    fetch_google_books_isbn("9788445078259", http: @http)
-    assert_equal pre_count, @http.requests.size, "second call hit cache, no new HTTP request"
-  end
-end
-
-class FetchGoogleBooksQueryTest < Test::Unit::TestCase
-  def setup
-    setup_memory_cache
-    @http = fixture_http_client
-  end
-
-  def test_returns_array_of_records
-    records = fetch_google_books_query("the martian chronicles bradbury", http: @http)
-    assert_kind_of Array, records
-    refute_empty records
-    assert records.first["title"]
-  end
-end
-
 class FetchOpenLibraryISBNTest < Test::Unit::TestCase
   def setup
     setup_memory_cache
@@ -237,7 +200,6 @@ class LookupISBNTest < Test::Unit::TestCase
   def test_aggregates_multiple_sources
     result = lookup_isbn("9788445078259", http: @http)
     assert_kind_of Hash, result
-    assert result["googlebooks"], "expected googlebooks present"
     assert result["openlibrary"], "expected openlibrary present"
   end
 
@@ -257,7 +219,7 @@ class LookupTextTest < Test::Unit::TestCase
 
   def test_returns_arrays_per_source
     result = lookup_text("the martian chronicles bradbury", http: @http)
-    %w[googlebooks openlibrary openlibrary_html goodreads].each do |source|
+    %w[openlibrary openlibrary_html goodreads].each do |source|
       next unless result[source]
       assert_kind_of Array, result[source], "#{source} should be an array for text lookup"
     end
@@ -278,11 +240,11 @@ class LookupDispatchTest < Test::Unit::TestCase
 
   def test_isbn_input_routes_to_isbn_lookup
     result = lookup("978-84-450-7825-9", http: @http)
-    assert result["googlebooks"].is_a?(Hash), "ISBN path returns single records"
+    assert result["openlibrary"].is_a?(Hash), "ISBN path returns single records"
   end
 
   def test_text_input_routes_to_text_lookup
     result = lookup("the martian chronicles bradbury", http: @http)
-    assert result["googlebooks"].is_a?(Array), "text path returns arrays"
+    assert result["openlibrary"].is_a?(Array), "text path returns arrays"
   end
 end

@@ -5,13 +5,13 @@ require_relative "test_helper"
 class FlattenLookupTest < Test::Unit::TestCase
   def test_arrays_are_unrolled_to_pairs
     result = {
-      "googlebooks" => [{ "title" => "A" }, { "title" => "B" }],
+      "openlibrary" => [{ "title" => "A" }, { "title" => "B" }],
       "wikipedia" => { "title" => "C" }
     }
     pairs = flatten_lookup(result)
     assert_equal 3, pairs.size
     sources = pairs.map(&:first)
-    assert_includes sources, "Google Books"
+    assert_includes sources, "OpenLibrary API"
     assert_includes sources, "Wikipedia"
   end
 
@@ -42,13 +42,13 @@ class BuildOptionsTest < Test::Unit::TestCase
   def test_dedupes_by_value_and_merges_sources
     candidates = [
       { value: "Ray Bradbury", source: "Goodreads", context: "Title: X" },
-      { value: "Ray Bradbury", source: "Google Books", context: "Title: X" }
+      { value: "Ray Bradbury", source: "OpenLibrary API", context: "Title: X" }
     ]
     options = build_options(candidates)
     assert_equal 1, options.size
     assert_equal "Ray Bradbury", options.first[:value]
     assert_match(/Goodreads/, options.first[:label])
-    assert_match(/Google Books/, options.first[:label])
+    assert_match(/OpenLibrary API/, options.first[:label])
   end
 
   def test_distinct_values_kept_separate
@@ -95,7 +95,7 @@ class CollectFieldTest < Test::Unit::TestCase
   def test_collects_string_fields
     pairs = [
       ["Goodreads", { "title" => "T1" }],
-      ["Google Books", { "title" => "T2" }],
+      ["OpenLibrary API", { "title" => "T2" }],
       ["Wikipedia", { "title" => nil }]
     ]
     candidates = collect_field(pairs) { |r| r["title"] }
@@ -111,7 +111,7 @@ class CollectFieldTest < Test::Unit::TestCase
   end
 
   def test_blank_values_filtered_out
-    pairs = [["Goodreads", { "title" => "" }], ["Google Books", { "title" => "  " }]]
+    pairs = [["Goodreads", { "title" => "" }], ["OpenLibrary API", { "title" => "  " }]]
     assert_empty collect_field(pairs) { |r| r["title"] }
   end
 end
@@ -170,7 +170,7 @@ class CanonicalizeAuthorCandidatesTest < Test::Unit::TestCase
   end
 
   def test_canonical_name_is_left_alone
-    candidates = [{ value: "Ray Bradbury", source: "Google Books", context: "" }]
+    candidates = [{ value: "Ray Bradbury", source: "OpenLibrary API", context: "" }]
     result = canonicalize_author_candidates(@db, candidates)
     assert_same candidates.first, result.first
   end
@@ -183,14 +183,14 @@ class CanonicalizeAuthorCandidatesTest < Test::Unit::TestCase
 
   def test_alias_and_canonical_collapse_after_build_options
     candidates = [
-      { value: "Ray D. Bradbury", source: "Google Books", context: "" },
-      { value: "Ray Bradbury",    source: "Goodreads",    context: "" }
+      { value: "Ray D. Bradbury", source: "OpenLibrary API", context: "" },
+      { value: "Ray Bradbury",    source: "Goodreads",       context: "" }
     ]
     result = canonicalize_author_candidates(@db, candidates)
     options = build_options(result)
     assert_equal 1, options.size, "alias and canonical merge into a single option"
     assert_equal "Ray Bradbury", options.first[:value]
-    assert_match(/Google Books/, options.first[:label])
+    assert_match(/OpenLibrary API/, options.first[:label])
     assert_match(/Goodreads/, options.first[:label])
   end
 end

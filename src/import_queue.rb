@@ -31,6 +31,11 @@ def press_enter
   UI.current.readline("Press Enter to continue... ")
 end
 
+def scan_label(scan, isbn)
+  title = scan.dig("meta", "title")
+  title && !title.empty? ? "\"#{title}\" — ISBN #{isbn}" : "ISBN #{isbn}"
+end
+
 def import_queue_cli
   UI.current.say "=" * 50
   UI.current.say "  Lev — Import Queue"
@@ -66,32 +71,44 @@ def import_queue_cli
         next
       end
 
+      label = scan_label(scan, isbn)
+      UI.current.say label
+      unless prompt_yes_no("Import this book?", default: "y")
+        UI.current.say "Skipped."
+        per_file[:skipped] += 1
+        next
+      end
+
       existing = find_book_by_isbn(db["books"], isbn)
       if existing
         name = resolve_author_names(db, existing).first || "Unknown"
         UI.current.say "Exists: \"#{existing["title"]}\" by #{name} (id #{existing["id"]}) — ISBN #{isbn}"
-        press_enter
         per_file[:existing] += 1
-        next
-      end
-
-      outcome = add_book(db: db, query: isbn, picker: CLIPicker.new)
-
-      if outcome[:existing]
-        book = outcome[:existing]
-        name = resolve_author_names(db, book).first || "Unknown"
-        UI.current.say "Exists: \"#{book["title"]}\" by #{name} (id #{book["id"]}) — ISBN #{isbn}"
-        per_file[:existing] += 1
-      elsif outcome[:saved]
-        git_auto_commit("Add", outcome[:book], db, include_covers: true)
-        UI.current.say "Added: \"#{outcome[:book]["title"]}\" (id #{outcome[:book]["id"]})"
-        per_file[:added] += 1
       else
-        UI.current.say "Skipped."
-        per_file[:skipped] += 1
+        outcome = add_book(db: db, query: isbn, picker: CLIPicker.new)
+
+        if outcome[:existing]
+          book = outcome[:existing]
+          name = resolve_author_names(db, book).first || "Unknown"
+          UI.current.say "Exists: \"#{book["title"]}\" by #{name} (id #{book["id"]}) — ISBN #{isbn}"
+          per_file[:existing] += 1
+        elsif outcome[:saved]
+          git_auto_commit("Add", outcome[:book], db, include_covers: true)
+          UI.current.say "Added: \"#{outcome[:book]["title"]}\" (id #{outcome[:book]["id"]})"
+          per_file[:added] += 1
+        else
+          UI.current.say "Skipped."
+          per_file[:skipped] += 1
+        end
       end
 
-      press_enter
+      next if i == scans.size - 1
+
+      UI.current.say label
+      unless prompt_yes_no("Continue to next book?", default: "y")
+        UI.current.say "Stopping at user request."
+        break
+      end
     end
 
     UI.current.say "\nFile summary — Added: #{per_file[:added]} · Existing: #{per_file[:existing]} · Skipped: #{per_file[:skipped]}"

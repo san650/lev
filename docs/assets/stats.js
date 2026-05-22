@@ -307,18 +307,15 @@
   renderAll();
 
   // --- Service worker — refresh on db.json change ---
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-    navigator.serviceWorker.addEventListener('message', async (event) => {
-      if (event.data?.type !== 'db-updated') return;
-      try {
-        db = await (await fetch('db.json')).json();
-        books = Array.isArray(db?.books) ? db.books : [];
-        authors = Array.isArray(db?.authors) ? db.authors : [];
-        authorById = new Map(authors.map(a => [a.id, a]));
-        renderAll();
-      } catch (err) {
-        console.warn('Failed to refresh db.json after SW update:', err);
-      }
-    });
-  }
+  const { registerServiceWorker } = await import('./register-sw.js');
+  registerServiceWorker(async () => {
+    try {
+      db = await (await fetch('db.json')).json();
+      books = Array.isArray(db?.books) ? db.books : [];
+      authors = Array.isArray(db?.authors) ? db.authors : [];
+      authorById = new Map(authors.map(a => [a.id, a]));
+      renderAll();
+    } catch (err) {
+      console.warn('Failed to refresh db.json after SW update:', err);
+    }
+  });

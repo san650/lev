@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "../http_client"
-require_relative "google_books"
 require_relative "open_library"
 require_relative "goodreads"
 require_relative "wikipedia"
@@ -18,12 +17,10 @@ end
 def lookup_isbn(isbn, http: DEFAULT_HTTP)
   warn "Looking up ISBN #{isbn}"
 
-  google = fetch_google_books_isbn(isbn, http: http)
   openlibrary = fetch_openlibrary_isbn(isbn, http: http)
   goodreads = fetch_goodreads(isbn, limit: 1, http: http).first
 
   result = {}
-  result["googlebooks"] = google if google
   result["openlibrary"] = openlibrary if openlibrary
   result["goodreads"] = goodreads if goodreads
 
@@ -36,13 +33,11 @@ end
 def lookup_text(query, http: DEFAULT_HTTP)
   warn "Searching for: #{query}"
 
-  google = fetch_google_books_query(query, http: http)
   openlibrary_api = fetch_openlibrary_query(query, http: http)
   openlibrary_html = fetch_openlibrary_html(query, http: http)
   goodreads = fetch_goodreads(query, http: http)
 
   result = {}
-  result["googlebooks"] = google unless google.empty?
   result["openlibrary"] = openlibrary_api unless openlibrary_api.empty?
   result["openlibrary_html"] = openlibrary_html unless openlibrary_html.empty?
   result["goodreads"] = goodreads unless goodreads.empty?
