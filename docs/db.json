@@ -2952,6 +2952,32 @@
       "saga": null,
       "score": 4,
       "review": ""
+    },
+    {
+      "id": 99,
+      "title": "Fahrenheit 451",
+      "subtitle": "",
+      "original_title": "Fahrenheit 451",
+      "first_publishing_date": "1953",
+      "author_ids": [
+        32
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9781434406330"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/99-fahrenheit-451.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 8,
+      "review": ""
     }
   ],
   "publishers": [
