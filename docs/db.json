@@ -2838,7 +2838,7 @@
       "title": "Fundación",
       "subtitle": "",
       "original_title": "Foundation",
-      "first_publishing_date": "2006",
+      "first_publishing_date": "1951",
       "author_ids": [
         9
       ],
@@ -2854,7 +2854,7 @@
           "default": true
         }
       ],
-      "publisher": "Plaza & Janes S.A.,Spain",
+      "publisher": "DeBolsillo",
       "saga": {
         "name": "Trilogía de la Fundación",
         "order": 1
@@ -2867,7 +2867,7 @@
       "title": "Fundación e Imperio",
       "subtitle": "",
       "original_title": "Foundation and Empire",
-      "first_publishing_date": "2004",
+      "first_publishing_date": "1952",
       "author_ids": [
         9
       ],
@@ -2883,10 +2883,39 @@
           "default": true
         }
       ],
-      "publisher": "Random House Espanol",
+      "publisher": "DeBolsillo",
       "saga": {
         "name": "Trilogía de la Fundación",
         "order": 2
+      },
+      "score": 7,
+      "review": ""
+    },
+    {
+      "id": 97,
+      "title": "Segunda Fundación",
+      "subtitle": "",
+      "original_title": "Second Foundation",
+      "first_publishing_date": "1953",
+      "author_ids": [
+        9
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788497596763"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/97-segunda-fundacion.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "DeBolsillo",
+      "saga": {
+        "name": "Trilogía de la Fundación",
+        "order": 3
       },
       "score": 7,
       "review": ""
