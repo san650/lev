@@ -2832,6 +2832,35 @@
       "saga": null,
       "score": 10,
       "review": ""
+    },
+    {
+      "id": 95,
+      "title": "Fundación",
+      "subtitle": "",
+      "original_title": "Foundation",
+      "first_publishing_date": "2006",
+      "author_ids": [
+        9
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788497599245"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/95-fundacion.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Plaza & Janes S.A.,Spain",
+      "saga": {
+        "name": "Trilogía de la Fundación",
+        "order": 1
+      },
+      "score": 7,
+      "review": ""
     }
   ],
   "publishers": [
@@ -2861,6 +2890,7 @@
     "Penguin Random House",
     "Perennial",
     "Planeta",
+    "Plaza & Janes S.A.,Spain",
     "Rayo",
     "Salamandra",
     "Seix Barral",
