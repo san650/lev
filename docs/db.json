@@ -423,6 +423,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 61,
+      "name": "Herman Melville",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2919,6 +2926,32 @@
       },
       "score": 7,
       "review": ""
+    },
+    {
+      "id": 98,
+      "title": "Bartleby, el escribiente",
+      "subtitle": "",
+      "original_title": "Bartleby the Scrivener",
+      "first_publishing_date": "1853",
+      "author_ids": [
+        61
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788491053859"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/98-bartleby_-el-escribiente.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "PENGUIN CLASICOS",
+      "saga": null,
+      "score": 4,
+      "review": ""
     }
   ],
   "publishers": [
@@ -2945,6 +2978,7 @@
     "Nordica Libros",
     "Nova",
     "Nørdica Libros",
+    "PENGUIN CLASICOS",
     "Penguin Random House",
     "Perennial",
     "Planeta",
