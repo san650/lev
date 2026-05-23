@@ -2861,6 +2861,35 @@
       },
       "score": 7,
       "review": ""
+    },
+    {
+      "id": 96,
+      "title": "Fundación e Imperio",
+      "subtitle": "",
+      "original_title": "Foundation and Empire",
+      "first_publishing_date": "2004",
+      "author_ids": [
+        9
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788497595018"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/96-fundacion-e-imperio.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Random House Espanol",
+      "saga": {
+        "name": "Trilogía de la Fundación",
+        "order": 2
+      },
+      "score": 7,
+      "review": ""
     }
   ],
   "publishers": [
@@ -2891,6 +2920,7 @@
     "Perennial",
     "Planeta",
     "Plaza & Janes S.A.,Spain",
+    "Random House Espanol",
     "Rayo",
     "Salamandra",
     "Seix Barral",
