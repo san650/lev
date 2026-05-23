@@ -93,6 +93,20 @@
     return ranked.slice(0, top);
   };
 
+  // 7b. Books per decade — only populated decades, oldest first.
+  const computeBooksPerDecade = (books) => {
+    const counts = new Map();
+    for (const b of books) {
+      const year = parseInt(b.first_publishing_date, 10);
+      if (!Number.isFinite(year)) continue;
+      const decade = Math.floor(year / 10) * 10;
+      counts.set(decade, (counts.get(decade) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .map(([decade, count]) => ({ decade, count }))
+      .sort((a, b) => a.decade - b.decade);
+  };
+
   // 8. Best book per decade — only populated decades, all ties, alphabetical
   const computeBestPerDecade = (books) => {
     const byDecade = new Map();
@@ -240,6 +254,33 @@
     });
   };
 
+  const renderBooksPerDecade = (data) => {
+    const wrap = $('decade-chart');
+    wrap.replaceChildren();
+    if (data.length === 0) return;
+    const max = Math.max(...data.map(d => d.count), 1);
+    for (const { decade, count } of data) {
+      const row = document.createElement('div');
+      row.className = 'decade-chart-row';
+
+      const label = document.createElement('span');
+      label.className = 'label';
+      label.textContent = `${decade}s`;
+
+      const bar = document.createElement('span');
+      bar.className = 'bar';
+      bar.style.width = `${(count / max) * 100}%`;
+      if (count === 0) bar.style.opacity = '0.2';
+
+      const num = document.createElement('span');
+      num.className = 'count';
+      num.textContent = count;
+
+      row.append(label, bar, num);
+      wrap.appendChild(row);
+    }
+  };
+
   const renderDecades = (groups) => {
     const wrap = $('decade-list');
     wrap.replaceChildren();
@@ -301,6 +342,7 @@
     renderScoreChart(computeScoreDistribution(books));
     renderRankedAuthors(computeRankedAuthors(books, authors));
     renderMostRead(computeMostRead(books, authors));
+    renderBooksPerDecade(computeBooksPerDecade(books));
     renderDecades(computeBestPerDecade(books));
   };
 
