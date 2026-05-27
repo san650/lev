@@ -472,6 +472,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 68,
+      "name": "Eugène Ionesco",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3172,6 +3179,32 @@
       "publisher": "",
       "saga": null,
       "score": 9,
+      "review": ""
+    },
+    {
+      "id": 106,
+      "title": "Rinoceronte",
+      "subtitle": "",
+      "original_title": "Rhinocéros",
+      "first_publishing_date": "1959",
+      "author_ids": [
+        68
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9789500396134"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/106-rinoceronte.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "LOSADA",
+      "saga": null,
+      "score": 5,
       "review": ""
     }
   ],
