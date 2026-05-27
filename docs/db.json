@@ -430,6 +430,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 62,
+      "name": "Rodo, Jose Enrique, 1872-1917.",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -2978,6 +2985,29 @@
       "saga": null,
       "score": 8,
       "review": ""
+    },
+    {
+      "id": 100,
+      "title": "Parabolas - Golu",
+      "subtitle": "",
+      "original_title": "",
+      "first_publishing_date": "1909",
+      "author_ids": [
+        62
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9789501321845"
+        }
+      ],
+      "covers": [
+
+      ],
+      "publisher": "Kapelusz",
+      "saga": null,
+      "score": 2,
+      "review": ""
     }
   ],
   "publishers": [
@@ -2994,6 +3024,7 @@
     "Emecé",
     "Galaxia Gutenberg",
     "HUM",
+    "Kapelusz",
     "La Bestia Equilátera",
     "La Factoría De Ideas",
     "Librerias Libertador",
