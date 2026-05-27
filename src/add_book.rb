@@ -17,12 +17,16 @@ require_relative "book_form/author_resolution"
 require_relative "lookup/standardize"
 
 # Collect normalized ISBN candidates from the original query (if it is an
-# ISBN) plus every identifier returned by the lookup sources.
-def collect_candidate_isbns(query, pairs)
+# ISBN) plus identifiers returned by lookup records whose title matches
+# the chosen title. Restricting by title avoids false-positive dedup hits
+# when a text query returns several unrelated books in the same response.
+def collect_candidate_isbns(query, pairs, chosen_title: nil)
   isbns = []
   q = normalize_isbn(query)
   isbns << q if q
+  needle = chosen_title.to_s.downcase
   pairs.each do |_source, record|
+    next unless needle.empty? || record["title"].to_s.downcase == needle
     (record["identifiers"] || []).each do |id|
       cleaned = normalize_isbn(id["value"])
       isbns << cleaned if cleaned
@@ -87,10 +91,10 @@ def add_book(db:, query:, http: DEFAULT_HTTP, picker: CLIPicker.new, save: true,
     pairs = flatten_lookup(result)
   end
 
-  candidate_isbns = collect_candidate_isbns(query, pairs)
-
   title_candidates = collect_field(pairs, exclude_context: :title) { |r| r["title"] }
   title = picker.single("Title", title_candidates, required: true)
+
+  candidate_isbns = collect_candidate_isbns(query, pairs, chosen_title: title)
 
   existing = find_existing_book(books, title: title, isbns: candidate_isbns)
   return { existing: existing } if existing
