@@ -451,6 +451,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 65,
+      "name": "Antoine de Saint-Exupéry",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3073,6 +3080,32 @@
       "publisher": "Seix Barral",
       "saga": null,
       "score": 8,
+      "review": ""
+    },
+    {
+      "id": 103,
+      "title": "El Principito",
+      "subtitle": "",
+      "original_title": "Le petit prince",
+      "first_publishing_date": "1943",
+      "author_ids": [
+        65
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9788446033677"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/103-el-principito.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 4,
       "review": ""
     }
   ],
