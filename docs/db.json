@@ -465,6 +465,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 67,
+      "name": "Mario Delgado Aparaín",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3139,6 +3146,32 @@
       "publisher": "",
       "saga": null,
       "score": 7,
+      "review": ""
+    },
+    {
+      "id": 105,
+      "title": "La balada de Johnny Sosa",
+      "subtitle": "",
+      "original_title": "",
+      "first_publishing_date": "1987",
+      "author_ids": [
+        67
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9789974950201"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/105-la-balada-de-johnny-sosa.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 9,
       "review": ""
     }
   ],
