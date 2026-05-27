@@ -433,7 +433,14 @@
     },
     {
       "id": 62,
-      "name": "Rodo, Jose Enrique, 1872-1917.",
+      "name": "José Enrique Rodo",
+      "aliases": [
+
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Max Weber",
       "aliases": [
 
       ]
@@ -3008,6 +3015,32 @@
       "saga": null,
       "score": 2,
       "review": ""
+    },
+    {
+      "id": 101,
+      "title": "Ética protestante",
+      "subtitle": "",
+      "original_title": "",
+      "first_publishing_date": "1905",
+      "author_ids": [
+        63
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9789875710092"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/101-etica-protestante.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "GRADIFCO",
+      "saga": null,
+      "score": 5,
+      "review": ""
     }
   ],
   "publishers": [
@@ -3023,6 +3056,7 @@
     "Editorial Impedimenta",
     "Emecé",
     "Galaxia Gutenberg",
+    "GRADIFCO",
     "HUM",
     "Kapelusz",
     "La Bestia Equilátera",
