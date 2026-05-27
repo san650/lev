@@ -458,6 +458,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 66,
+      "name": "Dario Fo",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3106,6 +3113,32 @@
       "publisher": "",
       "saga": null,
       "score": 4,
+      "review": ""
+    },
+    {
+      "id": 104,
+      "title": "Muerte accidental de un anarquista.",
+      "subtitle": "",
+      "original_title": "Morte accidentale di un anarchico",
+      "first_publishing_date": "1970",
+      "author_ids": [
+        66
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9781884365195"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/104-muerte-accidental-de-un-anarquista.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 7,
       "review": ""
     }
   ],
