@@ -444,6 +444,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 64,
+      "name": "Mario Vargas Llosa",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3040,6 +3047,32 @@
       "publisher": "GRADIFCO",
       "saga": null,
       "score": 5,
+      "review": ""
+    },
+    {
+      "id": 102,
+      "title": "Pantaleón y las visitadoras",
+      "subtitle": "",
+      "original_title": "Pantaleón y las visitadoras",
+      "first_publishing_date": "1973",
+      "author_ids": [
+        64
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_10",
+          "value": "8432202525"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/102-pantaleon-y-las-visitadoras.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "Seix Barral",
+      "saga": null,
+      "score": 8,
       "review": ""
     }
   ],
