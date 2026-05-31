@@ -45,6 +45,48 @@ const NODE_INDEX = {
 // and the matched db book. Cached so we don't recompute on every render.
 const PROJECTIONS = { book: new Map(), author: new Map() };
 
+// "Likeness" — a 0-10 estimate of how much the user will like a book,
+// based on (a) the weighted average of scores on connected books the
+// user HAS read (personal signal) and (b) the book's list-count, i.e.
+// the canon's collective opinion (impersonal prior). The two are
+// blended by a confidence factor that grows with the total edge weight
+// to read neighbors — so the more strong-tied books we have ratings
+// for, the more the score reflects the user's taste; the less, the
+// more it falls back to the canon prior.
+function computeLikeness(node) {
+  if (!node || !Array.isArray(node.tn)) return canonScore(node) * 0.7;
+
+  let scoreSum = 0;
+  let weightSum = 0;
+  for (const [peerId, w] of node.tn) {
+    const peer = NODE_INDEX.book.get(peerId);
+    if (!peer || peer.bi == null) continue;
+    const dbBook = BOOKS_BY_ID.get(peer.bi);
+    if (!dbBook || dbBook.score == null) continue;
+    scoreSum += dbBook.score * w;
+    weightSum += w;
+  }
+
+  const canon = canonScore(node);
+  if (weightSum === 0) {
+    // No personal evidence — use canon strength alone but discount it
+    // since "everyone else likes it" is a weaker signal than "people
+    // whose taste I've validated like it."
+    return canon * 0.7;
+  }
+
+  const personal = scoreSum / weightSum;         // 1-10 weighted avg
+  const confidence = Math.min(1, weightSum / 12);// saturates around ~3-4 strong read neighbors
+  return personal * confidence + canon * (1 - confidence);
+}
+
+function canonScore(node) {
+  // Map list_count (1..~7) to a 0-10 strength score. Books in 6+ lists
+  // sit at the top of every "best of" — give them near-full canon weight.
+  const lc = node?.lc || 0;
+  return Math.min(10, lc * 1.45);
+}
+
 function projectBook(node) {
   if (PROJECTIONS.book.has(node.id)) return PROJECTIONS.book.get(node.id);
   const firstEntry = (node.ei || []).map(id => ENTRIES_BY_ID.get(id)).find(Boolean);
@@ -73,6 +115,7 @@ function projectBook(node) {
     book_id: node.bi,
     top_neighbors: node.tn || [],
     neighbor_count: node.nc || 0,
+    likeness: computeLikeness(node),
   };
   PROJECTIONS.book.set(node.id, projected);
   return projected;
@@ -238,12 +281,16 @@ for (const btn of modeButtons) {
 // --- List rendering --------------------------------------------------------
 function renderList() {
   const q = normalize(state.filter);
-  // Sort by neighbor count desc: high-edge nodes are the most-connected
-  // ones, which doubles as a "what to read next" indicator for books
-  // (lots of strong co-occurrences with the rest of the canon).
-  const all = [...currentNodes()].sort((a, b) =>
-    (b.nc || 0) - (a.nc || 0) || (b.lc || 0) - (a.lc || 0)
-  );
+  // Books: sort by personalized "likeness" score (the read-next ranking
+  // — blends scores of connected books the user has read with the
+  // book's canon strength). Authors: still sort by raw edge count since
+  // there's no per-author score to blend.
+  const all = [...currentNodes()].sort((a, b) => {
+    if (state.mode === 'book') {
+      return computeLikeness(b) - computeLikeness(a) || (b.nc || 0) - (a.nc || 0);
+    }
+    return (b.nc || 0) - (a.nc || 0) || (b.lc || 0) - (a.lc || 0);
+  });
   const matched = q ? all.filter(n => haystack(state.mode, n).includes(q)) : all;
   nodeList.replaceChildren();
 
@@ -304,10 +351,20 @@ function buildRow(node, rank) {
   }
 
   const countEl = slot(frag, 'count');
-  const nc = p.neighbor_count || 0;
-  countEl.textContent = nc;
-  countEl.setAttribute('title', 'Related books');
-  countEl.classList.add(nc >= 10 ? 'count-strong' : nc >= 3 ? 'count-mid' : 'count-weak');
+  if (p.kind === 'book') {
+    const l = p.likeness ?? 0;
+    countEl.textContent = Math.round(l);
+    countEl.setAttribute(
+      'title',
+      'Likeness score — blends scores of connected books you\'ve read with canon strength'
+    );
+    countEl.classList.add(l >= 8 ? 'count-strong' : l >= 5 ? 'count-mid' : 'count-weak');
+  } else {
+    const nc = p.neighbor_count || 0;
+    countEl.textContent = nc;
+    countEl.setAttribute('title', 'Number of related authors');
+    countEl.classList.add(nc >= 10 ? 'count-strong' : nc >= 3 ? 'count-mid' : 'count-weak');
+  }
 
   if (state.focusId === node.id) btn.classList.add('focused');
 
@@ -764,7 +821,10 @@ function renderBookDetail(p) {
   }
   slot(frag, 'author').textContent = p.author || '';
   slot(frag, 'year').textContent = fmtYear(p.year);
-  slot(frag, 'list-count').textContent = p.list_count || 0;
+  const likenessEl = slot(frag, 'likeness');
+  const lk = p.likeness ?? 0;
+  likenessEl.textContent = Math.round(lk);
+  likenessEl.classList.add(lk >= 8 ? 'score-high' : lk >= 5 ? 'score-mid' : 'score-low');
 
   const scoreEl = slot(frag, 'score');
   if (p.score != null) {
