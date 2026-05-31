@@ -1702,7 +1702,24 @@
         "order": 2
       },
       "score": 4,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 32,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 2,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 30,
+          "title": "Guía del autoestopista galáctico"
+        }
+      ]
     },
     {
       "id": 39,
@@ -2868,24 +2885,7 @@
         "order": 1
       },
       "score": 5,
-      "review": "",
-      "in_lists": [
-        {
-          "list": "Goodreads (Best Books Ever)",
-          "position": 32,
-          "title": "Guía del autoestopista galáctico"
-        },
-        {
-          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
-          "position": 2,
-          "title": "Guía del autoestopista galáctico"
-        },
-        {
-          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
-          "position": 30,
-          "title": "Guía del autoestopista galáctico"
-        }
-      ]
+      "review": ""
     },
     {
       "id": 77,
@@ -2937,6 +2937,11 @@
       "review": "",
       "in_lists": [
         {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 53,
+          "title": "El señor de los anillos"
+        },
+        {
           "list": "Goodreads (Best Books Ever)",
           "position": 83,
           "title": "La comunidad del anillo"
@@ -2945,6 +2950,11 @@
           "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
           "position": 11,
           "title": "La comunidad del anillo"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 1,
+          "title": "El Señor de los Anillos"
         }
       ]
     },
@@ -3008,19 +3018,9 @@
       "review": "",
       "in_lists": [
         {
-          "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 53,
-          "title": "El señor de los anillos"
-        },
-        {
           "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
           "position": 14,
           "title": "El retorno del rey"
-        },
-        {
-          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
-          "position": 1,
-          "title": "El Señor de los Anillos"
         }
       ]
     },

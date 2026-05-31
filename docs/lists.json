@@ -7274,6 +7274,1498 @@
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
         }
       ]
+    },
+    {
+      "Source": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+      "SourceUrl": "https://www.worldswithoutend.com/lists_npr_sff.asp",
+      "OriginalNPRUrl": "https://www.npr.org/2011/08/11/139085843/your-picks-top-100-science-fiction-fantasy-books",
+      "Notes": "Lista originada en la encuesta de NPR de 2011. WWEnd reproduce la lista y muestra el primer libro cuando NPR eligió una serie.",
+      "Confidence": 4,
+      "ConfidenceReason": "La lista y su metodología pública son estables. La confianza baja levemente porque algunas entradas son series y se representaron por un volumen inicial o equivalente.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "The Lord of the Rings",
+          "TitleSpanish": "El Señor de los Anillos",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954,
+          "Notes": "NPR listed the trilogy/series; WWEnd displays the first or representative volume when a series is involved."
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Hitchhiker's Guide to the Galaxy",
+          "TitleSpanish": "Guía del autoestopista galáctico",
+          "Author": "Douglas Adams",
+          "FirstPublicationYear": 1979,
+          "Notes": null
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Ender's Game",
+          "TitleSpanish": "El juego de Ender",
+          "Author": "Orson Scott Card",
+          "FirstPublicationYear": 1985,
+          "Notes": "NPR listed The Ender Saga; WWEnd displays Ender's Game."
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "Dune",
+          "TitleSpanish": "Dune",
+          "Author": "Frank Herbert",
+          "FirstPublicationYear": 1965,
+          "Notes": "NPR listed The Dune Chronicles; WWEnd displays Dune."
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "A Game of Thrones",
+          "TitleSpanish": "Juego de tronos",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 1996,
+          "Notes": "NPR listed A Song of Ice and Fire; WWEnd displays A Game of Thrones."
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "Nineteen Eighty-Four",
+          "TitleSpanish": "1984",
+          "Author": "George Orwell",
+          "FirstPublicationYear": 1949,
+          "Notes": null
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Fahrenheit 451",
+          "TitleSpanish": "Fahrenheit 451",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1953,
+          "Notes": null
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "The Foundation Trilogy",
+          "TitleSpanish": "Trilogía de la Fundación",
+          "Author": "Isaac Asimov",
+          "FirstPublicationYear": 1974,
+          "Notes": null
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "Brave New World",
+          "TitleSpanish": "Un mundo feliz",
+          "Author": "Aldous Huxley",
+          "FirstPublicationYear": 1932,
+          "Notes": null
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "American Gods",
+          "TitleSpanish": "American Gods",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 2001,
+          "Notes": null
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Princess Bride",
+          "TitleSpanish": "La princesa prometida",
+          "Author": "William Goldman",
+          "FirstPublicationYear": 1973,
+          "Notes": null
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "The Eye of the World",
+          "TitleSpanish": "El ojo del mundo",
+          "Author": "Robert Jordan",
+          "FirstPublicationYear": 1990,
+          "Notes": "NPR listed The Wheel of Time series; WWEnd displays The Eye of the World."
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "Animal Farm",
+          "TitleSpanish": "Rebelión en la granja",
+          "Author": "George Orwell",
+          "FirstPublicationYear": 1945,
+          "Notes": null
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Neuromancer",
+          "TitleSpanish": "Neuromante",
+          "Author": "William Gibson",
+          "FirstPublicationYear": 1984,
+          "Notes": null
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "Watchmen",
+          "TitleSpanish": "Watchmen",
+          "Author": "Alan Moore and Dave Gibbons",
+          "FirstPublicationYear": 1987,
+          "Notes": null
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "I, Robot",
+          "TitleSpanish": "Yo, robot",
+          "Author": "Isaac Asimov",
+          "FirstPublicationYear": 1950,
+          "Notes": null
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "Stranger in a Strange Land",
+          "TitleSpanish": "Forastero en tierra extraña",
+          "Author": "Robert A. Heinlein",
+          "FirstPublicationYear": 1961,
+          "Notes": null
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "The Name of the Wind",
+          "TitleSpanish": "El nombre del viento",
+          "Author": "Patrick Rothfuss",
+          "FirstPublicationYear": 2007,
+          "Notes": "NPR listed The Kingkiller Chronicle; WWEnd displays The Name of the Wind."
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "Slaughterhouse-Five",
+          "TitleSpanish": "Matadero cinco",
+          "Author": "Kurt Vonnegut",
+          "FirstPublicationYear": 1969,
+          "Notes": null
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "Frankenstein",
+          "TitleSpanish": "Frankenstein",
+          "Author": "Mary Shelley",
+          "FirstPublicationYear": 1818,
+          "Notes": null
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "Do Androids Dream of Electric Sheep?",
+          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "Author": "Philip K. Dick",
+          "FirstPublicationYear": 1968,
+          "Notes": null
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "The Handmaid's Tale",
+          "TitleSpanish": "El cuento de la criada",
+          "Author": "Margaret Atwood",
+          "FirstPublicationYear": 1985,
+          "Notes": null
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "The Gunslinger",
+          "TitleSpanish": "El pistolero",
+          "Author": "Stephen King",
+          "FirstPublicationYear": 1982,
+          "Notes": "NPR listed The Dark Tower series; WWEnd displays The Gunslinger."
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "2001: A Space Odyssey",
+          "TitleSpanish": "2001: Una odisea espacial",
+          "Author": "Arthur C. Clarke",
+          "FirstPublicationYear": 1968,
+          "Notes": null
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "The Stand",
+          "TitleSpanish": "Apocalipsis",
+          "Author": "Stephen King",
+          "FirstPublicationYear": 1978,
+          "Notes": null
+        },
+        {
+          "Position": 26,
+          "TitleOriginal": "Snow Crash",
+          "TitleSpanish": "Snow Crash",
+          "Author": "Neal Stephenson",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 27,
+          "TitleOriginal": "The Martian Chronicles",
+          "TitleSpanish": "Crónicas marcianas",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1950,
+          "Notes": null
+        },
+        {
+          "Position": 28,
+          "TitleOriginal": "Cat's Cradle",
+          "TitleSpanish": "Cuna de gato",
+          "Author": "Kurt Vonnegut",
+          "FirstPublicationYear": 1963,
+          "Notes": null
+        },
+        {
+          "Position": 29,
+          "TitleOriginal": "The Sandman: Preludes and Nocturnes",
+          "TitleSpanish": "The Sandman: Preludios y nocturnos",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 1991,
+          "Notes": "NPR listed The Sandman series; WWEnd displays the first collected volume."
+        },
+        {
+          "Position": 30,
+          "TitleOriginal": "A Clockwork Orange",
+          "TitleSpanish": "La naranja mecánica",
+          "Author": "Anthony Burgess",
+          "FirstPublicationYear": 1962,
+          "Notes": null
+        },
+        {
+          "Position": 31,
+          "TitleOriginal": "Starship Troopers",
+          "TitleSpanish": "Tropas del espacio",
+          "Author": "Robert A. Heinlein",
+          "FirstPublicationYear": 1959,
+          "Notes": null
+        },
+        {
+          "Position": 32,
+          "TitleOriginal": "Watership Down",
+          "TitleSpanish": "La colina de Watership",
+          "Author": "Richard Adams",
+          "FirstPublicationYear": 1972,
+          "Notes": null
+        },
+        {
+          "Position": 33,
+          "TitleOriginal": "Dragonflight",
+          "TitleSpanish": "El vuelo del dragón",
+          "Author": "Anne McCaffrey",
+          "FirstPublicationYear": 1968,
+          "Notes": null
+        },
+        {
+          "Position": 34,
+          "TitleOriginal": "The Moon Is a Harsh Mistress",
+          "TitleSpanish": "La Luna es una cruel amante",
+          "Author": "Robert A. Heinlein",
+          "FirstPublicationYear": 1966,
+          "Notes": null
+        },
+        {
+          "Position": 35,
+          "TitleOriginal": "A Canticle for Leibowitz",
+          "TitleSpanish": "Cántico por Leibowitz",
+          "Author": "Walter M. Miller Jr.",
+          "FirstPublicationYear": 1959,
+          "Notes": null
+        },
+        {
+          "Position": 36,
+          "TitleOriginal": "The Time Machine",
+          "TitleSpanish": "La máquina del tiempo",
+          "Author": "H. G. Wells",
+          "FirstPublicationYear": 1895,
+          "Notes": null
+        },
+        {
+          "Position": 37,
+          "TitleOriginal": "Twenty Thousand Leagues Under the Sea",
+          "TitleSpanish": "Veinte mil leguas de viaje submarino",
+          "Author": "Jules Verne",
+          "FirstPublicationYear": 1870,
+          "Notes": null
+        },
+        {
+          "Position": 38,
+          "TitleOriginal": "Flowers for Algernon",
+          "TitleSpanish": "Flores para Algernon",
+          "Author": "Daniel Keyes",
+          "FirstPublicationYear": 1966,
+          "Notes": null
+        },
+        {
+          "Position": 39,
+          "TitleOriginal": "The War of the Worlds",
+          "TitleSpanish": "La guerra de los mundos",
+          "Author": "H. G. Wells",
+          "FirstPublicationYear": 1898,
+          "Notes": null
+        },
+        {
+          "Position": 40,
+          "TitleOriginal": "The Chronicles of Amber",
+          "TitleSpanish": "Las crónicas de Ámbar",
+          "Author": "Roger Zelazny",
+          "FirstPublicationYear": 1970,
+          "Notes": null
+        },
+        {
+          "Position": 41,
+          "TitleOriginal": "Pawn of Prophecy",
+          "TitleSpanish": "La senda de la profecía",
+          "Author": "David Eddings",
+          "FirstPublicationYear": 1982,
+          "Notes": "NPR listed The Belgariad; WWEnd displays Pawn of Prophecy."
+        },
+        {
+          "Position": 42,
+          "TitleOriginal": "The Mists of Avalon",
+          "TitleSpanish": "Las nieblas de Avalon",
+          "Author": "Marion Zimmer Bradley",
+          "FirstPublicationYear": 1982,
+          "Notes": null
+        },
+        {
+          "Position": 43,
+          "TitleOriginal": "Mistborn",
+          "TitleSpanish": "El imperio final",
+          "Author": "Brandon Sanderson",
+          "FirstPublicationYear": 2006,
+          "Notes": "NPR listed The Mistborn series; WWEnd displays Mistborn."
+        },
+        {
+          "Position": 44,
+          "TitleOriginal": "Ringworld",
+          "TitleSpanish": "Mundo Anillo",
+          "Author": "Larry Niven",
+          "FirstPublicationYear": 1970,
+          "Notes": null
+        },
+        {
+          "Position": 45,
+          "TitleOriginal": "The Left Hand of Darkness",
+          "TitleSpanish": "La mano izquierda de la oscuridad",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1969,
+          "Notes": null
+        },
+        {
+          "Position": 46,
+          "TitleOriginal": "The Silmarillion",
+          "TitleSpanish": "El Silmarillion",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1977,
+          "Notes": null
+        },
+        {
+          "Position": 47,
+          "TitleOriginal": "The Once and Future King",
+          "TitleSpanish": "Camelot / El rey que fue y será",
+          "Author": "T. H. White",
+          "FirstPublicationYear": 1958,
+          "Notes": null
+        },
+        {
+          "Position": 48,
+          "TitleOriginal": "Neverwhere",
+          "TitleSpanish": "Neverwhere",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 1996,
+          "Notes": null
+        },
+        {
+          "Position": 49,
+          "TitleOriginal": "Childhood's End",
+          "TitleSpanish": "El fin de la infancia",
+          "Author": "Arthur C. Clarke",
+          "FirstPublicationYear": 1953,
+          "Notes": null
+        },
+        {
+          "Position": 50,
+          "TitleOriginal": "Contact",
+          "TitleSpanish": "Contact",
+          "Author": "Carl Sagan",
+          "FirstPublicationYear": 1985,
+          "Notes": null
+        },
+        {
+          "Position": 51,
+          "TitleOriginal": "Hyperion",
+          "TitleSpanish": "Hyperion",
+          "Author": "Dan Simmons",
+          "FirstPublicationYear": 1989,
+          "Notes": null
+        },
+        {
+          "Position": 52,
+          "TitleOriginal": "Stardust",
+          "TitleSpanish": "Stardust",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 1999,
+          "Notes": null
+        },
+        {
+          "Position": 53,
+          "TitleOriginal": "Cryptonomicon",
+          "TitleSpanish": "Criptonomicón",
+          "Author": "Neal Stephenson",
+          "FirstPublicationYear": 1999,
+          "Notes": null
+        },
+        {
+          "Position": 54,
+          "TitleOriginal": "World War Z",
+          "TitleSpanish": "Guerra mundial Z",
+          "Author": "Max Brooks",
+          "FirstPublicationYear": 2006,
+          "Notes": null
+        },
+        {
+          "Position": 55,
+          "TitleOriginal": "The Last Unicorn",
+          "TitleSpanish": "El último unicornio",
+          "Author": "Peter S. Beagle",
+          "FirstPublicationYear": 1968,
+          "Notes": null
+        },
+        {
+          "Position": 56,
+          "TitleOriginal": "The Forever War",
+          "TitleSpanish": "La guerra interminable",
+          "Author": "Joe Haldeman",
+          "FirstPublicationYear": 1974,
+          "Notes": null
+        },
+        {
+          "Position": 57,
+          "TitleOriginal": "Small Gods",
+          "TitleSpanish": "Dioses menores",
+          "Author": "Terry Pratchett",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 58,
+          "TitleOriginal": "Lord Foul's Bane",
+          "TitleSpanish": "La ruina del Señor Foul",
+          "Author": "Stephen R. Donaldson",
+          "FirstPublicationYear": 1977,
+          "Notes": "NPR listed The Chronicles of Thomas Covenant; WWEnd displays Lord Foul's Bane."
+        },
+        {
+          "Position": 59,
+          "TitleOriginal": "Shards of Honor",
+          "TitleSpanish": "Fragmentos de honor",
+          "Author": "Lois McMaster Bujold",
+          "FirstPublicationYear": 1986,
+          "Notes": "NPR listed The Vorkosigan Saga; WWEnd displays Shards of Honor."
+        },
+        {
+          "Position": 60,
+          "TitleOriginal": "Going Postal",
+          "TitleSpanish": "Cartas en el asunto",
+          "Author": "Terry Pratchett",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 61,
+          "TitleOriginal": "The Mote in God's Eye",
+          "TitleSpanish": "La paja en el ojo de Dios",
+          "Author": "Larry Niven and Jerry Pournelle",
+          "FirstPublicationYear": 1974,
+          "Notes": null
+        },
+        {
+          "Position": 62,
+          "TitleOriginal": "Wizard's First Rule",
+          "TitleSpanish": "La primera norma del mago",
+          "Author": "Terry Goodkind",
+          "FirstPublicationYear": 1994,
+          "Notes": "NPR listed The Sword of Truth; WWEnd displays Wizard's First Rule."
+        },
+        {
+          "Position": 63,
+          "TitleOriginal": "The Road",
+          "TitleSpanish": "La carretera",
+          "Author": "Cormac McCarthy",
+          "FirstPublicationYear": 2006,
+          "Notes": null
+        },
+        {
+          "Position": 64,
+          "TitleOriginal": "Jonathan Strange & Mr Norrell",
+          "TitleSpanish": "Jonathan Strange y el señor Norrell",
+          "Author": "Susanna Clarke",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 65,
+          "TitleOriginal": "I Am Legend",
+          "TitleSpanish": "Soy leyenda",
+          "Author": "Richard Matheson",
+          "FirstPublicationYear": 1954,
+          "Notes": null
+        },
+        {
+          "Position": 66,
+          "TitleOriginal": "Magician: Apprentice",
+          "TitleSpanish": "Mago: aprendiz",
+          "Author": "Raymond E. Feist",
+          "FirstPublicationYear": 1982,
+          "Notes": "NPR listed The Riftwar Saga; WWEnd displays Magician: Apprentice."
+        },
+        {
+          "Position": 67,
+          "TitleOriginal": "The Sword of Shannara",
+          "TitleSpanish": "La espada de Shannara",
+          "Author": "Terry Brooks",
+          "FirstPublicationYear": 1977,
+          "Notes": null
+        },
+        {
+          "Position": 68,
+          "TitleOriginal": "The Conan Chronicles, Volume 1",
+          "TitleSpanish": "Las crónicas de Conan, volumen 1",
+          "Author": "Robert E. Howard",
+          "FirstPublicationYear": 2000,
+          "Notes": "NPR listed Conan the Barbarian series; WWEnd displays this collected volume."
+        },
+        {
+          "Position": 69,
+          "TitleOriginal": "Assassin's Apprentice",
+          "TitleSpanish": "Aprendiz de asesino",
+          "Author": "Robin Hobb",
+          "FirstPublicationYear": 1995,
+          "Notes": "NPR listed The Farseer Trilogy; WWEnd displays Assassin's Apprentice."
+        },
+        {
+          "Position": 70,
+          "TitleOriginal": "The Time Traveler's Wife",
+          "TitleSpanish": "La mujer del viajero en el tiempo",
+          "Author": "Audrey Niffenegger",
+          "FirstPublicationYear": 2003,
+          "Notes": null
+        },
+        {
+          "Position": 71,
+          "TitleOriginal": "The Way of Kings",
+          "TitleSpanish": "El camino de los reyes",
+          "Author": "Brandon Sanderson",
+          "FirstPublicationYear": 2010,
+          "Notes": null
+        },
+        {
+          "Position": 72,
+          "TitleOriginal": "Journey to the Center of the Earth",
+          "TitleSpanish": "Viaje al centro de la Tierra",
+          "Author": "Jules Verne",
+          "FirstPublicationYear": 1864,
+          "Notes": null
+        },
+        {
+          "Position": 73,
+          "TitleOriginal": "Homeland",
+          "TitleSpanish": "La morada",
+          "Author": "R. A. Salvatore",
+          "FirstPublicationYear": 1990,
+          "Notes": "NPR listed The Legend of Drizzt; WWEnd displays Homeland."
+        },
+        {
+          "Position": 74,
+          "TitleOriginal": "Old Man's War",
+          "TitleSpanish": "La vieja guardia",
+          "Author": "John Scalzi",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 75,
+          "TitleOriginal": "The Diamond Age",
+          "TitleSpanish": "La era del diamante",
+          "Author": "Neal Stephenson",
+          "FirstPublicationYear": 1995,
+          "Notes": null
+        },
+        {
+          "Position": 76,
+          "TitleOriginal": "Rendezvous with Rama",
+          "TitleSpanish": "Cita con Rama",
+          "Author": "Arthur C. Clarke",
+          "FirstPublicationYear": 1973,
+          "Notes": null
+        },
+        {
+          "Position": 77,
+          "TitleOriginal": "Kushiel's Dart",
+          "TitleSpanish": "El dardo de Kushiel",
+          "Author": "Jacqueline Carey",
+          "FirstPublicationYear": 2001,
+          "Notes": null
+        },
+        {
+          "Position": 78,
+          "TitleOriginal": "The Dispossessed",
+          "TitleSpanish": "Los desposeídos",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1974,
+          "Notes": null
+        },
+        {
+          "Position": 79,
+          "TitleOriginal": "Something Wicked This Way Comes",
+          "TitleSpanish": "La feria de las tinieblas",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1962,
+          "Notes": null
+        },
+        {
+          "Position": 80,
+          "TitleOriginal": "Wicked",
+          "TitleSpanish": "Wicked",
+          "Author": "Gregory Maguire",
+          "FirstPublicationYear": 1995,
+          "Notes": null
+        },
+        {
+          "Position": 81,
+          "TitleOriginal": "Gardens of the Moon",
+          "TitleSpanish": "Los jardines de la Luna",
+          "Author": "Steven Erikson",
+          "FirstPublicationYear": 1999,
+          "Notes": null
+        },
+        {
+          "Position": 82,
+          "TitleOriginal": "The Eyre Affair",
+          "TitleSpanish": "El caso Jane Eyre",
+          "Author": "Jasper Fforde",
+          "FirstPublicationYear": 2001,
+          "Notes": null
+        },
+        {
+          "Position": 83,
+          "TitleOriginal": "Consider Phlebas",
+          "TitleSpanish": "Pensad en Flebas",
+          "Author": "Iain M. Banks",
+          "FirstPublicationYear": 1987,
+          "Notes": null
+        },
+        {
+          "Position": 84,
+          "TitleOriginal": "The Crystal Cave",
+          "TitleSpanish": "La cueva de cristal",
+          "Author": "Mary Stewart",
+          "FirstPublicationYear": 1970,
+          "Notes": null
+        },
+        {
+          "Position": 85,
+          "TitleOriginal": "Anathem",
+          "TitleSpanish": "Anatema",
+          "Author": "Neal Stephenson",
+          "FirstPublicationYear": 2008,
+          "Notes": null
+        },
+        {
+          "Position": 86,
+          "TitleOriginal": "Furies of Calderon",
+          "TitleSpanish": "Las furias de Alera",
+          "Author": "Jim Butcher",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 87,
+          "TitleOriginal": "The Shadow of the Torturer",
+          "TitleSpanish": "La sombra del torturador",
+          "Author": "Gene Wolfe",
+          "FirstPublicationYear": 1980,
+          "Notes": null
+        },
+        {
+          "Position": 88,
+          "TitleOriginal": "Heir to the Empire",
+          "TitleSpanish": "Heredero del Imperio",
+          "Author": "Timothy Zahn",
+          "FirstPublicationYear": 1991,
+          "Notes": null
+        },
+        {
+          "Position": 89,
+          "TitleOriginal": "Outlander",
+          "TitleSpanish": "Forastera",
+          "Author": "Diana Gabaldon",
+          "FirstPublicationYear": 1991,
+          "Notes": null
+        },
+        {
+          "Position": 90,
+          "TitleOriginal": "Elric of Melniboné",
+          "TitleSpanish": "Elric de Melniboné",
+          "Author": "Michael Moorcock",
+          "FirstPublicationYear": 1972,
+          "Notes": null
+        },
+        {
+          "Position": 91,
+          "TitleOriginal": "The Illustrated Man",
+          "TitleSpanish": "El hombre ilustrado",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1951,
+          "Notes": null
+        },
+        {
+          "Position": 92,
+          "TitleOriginal": "Sunshine",
+          "TitleSpanish": null,
+          "Author": "Robin McKinley",
+          "FirstPublicationYear": 2003,
+          "Notes": null
+        },
+        {
+          "Position": 93,
+          "TitleOriginal": "A Fire Upon the Deep",
+          "TitleSpanish": "Un abismo en el cielo",
+          "Author": "Vernor Vinge",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 94,
+          "TitleOriginal": "The Caves of Steel",
+          "TitleSpanish": "Bóvedas de acero",
+          "Author": "Isaac Asimov",
+          "FirstPublicationYear": 1954,
+          "Notes": null
+        },
+        {
+          "Position": 95,
+          "TitleOriginal": "Red Mars",
+          "TitleSpanish": "Marte rojo",
+          "Author": "Kim Stanley Robinson",
+          "FirstPublicationYear": 1993,
+          "Notes": null
+        },
+        {
+          "Position": 96,
+          "TitleOriginal": "Lucifer's Hammer",
+          "TitleSpanish": "El martillo de Lucifer",
+          "Author": "Larry Niven and Jerry Pournelle",
+          "FirstPublicationYear": 1977,
+          "Notes": null
+        },
+        {
+          "Position": 97,
+          "TitleOriginal": "Doomsday Book",
+          "TitleSpanish": "El libro del día del juicio final",
+          "Author": "Connie Willis",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 98,
+          "TitleOriginal": "Perdido Street Station",
+          "TitleSpanish": "La estación de la calle Perdido",
+          "Author": "China Miéville",
+          "FirstPublicationYear": 2000,
+          "Notes": null
+        },
+        {
+          "Position": 99,
+          "TitleOriginal": "A Spell for Chameleon",
+          "TitleSpanish": "Un hechizo para Camaleón",
+          "Author": "Piers Anthony",
+          "FirstPublicationYear": 1977,
+          "Notes": null
+        },
+        {
+          "Position": 100,
+          "TitleOriginal": "Out of the Silent Planet",
+          "TitleSpanish": "Más allá del planeta silencioso",
+          "Author": "C. S. Lewis",
+          "FirstPublicationYear": 1938,
+          "Notes": null
+        }
+      ]
+    },
+    {
+      "Source": "Penguin Random House (The Best Historical Fiction of All Time)",
+      "SourceUrl": "https://www.penguinrandomhouse.com/the-read-down/the-best-historical-fiction-of-all-time/",
+      "Notes": "Lista editorial de PRH publicada el 16 de abril de 2026. No se presenta como ranking crítico universal, sino como selección editorial.",
+      "Confidence": 4,
+      "ConfidenceReason": "La lista base es oficial y verificable. La confianza baja levemente por la normalización manual de títulos en español y años.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "The Pillars of the Earth",
+          "TitleSpanish": "Los pilares de la Tierra",
+          "Author": "Ken Follett",
+          "FirstPublicationYear": 1989,
+          "Notes": null
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Marriage Portrait",
+          "TitleSpanish": "El retrato de casada",
+          "Author": "Maggie O'Farrell",
+          "FirstPublicationYear": 2022,
+          "Notes": null
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Things Fall Apart",
+          "TitleSpanish": "Todo se desmorona",
+          "Author": "Chinua Achebe",
+          "FirstPublicationYear": 1958,
+          "Notes": null
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "A Lesson Before Dying",
+          "TitleSpanish": "Una lección antes de morir",
+          "Author": "Ernest J. Gaines",
+          "FirstPublicationYear": 1993,
+          "Notes": null
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Year of Wonders",
+          "TitleSpanish": "El año de la peste",
+          "Author": "Geraldine Brooks",
+          "FirstPublicationYear": 2001,
+          "Notes": null
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "The English Patient",
+          "TitleSpanish": "El paciente inglés",
+          "Author": "Michael Ondaatje",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Girl with a Pearl Earring",
+          "TitleSpanish": "La joven de la perla",
+          "Author": "Tracy Chevalier",
+          "FirstPublicationYear": 1999,
+          "Notes": null
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "The Guernsey Literary and Potato Peel Pie Society",
+          "TitleSpanish": "La sociedad literaria y el pastel de piel de patata de Guernsey",
+          "Author": "Mary Ann Shaffer and Annie Barrows",
+          "FirstPublicationYear": 2008,
+          "Notes": null
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "The Crucible",
+          "TitleSpanish": "Las brujas de Salem",
+          "Author": "Arthur Miller",
+          "FirstPublicationYear": 1953,
+          "Notes": null
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "Lincoln in the Bardo",
+          "TitleSpanish": "Lincoln en el Bardo",
+          "Author": "George Saunders",
+          "FirstPublicationYear": 2017,
+          "Notes": null
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "James",
+          "TitleSpanish": "James",
+          "Author": "Percival Everett",
+          "FirstPublicationYear": 2024,
+          "Notes": null
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "Hotel on the Corner of Bitter and Sweet",
+          "TitleSpanish": "El hotel de la esquina de los amores prohibidos",
+          "Author": "Jamie Ford",
+          "FirstPublicationYear": 2009,
+          "Notes": null
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "A Brief History of Seven Killings",
+          "TitleSpanish": "Breve historia de siete asesinatos",
+          "Author": "Marlon James",
+          "FirstPublicationYear": 2014,
+          "Notes": null
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Lilac Girls",
+          "TitleSpanish": "Las mujeres de la casa de las lilas",
+          "Author": "Martha Hall Kelly",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "The Underground Railroad",
+          "TitleSpanish": "El ferrocarril subterráneo",
+          "Author": "Colson Whitehead",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Grapes of Wrath",
+          "TitleSpanish": "Las uvas de la ira",
+          "Author": "John Steinbeck",
+          "FirstPublicationYear": 1939,
+          "Notes": null
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "What Is the What",
+          "TitleSpanish": "Qué es el qué",
+          "Author": "Dave Eggers",
+          "FirstPublicationYear": 2006,
+          "Notes": null
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "A Fine Balance",
+          "TitleSpanish": "Un perfecto equilibrio",
+          "Author": "Rohinton Mistry",
+          "FirstPublicationYear": 1995,
+          "Notes": null
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "Love in the Time of Cholera",
+          "TitleSpanish": "El amor en los tiempos del cólera",
+          "Author": "Gabriel García Márquez",
+          "FirstPublicationYear": 1985,
+          "Notes": null
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "Beloved",
+          "TitleSpanish": "Beloved",
+          "Author": "Toni Morrison",
+          "FirstPublicationYear": 1987,
+          "Notes": null
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "A Gentleman in Moscow",
+          "TitleSpanish": "Un caballero en Moscú",
+          "Author": "Amor Towles",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "Homegoing",
+          "TitleSpanish": "Volver a casa",
+          "Author": "Yaa Gyasi",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Before We Were Yours",
+          "TitleSpanish": "Antes de que fuéramos tuyos",
+          "Author": "Lisa Wingate",
+          "FirstPublicationYear": 2017,
+          "Notes": null
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "Half of a Yellow Sun",
+          "TitleSpanish": "Medio sol amarillo",
+          "Author": "Chimamanda Ngozi Adichie",
+          "FirstPublicationYear": 2006,
+          "Notes": null
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "Blood Meridian",
+          "TitleSpanish": "Meridiano de sangre",
+          "Author": "Cormac McCarthy",
+          "FirstPublicationYear": 1985,
+          "Notes": null
+        },
+        {
+          "Position": 26,
+          "TitleOriginal": "The Kitchen God's Wife",
+          "TitleSpanish": "La esposa del Dios del Fuego",
+          "Author": "Amy Tan",
+          "FirstPublicationYear": 1991,
+          "Notes": null
+        },
+        {
+          "Position": 27,
+          "TitleOriginal": "Snow Flower and the Secret Fan",
+          "TitleSpanish": "El abanico de seda",
+          "Author": "Lisa See",
+          "FirstPublicationYear": 2005,
+          "Notes": null
+        },
+        {
+          "Position": 28,
+          "TitleOriginal": "The Heaven & Earth Grocery Store",
+          "TitleSpanish": "El colmado del cielo y la tierra",
+          "Author": "James McBride",
+          "FirstPublicationYear": 2023,
+          "Notes": null
+        },
+        {
+          "Position": 29,
+          "TitleOriginal": "The Remains of the Day",
+          "TitleSpanish": "Los restos del día",
+          "Author": "Kazuo Ishiguro",
+          "FirstPublicationYear": 1989,
+          "Notes": null
+        },
+        {
+          "Position": 30,
+          "TitleOriginal": "A Tale of Two Cities",
+          "TitleSpanish": "Historia de dos ciudades",
+          "Author": "Charles Dickens",
+          "FirstPublicationYear": 1859,
+          "Notes": null
+        },
+        {
+          "Position": 31,
+          "TitleOriginal": "Alias Grace",
+          "TitleSpanish": "Alias Grace",
+          "Author": "Margaret Atwood",
+          "FirstPublicationYear": 1996,
+          "Notes": null
+        },
+        {
+          "Position": 32,
+          "TitleOriginal": "Memoirs of a Geisha",
+          "TitleSpanish": "Memorias de una geisha",
+          "Author": "Arthur Golden",
+          "FirstPublicationYear": 1997,
+          "Notes": null
+        }
+      ]
+    },
+    {
+      "Source": "Penguin Random House (The Best Science Fiction Books of All Time)",
+      "SourceUrl": "https://www.penguinrandomhouse.com/the-read-down/best-sci-fi-books/",
+      "Notes": "Lista editorial de PRH publicada el 5 de marzo de 2026. La página contiene 51 entradas al momento de la consulta.",
+      "Confidence": 4,
+      "ConfidenceReason": "La lista base es oficial y verificable. La confianza baja levemente por la normalización manual de títulos en español y años, y por entradas que son antologías o ediciones específicas.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "The Real Story",
+          "TitleSpanish": "La verdadera historia",
+          "Author": "Stephen R. Donaldson",
+          "FirstPublicationYear": 1991,
+          "Notes": null
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "Project Hail Mary",
+          "TitleSpanish": "Proyecto Hail Mary",
+          "Author": "Andy Weir",
+          "FirstPublicationYear": 2021,
+          "Notes": null
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "1984",
+          "TitleSpanish": "1984",
+          "Author": "George Orwell",
+          "FirstPublicationYear": 1949,
+          "Notes": null
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "1Q84",
+          "TitleSpanish": "1Q84",
+          "Author": "Haruki Murakami",
+          "FirstPublicationYear": 2009,
+          "Notes": null
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Altered Carbon",
+          "TitleSpanish": "Carbono alterado",
+          "Author": "Richard K. Morgan",
+          "FirstPublicationYear": 2002,
+          "Notes": null
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "Amatka",
+          "TitleSpanish": "Amatka",
+          "Author": "Karin Tidbeck",
+          "FirstPublicationYear": 2012,
+          "Notes": null
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "The Black Fantastic",
+          "TitleSpanish": null,
+          "Author": "Edited by andré m. carrington",
+          "FirstPublicationYear": 2022,
+          "Notes": null
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Ammonite",
+          "TitleSpanish": "Ammonite",
+          "Author": "Nicola Griffith",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "The Best of All Possible Worlds",
+          "TitleSpanish": "El mejor de todos los mundos posibles",
+          "Author": "Karen Lord",
+          "FirstPublicationYear": 2013,
+          "Notes": null
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Big Book of Science Fiction",
+          "TitleSpanish": "El gran libro de la ciencia ficción",
+          "Author": "Edited by Jeff VanderMeer and Ann VanderMeer",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "Binti: The Complete Trilogy",
+          "TitleSpanish": "Binti: La trilogía completa",
+          "Author": "Nnedi Okorafor",
+          "FirstPublicationYear": 2019,
+          "Notes": null
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "What We Can Know",
+          "TitleSpanish": "Lo que podemos saber",
+          "Author": "Ian McEwan",
+          "FirstPublicationYear": 2025,
+          "Notes": null
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "Under the Eye of the Big Bird",
+          "TitleSpanish": null,
+          "Author": "Hiromi Kawakami",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "A Canticle for Leibowitz",
+          "TitleSpanish": "Cántico por Leibowitz",
+          "Author": "Walter M. Miller Jr.",
+          "FirstPublicationYear": 1959,
+          "Notes": null
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "The Memory Police",
+          "TitleSpanish": "La policía de la memoria",
+          "Author": "Yoko Ogawa",
+          "FirstPublicationYear": 1994,
+          "Notes": null
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The City & The City",
+          "TitleSpanish": "La ciudad y la ciudad",
+          "Author": "China Miéville",
+          "FirstPublicationYear": 2009,
+          "Notes": null
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "Cloud Atlas",
+          "TitleSpanish": "El atlas de las nubes",
+          "Author": "David Mitchell",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "Dark Matter",
+          "TitleSpanish": "Materia oscura",
+          "Author": "Blake Crouch",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "Darwin's Radio",
+          "TitleSpanish": "La radio de Darwin",
+          "Author": "Greg Bear",
+          "FirstPublicationYear": 1999,
+          "Notes": null
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "The Daughter of Doctor Moreau",
+          "TitleSpanish": "La hija del doctor Moreau",
+          "Author": "Silvia Moreno-Garcia",
+          "FirstPublicationYear": 2022,
+          "Notes": null
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "Dhalgren",
+          "TitleSpanish": "Dhalgren",
+          "Author": "Samuel R. Delany",
+          "FirstPublicationYear": 1975,
+          "Notes": null
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "Kallocain",
+          "TitleSpanish": "Kallocaína",
+          "Author": "Karin Boye",
+          "FirstPublicationYear": 1940,
+          "Notes": null
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Do Androids Dream of Electric Sheep?",
+          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "Author": "Philip K. Dick",
+          "FirstPublicationYear": 1968,
+          "Notes": null
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "Doomsday Book",
+          "TitleSpanish": "El libro del día del juicio final",
+          "Author": "Connie Willis",
+          "FirstPublicationYear": 1992,
+          "Notes": null
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "Downbelow Station",
+          "TitleSpanish": "Estación Downbelow",
+          "Author": "C. J. Cherryh",
+          "FirstPublicationYear": 1981,
+          "Notes": null
+        },
+        {
+          "Position": 26,
+          "TitleOriginal": "Dune",
+          "TitleSpanish": "Dune",
+          "Author": "Frank Herbert",
+          "FirstPublicationYear": 1965,
+          "Notes": null
+        },
+        {
+          "Position": 27,
+          "TitleOriginal": "The Fold",
+          "TitleSpanish": "El pliegue",
+          "Author": "Peter Clines",
+          "FirstPublicationYear": 2015,
+          "Notes": null
+        },
+        {
+          "Position": 28,
+          "TitleOriginal": "Foundation",
+          "TitleSpanish": "Fundación",
+          "Author": "Isaac Asimov",
+          "FirstPublicationYear": 1951,
+          "Notes": null
+        },
+        {
+          "Position": 29,
+          "TitleOriginal": "The Gone World",
+          "TitleSpanish": "El mundo perdido",
+          "Author": "Tom Sweterlitsch",
+          "FirstPublicationYear": 2018,
+          "Notes": null
+        },
+        {
+          "Position": 30,
+          "TitleOriginal": "The Hitchhiker's Guide to the Galaxy",
+          "TitleSpanish": "Guía del autoestopista galáctico",
+          "Author": "Douglas Adams",
+          "FirstPublicationYear": 1979,
+          "Notes": null
+        },
+        {
+          "Position": 31,
+          "TitleOriginal": "How to Live Safely in a Science Fictional Universe",
+          "TitleSpanish": "Cómo vivir a salvo en un universo de ciencia ficción",
+          "Author": "Charles Yu",
+          "FirstPublicationYear": 2010,
+          "Notes": null
+        },
+        {
+          "Position": 32,
+          "TitleOriginal": "There Is No Antimemetics Division",
+          "TitleSpanish": null,
+          "Author": "qntm",
+          "FirstPublicationYear": 2021,
+          "Notes": null
+        },
+        {
+          "Position": 33,
+          "TitleOriginal": "Hyperion",
+          "TitleSpanish": "Hyperion",
+          "Author": "Dan Simmons",
+          "FirstPublicationYear": 1989,
+          "Notes": null
+        },
+        {
+          "Position": 34,
+          "TitleOriginal": "Kindred",
+          "TitleSpanish": "Parentesco",
+          "Author": "Octavia Butler",
+          "FirstPublicationYear": 1979,
+          "Notes": null
+        },
+        {
+          "Position": 35,
+          "TitleOriginal": "The Left Hand of Darkness",
+          "TitleSpanish": "La mano izquierda de la oscuridad",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1969,
+          "Notes": null
+        },
+        {
+          "Position": 36,
+          "TitleOriginal": "The Surviving Sky",
+          "TitleSpanish": null,
+          "Author": "Kritika H. Rao",
+          "FirstPublicationYear": 2023,
+          "Notes": null
+        },
+        {
+          "Position": 37,
+          "TitleOriginal": "Neuromancer",
+          "TitleSpanish": "Neuromante",
+          "Author": "William Gibson",
+          "FirstPublicationYear": 1984,
+          "Notes": null
+        },
+        {
+          "Position": 38,
+          "TitleOriginal": "Never Let Me Go",
+          "TitleSpanish": "Nunca me abandones",
+          "Author": "Kazuo Ishiguro",
+          "FirstPublicationYear": 2005,
+          "Notes": null
+        },
+        {
+          "Position": 39,
+          "TitleOriginal": "Oryx and Crake",
+          "TitleSpanish": "Oryx y Crake",
+          "Author": "Margaret Atwood",
+          "FirstPublicationYear": 2003,
+          "Notes": null
+        },
+        {
+          "Position": 40,
+          "TitleOriginal": "Pandora's Star",
+          "TitleSpanish": "La estrella de Pandora",
+          "Author": "Peter F. Hamilton",
+          "FirstPublicationYear": 2004,
+          "Notes": null
+        },
+        {
+          "Position": 41,
+          "TitleOriginal": "Red Rising",
+          "TitleSpanish": "Amanecer rojo",
+          "Author": "Pierce Brown",
+          "FirstPublicationYear": 2014,
+          "Notes": null
+        },
+        {
+          "Position": 42,
+          "TitleOriginal": "The Dream Hotel",
+          "TitleSpanish": null,
+          "Author": "Laila Lalami",
+          "FirstPublicationYear": 2025,
+          "Notes": null
+        },
+        {
+          "Position": 43,
+          "TitleOriginal": "The Changeling",
+          "TitleSpanish": "El cambiazo",
+          "Author": "Victor LaValle",
+          "FirstPublicationYear": 2017,
+          "Notes": null
+        },
+        {
+          "Position": 44,
+          "TitleOriginal": "Slaughterhouse-Five",
+          "TitleSpanish": "Matadero cinco",
+          "Author": "Kurt Vonnegut",
+          "FirstPublicationYear": 1969,
+          "Notes": null
+        },
+        {
+          "Position": 45,
+          "TitleOriginal": "Sleeping Giants",
+          "TitleSpanish": "Gigantes dormidos",
+          "Author": "Sylvain Neuvel",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 46,
+          "TitleOriginal": "The Stand",
+          "TitleSpanish": "Apocalipsis",
+          "Author": "Stephen King",
+          "FirstPublicationYear": 1978,
+          "Notes": null
+        },
+        {
+          "Position": 47,
+          "TitleOriginal": "Station Eleven",
+          "TitleSpanish": "Estación Once",
+          "Author": "Emily St. John Mandel",
+          "FirstPublicationYear": 2014,
+          "Notes": null
+        },
+        {
+          "Position": 48,
+          "TitleOriginal": "Stories of Your Life and Others",
+          "TitleSpanish": "La historia de tu vida",
+          "Author": "Ted Chiang",
+          "FirstPublicationYear": 2002,
+          "Notes": null
+        },
+        {
+          "Position": 49,
+          "TitleOriginal": "The Underground Railroad",
+          "TitleSpanish": "El ferrocarril subterráneo",
+          "Author": "Colson Whitehead",
+          "FirstPublicationYear": 2016,
+          "Notes": null
+        },
+        {
+          "Position": 50,
+          "TitleOriginal": "The War of the Worlds",
+          "TitleSpanish": "La guerra de los mundos",
+          "Author": "H. G. Wells",
+          "FirstPublicationYear": 1898,
+          "Notes": null
+        },
+        {
+          "Position": 51,
+          "TitleOriginal": "Woman on the Edge of Time",
+          "TitleSpanish": "Mujer al borde del tiempo",
+          "Author": "Marge Piercy",
+          "FirstPublicationYear": 1976,
+          "Notes": null
+        }
+      ]
     }
   ],
   "SourcesConsulted": [
