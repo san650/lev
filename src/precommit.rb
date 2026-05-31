@@ -12,8 +12,12 @@ require "tempfile"
 require "fileutils"
 require "open3"
 
-PRECOMMIT_ROOT = File.expand_path("..", __dir__)
-DB_PATH = File.join(PRECOMMIT_ROOT, "docs", "db.json")
+require_relative "constants"
+require_relative "lists_index"
+
+# DB_PATH and LISTS_PATH come from constants.rb / lists_index.rb. We define
+# PRECOMMIT_ROOT for backward-compat with any callers that already use it.
+PRECOMMIT_ROOT = ROOT_DIR
 
 # ---------------------------------------------------------------------------
 # ISBN-13 hyphenation using embedded range data from isbn-international.org
@@ -230,6 +234,118 @@ rescue JSON::ParserError => e
   raise "db.json is not valid JSON — #{e.message}"
 end
 
+# --- Step 1b: lists.json dedupe --------------------------------------------
+#
+# Walks every list entry and unifies its TitleSpanish / TitleOriginal /
+# Author spellings against a single canonical source:
+#
+#   - When the entry matches a db book (via the existing fuzzy matcher),
+#     we copy the spellings straight from db.json. db is the source of
+#     truth, so "Anna Karénina" written three different ways across three
+#     lists collapses to the one form db carries.
+#   - When no db book matches, we still want list-internal coherence — the
+#     first time we see an (normalized-title, normalized-author) pair we
+#     stash its spellings as canonical, and rewrite any later entry that
+#     loosely resolves to the same identity.
+#
+# Returns the number of fields rewritten so the caller can log it.
+
+def canonical_from_db(db)
+  authors_by_id = (db["authors"] || []).each_with_object({}) { |a, h| h[a["id"]] = a }
+  (db["books"] || []).each_with_object({}) do |book, h|
+    next unless book["id"]
+    names = (book["author_ids"] || []).map { |aid| authors_by_id[aid]&.dig("name") }.compact
+    next if names.empty?
+    h[book["id"]] = {
+      "TitleSpanish" => book["title"],
+      "TitleOriginal" => book["original_title"].to_s.empty? ? book["title"] : book["original_title"],
+      "Author" => names.join(", ")
+    }
+  end
+end
+
+def literal_key_for(entry)
+  primary = entry["TitleSpanish"].to_s.empty? ? entry["TitleOriginal"] : entry["TitleSpanish"]
+  title_key = ListsIndex.strip_suffix(ListsIndex.normalize(primary.to_s))
+  first_author = ListsIndex.split_authors(entry["Author"]).first || entry["Author"].to_s
+  [title_key, ListsIndex.normalize(first_author)]
+end
+
+def dedupe_lists_data!(db, lists_data)
+  return 0 unless lists_data.is_a?(Hash) && lists_data["Lists"].is_a?(Array)
+
+  title_idx = ListsIndex.build_title_index(db)
+  saga_idx = ListsIndex.build_saga_index(db)
+  db_canonical = canonical_from_db(db)
+  literal_canonical = {} # [title_key, author_key] -> canonical spellings hash
+
+  rewritten = 0
+  lists_data["Lists"].each do |list|
+    (list["Books/Stories"] || []).each do |entry|
+      bid = ListsIndex.match_entry(entry, title_idx, saga_idx)
+      canonical = bid ? db_canonical[bid] : nil
+
+      if canonical.nil?
+        # No db match — fall back to the first-seen literal identity. Both
+        # title and author must be non-empty for the key to be meaningful.
+        key = literal_key_for(entry)
+        next if key.first.empty? || key.last.empty?
+        canonical = literal_canonical[key] ||= {
+          "TitleSpanish" => entry["TitleSpanish"],
+          "TitleOriginal" => entry["TitleOriginal"],
+          "Author" => entry["Author"]
+        }
+      end
+
+      %w[TitleSpanish TitleOriginal Author].each do |field|
+        new_val = canonical[field]
+        next if new_val.nil? || new_val.empty?
+        next if entry[field] == new_val
+        entry[field] = new_val
+        rewritten += 1
+      end
+    end
+  end
+
+  rewritten
+end
+
+def validate_lists_json
+  unless File.exist?(LISTS_PATH)
+    warn "  lists.json not found, skipping dedup."
+    return
+  end
+  unless File.exist?(DB_PATH)
+    warn "  db.json missing, skipping lists dedup (need db spellings as source of truth)."
+    return
+  end
+
+  db = JSON.parse(File.read(DB_PATH, encoding: "UTF-8"))
+  lists_data = JSON.parse(File.read(LISTS_PATH, encoding: "UTF-8"))
+
+  rewritten = dedupe_lists_data!(db, lists_data)
+
+  if rewritten.zero?
+    puts "  lists.json already deduped (0 fields rewritten)"
+    return
+  end
+
+  formatted = JSON.pretty_generate(lists_data)
+  JSON.parse(formatted) # paranoid round-trip
+
+  tmp = Tempfile.new("lists", File.dirname(LISTS_PATH))
+  tmp.write(formatted)
+  tmp.write("\n")
+  tmp.close
+  FileUtils.mv(tmp.path, LISTS_PATH)
+
+  system("git", "add", LISTS_PATH)
+
+  puts "  lists.json deduped (#{rewritten} field(s) rewritten — remember to run `make reindex` and `make graph`)"
+rescue JSON::ParserError => e
+  raise "lists.json is not valid JSON — #{e.message}"
+end
+
 # --- Step 2 + 3: Ruby syntax validation -------------------------------------
 
 def validate_ruby_syntax(label, glob)
@@ -270,10 +386,11 @@ end
 
 def precommit_main
   steps = [
-    ["1/4 db.json",     -> { validate_db_json }],
-    ["2/4 src/ syntax", -> { validate_ruby_syntax("src",     File.join(PRECOMMIT_ROOT, "src", "**", "*.rb")) }],
-    ["3/4 scripts/ syntax", -> { validate_ruby_syntax("scripts", File.join(PRECOMMIT_ROOT, "scripts", "**", "*.rb")) }],
-    ["4/4 tests",       -> { run_tests }]
+    ["1/5 db.json",          -> { validate_db_json }],
+    ["2/5 lists.json",       -> { validate_lists_json }],
+    ["3/5 src/ syntax",      -> { validate_ruby_syntax("src",     File.join(PRECOMMIT_ROOT, "src", "**", "*.rb")) }],
+    ["4/5 scripts/ syntax",  -> { validate_ruby_syntax("scripts", File.join(PRECOMMIT_ROOT, "scripts", "**", "*.rb")) }],
+    ["5/5 tests",            -> { run_tests }]
   ]
 
   steps.each do |label, body|

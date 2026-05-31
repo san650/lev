@@ -54,6 +54,13 @@ const PROJECTIONS = { book: new Map(), author: new Map() };
 // for, the more the score reflects the user's taste; the less, the
 // more it falls back to the canon prior.
 function computeLikeness(node) {
+  // Read books bypass the estimator — your own score is the ground truth
+  // for how much you liked it, so the Match figure should mirror it.
+  if (node?.bi != null) {
+    const dbBook = BOOKS_BY_ID.get(node.bi);
+    if (dbBook?.score != null) return dbBook.score;
+  }
+
   if (!node || !Array.isArray(node.tn)) return canonScore(node) * 0.7;
 
   let scoreSum = 0;
@@ -85,6 +92,52 @@ function canonScore(node) {
   // sit at the top of every "best of" — give them near-full canon weight.
   const lc = node?.lc || 0;
   return Math.min(10, lc * 1.45);
+}
+
+// Author Match — same spirit as computeLikeness but anchored on author
+// signals: how the user has actually scored this author's books, blended
+// with how broadly the recommended-lists corpus features them.
+function computeAuthorMatch(node) {
+  // PERSONAL — raw mean of user scores on this author's books. No early
+  // shrinkage; confidence (below) handles trust based on sample size.
+  let personalMean = null;
+  let nScored = 0;
+  if (node?.ai != null) {
+    const dbAuthor = AUTHORS_BY_ID.get(node.ai);
+    if (dbAuthor) {
+      const scores = (db.books || [])
+        .filter(b => (b.author_ids || []).includes(dbAuthor.id) && typeof b.score === 'number')
+        .map(b => b.score);
+      nScored = scores.length;
+      if (nScored > 0) personalMean = scores.reduce((a, b) => a + b, 0) / nScored;
+    }
+  }
+
+  // CANON — list footprint. Distinct lists matter more than total entries:
+  // six independent curators citing an author is stronger than one curator
+  // listing six of their books. Extra entries beyond lc add diminishing
+  // returns (sqrt).
+  const lc = node?.lc || 0;
+  const ec = (node?.ei || []).length;
+  const canon = Math.min(10, lc * 1.3 + Math.sqrt(Math.max(0, ec - lc)) * 0.7);
+
+  if (personalMean == null) return canon * 0.7;
+
+  // Confidence grows with the number of personally-scored books. At ≥3
+  // books we trust the user's mean fully; at one book it counts for ~33%.
+  const confidence = Math.min(1, nScored / 3);
+  return personalMean * confidence + canon * (1 - confidence);
+}
+
+// Bucket a 0-10 Match value into five equitable tiers. Each tier carries
+// the display label plus the class names used by the list count pill and
+// the detail-card score figure, so every consumer renders in lockstep.
+function matchTier(v) {
+  if (v >= 8) return { label: 'MUST READ',     countClass: 'match-love',  scoreClass: 'score-love'  };
+  if (v >= 6) return { label: 'HIGH',          countClass: 'match-high',  scoreClass: 'score-high'  };
+  if (v >= 4) return { label: 'MID',           countClass: 'match-mid',   scoreClass: 'score-mid'   };
+  if (v >= 2) return { label: 'LOW',           countClass: 'match-low',   scoreClass: 'score-low'   };
+  return             { label: 'VERY LOW',      countClass: 'match-faint', scoreClass: 'score-faint' };
 }
 
 function projectBook(node) {
@@ -137,6 +190,7 @@ function projectAuthor(node) {
   }
   for (const v of byList.values()) listBooks.push(v);
   const dbBooks = dbAuthor ? booksByAuthor(dbAuthor.id) : [];
+  const readCount = dbBooks.filter(b => b.read).length;
   const projected = {
     kind: 'author',
     id: node.id,
@@ -148,6 +202,8 @@ function projectAuthor(node) {
     author_id: node.ai,
     top_neighbors: node.tn || [],
     neighbor_count: node.nc || 0,
+    read_count: readCount,
+    match: computeAuthorMatch(node),
   };
   PROJECTIONS.author.set(node.id, projected);
   return projected;
@@ -200,7 +256,6 @@ const stageRings    = document.getElementById('stage-rings');
 const stageControls = document.getElementById('stage-controls');
 const stageMeta     = document.getElementById('stage-meta');
 const toggleWeak    = document.getElementById('toggle-weak');
-const clearFocus    = document.getElementById('clear-focus');
 const listHeading   = document.getElementById('list-heading');
 const listCount     = document.getElementById('list-count');
 const nodeList      = document.getElementById('node-list');
@@ -281,15 +336,15 @@ for (const btn of modeButtons) {
 // --- List rendering --------------------------------------------------------
 function renderList() {
   const q = normalize(state.filter);
-  // Books: sort by personalized "likeness" score (the read-next ranking
+  // Books: sort by personalized "Match" score (the read-next ranking
   // — blends scores of connected books the user has read with the
-  // book's canon strength). Authors: still sort by raw edge count since
-  // there's no per-author score to blend.
+  // book's canon strength). Authors: sort by the analogous Match —
+  // user's mean score on their books blended with list footprint.
   const all = [...currentNodes()].sort((a, b) => {
     if (state.mode === 'book') {
       return computeLikeness(b) - computeLikeness(a) || (b.nc || 0) - (a.nc || 0);
     }
-    return (b.nc || 0) - (a.nc || 0) || (b.lc || 0) - (a.lc || 0);
+    return computeAuthorMatch(b) - computeAuthorMatch(a) || (b.lc || 0) - (a.lc || 0);
   });
   const matched = q ? all.filter(n => haystack(state.mode, n).includes(q)) : all;
   nodeList.replaceChildren();
@@ -353,17 +408,22 @@ function buildRow(node, rank) {
   const countEl = slot(frag, 'count');
   if (p.kind === 'book') {
     const l = p.likeness ?? 0;
-    countEl.textContent = Math.round(l);
+    const t = matchTier(l);
+    countEl.textContent = t.label;
     countEl.setAttribute(
       'title',
-      'Likeness score — blends scores of connected books you\'ve read with canon strength'
+      'Match — blends scores of connected books you\'ve read with canon strength'
     );
-    countEl.classList.add(l >= 8 ? 'count-strong' : l >= 5 ? 'count-mid' : 'count-weak');
+    countEl.classList.add(t.countClass);
   } else {
-    const nc = p.neighbor_count || 0;
-    countEl.textContent = nc;
-    countEl.setAttribute('title', 'Number of related authors');
-    countEl.classList.add(nc >= 10 ? 'count-strong' : nc >= 3 ? 'count-mid' : 'count-weak');
+    const m = p.match ?? 0;
+    const t = matchTier(m);
+    countEl.textContent = t.label;
+    countEl.setAttribute(
+      'title',
+      "Match — blends your scores on this author's books with their reach across recommended lists"
+    );
+    countEl.classList.add(t.countClass);
   }
 
   if (state.focusId === node.id) btn.classList.add('focused');
@@ -391,8 +451,6 @@ function clearFocused() {
   renderFocused();
   renderList();
 }
-
-clearFocus.addEventListener('click', clearFocused);
 
 // w<3 has been dropped from graph.json entirely. The "show weak edges"
 // toggle no longer has anything to reveal, so hide it.
@@ -529,45 +587,182 @@ function drawFocusedGraph(center, neighbors) {
     Object.assign(c.group.__layout, { x, y, vx: x, vy: y });
   }
 
-  // Grow the viewBox to enclose every card's furthest corner.
-  const maxExtent = rOuter
-    + Math.max(outerMaxHalfW, outerMaxHalfH)
-    + VIEWBOX_PAD;
-  fitStageViewBox(maxExtent);
+  // Resolve overlaps first — collision passes nudge orbit cards outward,
+  // so we need their final positions before sizing the viewBox or drawing
+  // edges. Otherwise pushed cards clip past the SVG edge and edges point
+  // at stale coordinates.
+  resolveCollisions();
+  for (const c of cards) {
+    c.x = c.group.__layout.x;
+    c.y = c.group.__layout.y;
+  }
+
+  // Grow the viewBox to enclose every card's furthest corner — including
+  // any post-collision drift past the nominal ring radius.
+  let maxExtent = Math.max(centerHalfW, centerHalfH);
+  for (const c of cards) {
+    maxExtent = Math.max(
+      maxExtent,
+      Math.abs(c.x) + c.w / 2,
+      Math.abs(c.y) + c.h / 2,
+    );
+  }
+  fitStageViewBox(maxExtent + VIEWBOX_PAD);
 
   drawRings([rInner, rOuter]);
   cards.forEach((c) => drawEdge(c));
-
-  requestAnimationFrame(() => resolveCollisions());
 }
 
-// Resize the SVG viewBox + the rendered (CSS-px) dimensions of the SVG
-// so the focused graph renders at 1:1 scale — every 1 user-unit in the
-// viewBox is one CSS pixel on screen. Text reads at its declared
-// font-size regardless of how wide the graph turned out to be. When the
-// SVG is wider than the section, the section scrolls.
+// ---- Pan + zoom state ---------------------------------------------------
+// Declared before fitStageViewBox so the function can write into it on the
+// first render. `baseViewBox` is the natural framing for the current focus;
+// (view.scale, view.tx, view.ty) is the live user-driven transform applied
+// on top via applyView().
+let baseViewBox = null;
+const view = { scale: 1, tx: 0, ty: 0 };
+const MIN_SCALE = 0.4;
+const MAX_SCALE = 6;
+
+// Size the SVG viewBox tight to actual card extents. The SVG itself is
+// sized in CSS to fit the stage section, and preserveAspectRatio scales
+// the viewBox uniformly so every node always lands inside the visible
+// area — no horizontal/vertical scroll within the stage.
 function fitStageViewBox(extent) {
   const e = Math.max(extent, 280);
   const size = e * 2;
-  stage.setAttribute('viewBox', `${-e} ${-e} ${size} ${size}`);
-  stage.setAttribute('width', size);
-  stage.setAttribute('height', size);
+  baseViewBox = { x: -e, y: -e, w: size, h: size };
+  view.scale = 1;
+  view.tx = 0;
+  view.ty = 0;
+  applyView();
+  // Oversize the bg rect well past the base viewBox so even at maximum
+  // zoom-out the dark background still fills the SVG box.
   const bg = stage.querySelector('.stage-bg-rect');
   if (bg) {
-    bg.setAttribute('x', -e);
-    bg.setAttribute('y', -e);
-    bg.setAttribute('width', size);
-    bg.setAttribute('height', size);
+    const PAD = size * 2;
+    bg.setAttribute('x', -e - PAD);
+    bg.setAttribute('y', -e - PAD);
+    bg.setAttribute('width', size + PAD * 2);
+    bg.setAttribute('height', size + PAD * 2);
   }
-  // Center the SVG inside its scroll container on initial render so the
-  // focused node lands in the middle of the viewport, not at top-left.
-  requestAnimationFrame(() => {
-    if (stageSection) {
-      stageSection.scrollLeft = Math.max(0, (size - stageSection.clientWidth) / 2);
-      stageSection.scrollTop  = Math.max(0, (size - stageSection.clientHeight) / 2);
-    }
-  });
 }
+
+// ---- Pan + zoom on the stage --------------------------------------------
+// State (baseViewBox, view, MIN_SCALE, MAX_SCALE) is declared above
+// fitStageViewBox so that function can initialize it on first render.
+// Wheel, pointer-drag, and pinch handlers below mutate `view` and call
+// applyView() to push the live transform back onto the SVG viewBox.
+function applyView() {
+  if (!baseViewBox) return;
+  const { x, y, w, h } = baseViewBox;
+  const sw = w / view.scale;
+  const sh = h / view.scale;
+  const cx = x + (w - sw) / 2 - view.tx;
+  const cy = y + (h - sh) / 2 - view.ty;
+  stage.setAttribute('viewBox', `${cx} ${cy} ${sw} ${sh}`);
+}
+
+// Convert a client (pixel) point to current SVG user-space coordinates so
+// zoom-toward-cursor stays anchored under the pointer.
+function clientToUser(clientX, clientY) {
+  const r = stage.getBoundingClientRect();
+  const vb = stage.getAttribute('viewBox').split(/\s+/).map(Number);
+  const [vx, vy, vw, vh] = vb;
+  const px = (clientX - r.left) / r.width;
+  const py = (clientY - r.top) / r.height;
+  return { x: vx + px * vw, y: vy + py * vh };
+}
+
+function zoomAt(clientX, clientY, factor) {
+  if (!baseViewBox) return;
+  const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, view.scale * factor));
+  if (newScale === view.scale) return;
+  const before = clientToUser(clientX, clientY);
+  view.scale = newScale;
+  applyView();
+  const after = clientToUser(clientX, clientY);
+  // tx/ty are subtracted in applyView's cx/cy. Keeping `after` aligned
+  // with `before` means the user-space point under the cursor doesn't drift.
+  view.tx += after.x - before.x;
+  view.ty += after.y - before.y;
+  applyView();
+}
+
+// Pointer tracking — supports single-pointer pan and two-pointer pinch.
+const pointers = new Map(); // pointerId -> {x, y}
+let pinchStart = null;      // { dist, midX, midY, scale, tx, ty }
+
+stage.addEventListener('wheel', (e) => {
+  // Only intercept when the user is intentionally scrolling on the stage —
+  // touchpads emit wheel events on plain scroll too, but the user is
+  // already inside the stage rect so it's safe to claim them.
+  e.preventDefault();
+  const factor = Math.pow(1.0015, -e.deltaY);
+  zoomAt(e.clientX, e.clientY, factor);
+}, { passive: false });
+
+stage.addEventListener('pointerdown', (e) => {
+  // Ignore clicks that land on a card — those open / refocus the node and
+  // shouldn't initiate a pan.
+  if (e.target.closest('.node-card')) return;
+  stage.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 2) {
+    const [a, b] = [...pointers.values()];
+    pinchStart = {
+      dist: Math.hypot(a.x - b.x, a.y - b.y),
+      midX: (a.x + b.x) / 2,
+      midY: (a.y + b.y) / 2,
+      scale: view.scale,
+      tx: view.tx,
+      ty: view.ty,
+    };
+  }
+});
+
+stage.addEventListener('pointermove', (e) => {
+  const prev = pointers.get(e.pointerId);
+  if (!prev) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+  if (pointers.size === 1) {
+    // Drag pan — convert pixel delta to user-space delta via current zoom.
+    if (!baseViewBox) return;
+    const r = stage.getBoundingClientRect();
+    const pxToUser = baseViewBox.w / view.scale / r.width;
+    view.tx += (e.clientX - prev.x) * pxToUser;
+    view.ty += (e.clientY - prev.y) * pxToUser;
+    applyView();
+  } else if (pointers.size === 2 && pinchStart) {
+    // Pinch zoom — scale relative to start of gesture so the rate is stable
+    // even when fingers drift during the gesture.
+    const [a, b] = [...pointers.values()];
+    const dist = Math.hypot(a.x - b.x, a.y - b.y) || 1;
+    const factor = dist / (pinchStart.dist || 1);
+    view.scale = pinchStart.scale;
+    view.tx = pinchStart.tx;
+    view.ty = pinchStart.ty;
+    applyView();
+    zoomAt(pinchStart.midX, pinchStart.midY, factor);
+  }
+});
+
+function endPointer(e) {
+  pointers.delete(e.pointerId);
+  if (pointers.size < 2) pinchStart = null;
+}
+stage.addEventListener('pointerup', endPointer);
+stage.addEventListener('pointercancel', endPointer);
+stage.addEventListener('pointerleave', endPointer);
+
+// Double-click resets zoom/pan back to the focused view.
+stage.addEventListener('dblclick', (e) => {
+  if (e.target.closest('.node-card')) return;
+  view.scale = 1;
+  view.tx = 0;
+  view.ty = 0;
+  applyView();
+});
 
 // Allocate angular space around a ring proportional to each card's
 // measured width. The angular footprint of card i = (w_i + gap) / r.
@@ -823,8 +1018,9 @@ function renderBookDetail(p) {
   slot(frag, 'year').textContent = fmtYear(p.year);
   const likenessEl = slot(frag, 'likeness');
   const lk = p.likeness ?? 0;
-  likenessEl.textContent = Math.round(lk);
-  likenessEl.classList.add(lk >= 8 ? 'score-high' : lk >= 5 ? 'score-mid' : 'score-low');
+  const lkTier = matchTier(lk);
+  likenessEl.textContent = lkTier.label;
+  likenessEl.classList.add(lkTier.scoreClass);
 
   const scoreEl = slot(frag, 'score');
   if (p.score != null) {
@@ -861,8 +1057,15 @@ function renderAuthorDetail(p) {
     aliases.textContent = `also known as ${p.aliases.join(', ')}`;
     aliases.hidden = false;
   }
+  const matchEl = slot(frag, 'match');
+  const m = p.match ?? 0;
+  const mTier = matchTier(m);
+  matchEl.textContent = mTier.label;
+  matchEl.classList.add(mTier.scoreClass);
+
   slot(frag, 'list-count').textContent = p.list_count || 0;
   slot(frag, 'db-count').textContent = (p.dbBooks || []).length;
+  slot(frag, 'read-count').textContent = p.read_count ?? 0;
 
   const lb = slot(frag, 'list-books');
   for (const entry of (p.listBooks || [])) {

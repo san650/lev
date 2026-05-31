@@ -17,7 +17,7 @@
 
 <!-- Toolbar -->
 <div class="toolbar-sticky bg-deep">
-  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full">
+  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full" aria-label="Search">
     <a href="/" class="flex items-center gap-3 shrink-0" style="text-decoration:none">
       <img src="assets/logo.svg" alt="" class="w-6 h-6">
       <mark class="font-brand text-lg fw-700 uppercase tracking-wide color-white bg-deep">Lev</mark>
@@ -25,11 +25,12 @@
     <search class="flex-1">
       <input id="filter" type="search" placeholder="Filter title, author, year..." class="w-full bg-white color-deep font-body text-sm py-2 px-3 search-input">
     </search>
-    <div class="flex items-center gap-3 shrink-0">
-      <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Stats</a>
-      <a href="lists.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Lists</a>
-      <a href="graph.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Similar</a>
-    </div>
+  </nav>
+  <nav class="subnav bg-purple max-w-app mx-auto w-full flex" aria-label="Sections">
+    <a href="index.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Books</a>
+    <a href="stats.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Stats</a>
+    <a href="lists.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Lists</a>
+    <a href="graph.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide" aria-current="page">Similar</a>
   </nav>
   <div class="bg-orange accent-strip"></div>
   <div class="graph-mode bg-surface-alt flex items-center justify-between flex-wrap gap-3 px-3 py-2 max-w-app mx-auto w-full">
@@ -56,23 +57,8 @@
           <stop offset="55%"  stop-color="#1E104E"/>
           <stop offset="100%" stop-color="#170c3a"/>
         </radialGradient>
-        <radialGradient id="center-fill" cx="35%" cy="30%" r="80%">
-          <stop offset="0%"  stop-color="#FFE08A"/>
-          <stop offset="100%" stop-color="#FFC85C"/>
-        </radialGradient>
-        <linearGradient id="edge-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#FFC85C" stop-opacity="0.95"/>
-          <stop offset="100%" stop-color="#FF653F" stop-opacity="0.75"/>
-        </linearGradient>
         <filter id="center-glow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="6" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-        <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="2" result="blur"/>
           <feMerge>
             <feMergeNode in="blur"/>
             <feMergeNode in="SourceGraphic"/>
@@ -87,7 +73,6 @@
     <div id="stage-controls" class="stage-controls px-3 py-2 flex items-center justify-between gap-3" hidden>
       <button id="toggle-weak" type="button" class="font-mono text-xs fw-700 uppercase tracking-wide stage-ctrl" aria-pressed="false">+ W=1 edges</button>
       <output id="stage-meta" class="color-white-65 font-mono text-xs fw-700 tracking-wide uppercase"></output>
-      <button id="clear-focus" type="button" class="font-mono text-xs fw-700 uppercase tracking-wide stage-ctrl">Clear</button>
     </div>
   </section>
 
@@ -145,7 +130,7 @@
       <dd class="font-mono text-lg fw-700 color-deep" data-slot="year">–</dd>
     </div>
     <div class="detail-stat">
-      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Likeness</dt>
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Match</dt>
       <dd class="font-mono text-lg fw-700 color-orange" data-slot="likeness" title="0-10 estimate blending your scores on related books with canon strength">–</dd>
     </div>
     <div class="detail-stat">
@@ -175,12 +160,20 @@
   <div class="bg-orange accent-strip"></div>
   <dl class="detail-stats grid">
     <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Match</dt>
+      <dd class="font-mono text-lg fw-700 color-orange" data-slot="match" title="0-10 blend of your scores on this author's books and their reach across recommended lists">–</dd>
+    </div>
+    <div class="detail-stat">
       <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Lists</dt>
       <dd class="font-mono text-lg fw-700 color-orange" data-slot="list-count"></dd>
     </div>
     <div class="detail-stat">
-      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">In library</dt>
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Library</dt>
       <dd class="font-mono text-lg fw-700 color-deep" data-slot="db-count"></dd>
+    </div>
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Read</dt>
+      <dd class="font-mono text-lg fw-700 color-deep" data-slot="read-count"></dd>
     </div>
   </dl>
   <div class="detail-section bg-surface-alt px-4 py-3">

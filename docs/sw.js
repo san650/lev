@@ -1,4 +1,4 @@
-const VERSION = 'v28'
+const VERSION = 'v30'
 const CACHE_NAME = `lev-${VERSION}`
 
 const SHELL_ASSETS = [

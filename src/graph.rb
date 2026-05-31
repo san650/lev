@@ -73,11 +73,15 @@ module Graph
     (lists_data["Lists"] || []).each do |list|
       list_id = list["id"]
       (list["Books/Stories"] || []).each do |entry|
-        key = book_node_key(entry)
+        db_book = match_db_book(entry, db_book_index)
+        # When a list entry resolves to a db book, key the graph node by the
+        # db_book_id so every variant spelling of the same work collapses
+        # into a single node. Only unmatched entries fall back to the
+        # literal title+author key.
+        key = db_book ? [:db, db_book["id"]] : book_node_key(entry)
         node = node_by_key[key]
         if node.nil?
           node_counter += 1
-          db_book = match_db_book(entry, db_book_index)
           node = {
             "id" => node_counter,
             "entry_ids" => [],

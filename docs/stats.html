@@ -17,17 +17,17 @@
 
 <!-- Toolbar -->
 <div class="toolbar-sticky bg-deep">
-  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full">
+  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full" aria-label="Brand">
     <a href="/" class="flex items-center gap-3 shrink-0" style="text-decoration:none">
       <img src="assets/logo.svg" alt="" class="w-6 h-6">
       <mark class="font-brand text-lg fw-700 uppercase tracking-wide color-white bg-deep">Lev</mark>
     </a>
-    <div class="flex items-center gap-4 ml-auto">
-      <a href="index.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Books</a>
-      <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Stats</a>
-      <a href="lists.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Lists</a>
-      <a href="graph.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Similar</a>
-    </div>
+  </nav>
+  <nav class="subnav bg-purple max-w-app mx-auto w-full flex" aria-label="Sections">
+    <a href="index.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Books</a>
+    <a href="stats.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide" aria-current="page">Stats</a>
+    <a href="lists.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Lists</a>
+    <a href="graph.html" class="subnav-link font-mono text-xs fw-700 uppercase tracking-wide">Similar</a>
   </nav>
   <div class="bg-orange accent-strip"></div>
 </div>

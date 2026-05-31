@@ -274,6 +274,36 @@
   }
   .nav-link:hover { color: var(--c-yellow); }
 
+  /* Secondary nav strip — sits below the brand/search row on the sticky
+     toolbar. Four equal-width section tabs reusing the brutalist palette:
+     muted yellow-tinted labels on deep purple, with the active tab
+     inverting to white-on-orange. The orange accent strip below ties the
+     whole header together visually. */
+  .subnav { gap: 0; }
+  .subnav-link {
+    flex: 1;
+    padding: var(--sp-3) var(--sp-2);
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.1s, background 0.1s;
+  }
+  .subnav-link + .subnav-link {
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+  .subnav-link:hover {
+    color: var(--c-yellow);
+    background: rgba(255, 200, 92, 0.08);
+  }
+  .subnav-link[aria-current="page"] {
+    color: var(--c-white);
+    background: var(--c-orange);
+  }
+  .subnav-link[aria-current="page"]:hover {
+    color: var(--c-white);
+    background: var(--c-orange);
+  }
+
   .search-input {
     transition: background 0.15s;
     &::placeholder {
@@ -1346,18 +1376,19 @@
   }
   .stage-svg {
     display: block;
-    /* JS sets width/height attributes to match the dynamic viewBox so the
-       SVG renders at 1:1 scale — text CSS px equal screen px. On small
-       viewports this overflows; the section below scrolls. */
     background: var(--c-deep);
     user-select: none;
     -webkit-user-select: none;
-    margin-inline: auto;
+    width: 100%;
+    height: 100%;
   }
   #stage-section {
-    overflow: auto;
-    max-height: 78dvh;
-    -webkit-overflow-scrolling: touch;
+    /* Fixed height + overflow hidden so the SVG scales to fit the visible
+       box. preserveAspectRatio="xMidYMid meet" keeps everything inside
+       and centered — no panning required. */
+    height: 70dvh;
+    max-height: 70dvh;
+    overflow: hidden;
   }
   .stage-controls {
     background: var(--c-deep);
@@ -1422,11 +1453,11 @@
     transition: fill 180ms ease, stroke 180ms ease;
   }
 
-  /* Center node — luminous yellow anchor with a built-in halo via the
-     center-glow filter, applied inline from JS. */
+  /* Center node — solid yellow block, no gradient. The center-glow filter
+     applied inline from JS supplies the halo. */
   .node-center .node-bg {
-    fill: url(#center-fill);
-    stroke: rgba(255, 230, 160, 0.9);
+    fill: var(--c-yellow);
+    stroke: var(--c-yellow);
     stroke-width: 1.5;
   }
   /* Font sizes balance readability against viewBox bloat — bigger cards
@@ -1446,10 +1477,10 @@
     fill: rgba(30, 16, 78, 0.75);
   }
 
-  /* Orbit (neighbor) nodes — translucent purple pill with an orange rim. */
+  /* Orbit (neighbor) nodes — solid deep-purple block with an orange rim. */
   .node-orbit .node-bg {
-    fill: rgba(36, 22, 88, 0.92);
-    stroke: rgba(255, 122, 80, 0.85);
+    fill: var(--c-deep);
+    stroke: var(--c-orange);
     stroke-width: 1.5;
   }
   .node-orbit .node-title {
@@ -1465,11 +1496,11 @@
 
   /* Read book — solid orange with deep-purple text for high contrast. */
   .node-orbit.node-read .node-bg {
-    fill: #FF7A50;
-    stroke: rgba(255, 200, 92, 0.7);
+    fill: var(--c-orange);
+    stroke: var(--c-yellow);
   }
   .node-orbit.node-read .node-title { fill: var(--c-deep); }
-  .node-orbit.node-read .node-sub   { fill: rgba(30, 16, 78, 0.78); }
+  .node-orbit.node-read .node-sub   { fill: var(--c-deep); }
 
   /* Hover/focus: lift toward yellow + intensify glow via filter. */
   .node-orbit:hover .node-bg,
@@ -1507,7 +1538,7 @@
   .node-row + .node-row { box-shadow: inset 0 1px 0 var(--surface-alt); }
   .node-row-btn {
     display: grid;
-    grid-template-columns: 36px 18px 50px 1fr 36px;
+    grid-template-columns: 36px 18px 50px 1fr 72px;
     align-items: center;
     gap: var(--sp-3);
     padding: var(--sp-3) var(--sp-4);
@@ -1542,14 +1573,29 @@
     white-space: nowrap;
   }
   .node-row-count {
-    justify-self: end;
-    padding: 2px 6px;
+    justify-self: stretch;
+    padding: 4px 6px;
     text-align: center;
     min-width: 24px;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    font-size: 0.62rem;
+    white-space: normal;
+    word-break: keep-all;
   }
+  /* Author rows use the original 3 tiers (count-weak/mid/strong) keyed on
+     neighbor count. Book rows use the 5-tier match-* palette below — a
+     warming gradient from empty surface through pale yellow up to a hot
+     orange chip that earns its weight by sitting alone at the top. */
   .count-weak   { color: var(--c-purple); background: var(--surface-alt); }
   .count-mid    { color: var(--c-deep);   background: var(--c-yellow); }
   .count-strong { color: var(--c-white);  background: var(--c-orange); }
+
+  .match-faint  { color: rgba(69, 46, 90, 0.5);  background: transparent; }
+  .match-low    { color: var(--c-purple);        background: var(--surface-alt); }
+  .match-mid    { color: var(--c-deep);          background: rgba(255, 200, 92, 0.35); }
+  .match-high   { color: var(--c-deep);          background: var(--c-yellow); }
+  .match-love   { color: var(--c-white);         background: var(--c-orange); }
 
   .node-row-check {
     width: 18px;
@@ -1580,9 +1626,27 @@
   }
   .detail-stat:last-child { border-right: none; }
   .detail-stat dd { margin: 0; }
-  .score-high { color: var(--c-orange); }
-  .score-mid  { color: var(--c-deep); }
-  .score-low  { color: var(--c-purple); }
+  .score-faint { color: rgba(69, 46, 90, 0.55); }
+  .score-low   { color: var(--c-purple); }
+  .score-mid   { color: var(--c-deep); }
+  .score-high  { color: var(--c-orange); }
+  /* score-love wears an orange chip so it visually outranks score-high,
+     which is plain orange text. The Match figure inside <dd> shrinks to
+     fit so "GONNA LOVE IT" doesn't overflow the 1fr column. */
+  .score-love {
+    color: var(--c-white);
+    background: var(--c-orange);
+    padding: 2px 6px;
+    align-self: flex-start;
+  }
+  .detail-stat dd[data-slot="likeness"],
+  .detail-stat dd[data-slot="match"] {
+    font-size: var(--text-base);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    white-space: normal;
+    word-break: keep-all;
+  }
   .status-read   { color: var(--c-orange); }
   .status-unread { color: var(--c-purple); }
 
@@ -1618,8 +1682,8 @@
     .detail-stats { grid-template-columns: repeat(2, 1fr); }
     .detail-stat:nth-child(2n) { border-right: none; }
     .detail-stat:nth-child(-n+2) { border-bottom: 1px solid var(--surface-alt); }
-    .stage-svg { max-height: 60dvh; }
-    .node-row-btn { grid-template-columns: 30px 16px 42px 1fr 32px; gap: var(--sp-2); padding: var(--sp-3); }
+    #stage-section { height: 60dvh; max-height: 60dvh; }
+    .node-row-btn { grid-template-columns: 30px 16px 42px 1fr 68px; gap: var(--sp-2); padding: var(--sp-3); }
   }
 }
 

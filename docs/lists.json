@@ -48,9 +48,9 @@
         {
           "id": 4,
           "Position": 4,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
-          "Author": "Kurt Vonnegut",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
+          "Author": "Kurt Vonnegut Jr.",
           "TitleSpanishStatus": "provided_or_known_spanish_publication_title",
           "FirstPublicationYear": 1969,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -68,7 +68,7 @@
         {
           "id": 6,
           "Position": 6,
-          "TitleOriginal": "A Confederacy of Dunces",
+          "TitleOriginal": "A confederacy of dunces",
           "TitleSpanish": "La conjura de los necios",
           "Author": "John Kennedy Toole",
           "TitleSpanishStatus": "provided_or_known_spanish_publication_title",
@@ -99,7 +99,7 @@
           "id": 9,
           "Position": 9,
           "TitleOriginal": "To Kill a Mockingbird",
-          "TitleSpanish": "Matar a un ruiseñor",
+          "TitleSpanish": "Matar Un Ruisenor",
           "Author": "Harper Lee",
           "TitleSpanishStatus": "provided_or_known_spanish_publication_title",
           "FirstPublicationYear": 1960,
@@ -147,8 +147,8 @@
         {
           "id": 13,
           "Position": 3,
-          "TitleOriginal": "Los evangelios apócrifos II",
-          "TitleSpanish": "Los evangelios apócrifos II",
+          "TitleOriginal": "Los evangelios apócrifos I",
+          "TitleSpanish": "Los evangelios apócrifos I",
           "Author": "Anónimo",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": null,
@@ -187,8 +187,8 @@
         {
           "id": 17,
           "Position": 7,
-          "TitleOriginal": "La piedra lunar II",
-          "TitleSpanish": "La piedra lunar II",
+          "TitleOriginal": "La piedra lunar I",
+          "TitleSpanish": "La piedra lunar I",
           "Author": "Wilkie Collins",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1868,
@@ -287,8 +287,8 @@
         {
           "id": 27,
           "Position": 17,
-          "TitleOriginal": "Los demonios II",
-          "TitleSpanish": "Los demonios II",
+          "TitleOriginal": "Los demonios I",
+          "TitleSpanish": "Los demonios I",
           "Author": "Fiódor Dostoievski",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1872,
@@ -367,8 +367,8 @@
         {
           "id": 35,
           "Position": 25,
-          "TitleOriginal": "Cantar de los cantares y Exposición del Libro de Job II",
-          "TitleSpanish": "Cantar de los cantares y Exposición del Libro de Job II",
+          "TitleOriginal": "Cantar de los cantares y Exposición del Libro de Job I",
+          "TitleSpanish": "Cantar de los cantares y Exposición del Libro de Job I",
           "Author": "Fray Luis de León",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": null,
@@ -557,8 +557,8 @@
         {
           "id": 54,
           "Position": 44,
-          "TitleOriginal": "Los nueve libros de la historia II",
-          "TitleSpanish": "Los nueve libros de la historia II",
+          "TitleOriginal": "Los nueve libros de la historia I",
+          "TitleSpanish": "Los nueve libros de la historia I",
           "Author": "Heródoto",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": null,
@@ -567,8 +567,8 @@
         {
           "id": 55,
           "Position": 45,
-          "TitleOriginal": "Pedro Páramo",
-          "TitleSpanish": "Pedro Páramo",
+          "TitleOriginal": "Pedro Páramo",
+          "TitleSpanish": "Pedro Páramo",
           "Author": "Juan Rulfo",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1955,
@@ -827,8 +827,8 @@
         {
           "id": 81,
           "Position": 71,
-          "TitleOriginal": "Las variedades de la experiencia religiosa II",
-          "TitleSpanish": "Las variedades de la experiencia religiosa II",
+          "TitleOriginal": "Las variedades de la experiencia religiosa I",
+          "TitleSpanish": "Las variedades de la experiencia religiosa I",
           "Author": "William James",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1902,
@@ -867,8 +867,8 @@
         {
           "id": 85,
           "Position": 75,
-          "TitleOriginal": "El problema del tiempo II",
-          "TitleSpanish": "El problema del tiempo II",
+          "TitleOriginal": "El problema del tiempo I",
+          "TitleSpanish": "El problema del tiempo I",
           "Author": "J. Alexander Gunn",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1929,
@@ -1397,7 +1397,7 @@
           "id": 137,
           "Position": 52,
           "TitleOriginal": "Lord of the Flies",
-          "TitleSpanish": "El señor de las moscas",
+          "TitleSpanish": "El Señor De Las Moscas",
           "Author": "William Golding",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1954,
@@ -1406,9 +1406,9 @@
         {
           "id": 138,
           "Position": 53,
-          "TitleOriginal": "The Lord of the Rings",
-          "TitleSpanish": "El señor de los anillos",
-          "Author": "J. R. R. Tolkien",
+          "TitleOriginal": "The Fellowship of the Ring",
+          "TitleSpanish": "La comunidad del anillo",
+          "Author": "J.R.R. Tolkien",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1954,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -1696,9 +1696,9 @@
         {
           "id": 167,
           "Position": 82,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
-          "Author": "Kurt Vonnegut",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
+          "Author": "Kurt Vonnegut Jr.",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1969,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -1787,7 +1787,7 @@
           "id": 176,
           "Position": 91,
           "TitleOriginal": "To Kill a Mockingbird",
-          "TitleSpanish": "Matar a un ruiseñor",
+          "TitleSpanish": "Matar Un Ruisenor",
           "Author": "Harper Lee",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1960,
@@ -1945,9 +1945,9 @@
         {
           "id": 191,
           "Position": 6,
-          "TitleOriginal": "Anna Karenina",
-          "TitleSpanish": "Ana Karenina",
-          "Author": "León Tolstói",
+          "TitleOriginal": "Анна Каренина",
+          "TitleSpanish": "Anna Karénina",
+          "Author": "Leo Tolstoi",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1878,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -1975,9 +1975,9 @@
         {
           "id": 194,
           "Position": 9,
-          "TitleOriginal": "War and Peace",
-          "TitleSpanish": "Guerra y paz",
-          "Author": "León Tolstói",
+          "TitleOriginal": "Guerra y Paz",
+          "TitleSpanish": "Guerra y Paz",
+          "Author": "Leo Tolstoi",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1869,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -2045,8 +2045,8 @@
         {
           "id": 201,
           "Position": 16,
-          "TitleOriginal": "Pedro Páramo",
-          "TitleSpanish": "Pedro Páramo",
+          "TitleOriginal": "Pedro Páramo",
+          "TitleSpanish": "Pedro Páramo",
           "Author": "Juan Rulfo",
           "TitleSpanishStatus": "spanish_source_title",
           "FirstPublicationYear": 1955,
@@ -2395,7 +2395,7 @@
         {
           "id": 236,
           "Position": 51,
-          "TitleOriginal": "L’Étranger",
+          "TitleOriginal": "The Stranger",
           "TitleSpanish": "El extranjero",
           "Author": "Albert Camus",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -2685,8 +2685,8 @@
         {
           "id": 265,
           "Position": 80,
-          "TitleOriginal": "Alice’s Adventures in Wonderland",
-          "TitleSpanish": "Alicia en el país de las maravillas",
+          "TitleOriginal": "Alice's Adventures in Wonderland",
+          "TitleSpanish": "Las aventuras de Alicia en el país de las maravillas",
           "Author": "Lewis Carroll",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1865,
@@ -2925,7 +2925,7 @@
           "id": 288,
           "Position": 3,
           "TitleOriginal": "To Kill a Mockingbird",
-          "TitleSpanish": "Matar a un ruiseñor",
+          "TitleSpanish": "Matar Un Ruisenor",
           "Author": "Harper Lee",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1960,
@@ -2974,9 +2974,9 @@
         {
           "id": 293,
           "Position": 8,
-          "TitleOriginal": "J. R. R. Tolkien 4-Book Boxed Set: The Hobbit and The Lord of the Rings",
-          "TitleSpanish": "El hobbit y El señor de los anillos",
-          "Author": "J. R. R. Tolkien",
+          "TitleOriginal": "The Hobbit",
+          "TitleSpanish": "El Hobbit",
+          "Author": "J.R.R. Tolkien",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1937,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -3064,8 +3064,8 @@
         {
           "id": 302,
           "Position": 17,
-          "TitleOriginal": "The Little Prince",
-          "TitleSpanish": "El principito",
+          "TitleOriginal": "Le petit prince",
+          "TitleSpanish": "El Principito",
           "Author": "Antoine de Saint-Exupéry",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1943,
@@ -3174,7 +3174,7 @@
         {
           "id": 313,
           "Position": 28,
-          "TitleOriginal": "The Alchemist",
+          "TitleOriginal": "El alquimista",
           "TitleSpanish": "El alquimista",
           "Author": "Paulo Coelho",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -3185,7 +3185,7 @@
           "id": 314,
           "Position": 29,
           "TitleOriginal": "Lord of the Flies",
-          "TitleSpanish": "El señor de las moscas",
+          "TitleSpanish": "El Señor De Las Moscas",
           "Author": "William Golding",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1954,
@@ -3205,7 +3205,7 @@
           "id": 316,
           "Position": 31,
           "TitleOriginal": "Brave New World",
-          "TitleSpanish": "Un mundo feliz",
+          "TitleSpanish": "Un Mundo Feliz",
           "Author": "Aldous Huxley",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1932,
@@ -3214,7 +3214,7 @@
         {
           "id": 317,
           "Position": 32,
-          "TitleOriginal": "The Hitchhiker’s Guide to the Galaxy (Hitchhiker’s Guide to the Galaxy, #1)",
+          "TitleOriginal": "The Hitchhiker Guide To The Galaxy",
           "TitleSpanish": "Guía del autoestopista galáctico",
           "Author": "Douglas Adams",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -3334,7 +3334,7 @@
         {
           "id": 329,
           "Position": 44,
-          "TitleOriginal": "One Hundred Years of Solitude",
+          "TitleOriginal": "Cien años de soledad",
           "TitleSpanish": "Cien años de soledad",
           "Author": "Gabriel García Márquez",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -3484,9 +3484,9 @@
         {
           "id": 344,
           "Position": 59,
-          "TitleOriginal": "Dune (Dune, #1)",
+          "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1965,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -3564,8 +3564,8 @@
         {
           "id": 352,
           "Position": 67,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
           "Author": "Kurt Vonnegut Jr.",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1969,
@@ -3724,9 +3724,9 @@
         {
           "id": 368,
           "Position": 83,
-          "TitleOriginal": "The Fellowship of the Ring (The Lord of the Rings, #1)",
+          "TitleOriginal": "The Fellowship of the Ring",
           "TitleSpanish": "La comunidad del anillo",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1954,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -3734,9 +3734,9 @@
         {
           "id": 369,
           "Position": 84,
-          "TitleOriginal": "Anna Karenina",
+          "TitleOriginal": "Анна Каренина",
           "TitleSpanish": "Anna Karénina",
-          "Author": "Leo Tolstoy",
+          "Author": "Leo Tolstoi",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1878,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -3785,7 +3785,7 @@
           "id": 374,
           "Position": 89,
           "TitleOriginal": "To Kill a Mockingbird",
-          "TitleSpanish": "Matar a un ruiseñor",
+          "TitleSpanish": "Matar Un Ruisenor",
           "Author": "Harper Lee",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1960,
@@ -3874,7 +3874,7 @@
         {
           "id": 383,
           "Position": 98,
-          "TitleOriginal": "Don Quixote",
+          "TitleOriginal": "Don Quijote de la Mancha",
           "TitleSpanish": "Don Quijote de la Mancha",
           "Author": "Miguel de Cervantes Saavedra",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -4037,7 +4037,7 @@
           "AwardYear": 1966,
           "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "TitleSpanishStatus": "known_or_found_spanish_publication_title",
           "FirstPublicationYear": 1965,
           "FirstPublicationYearStatus": "known_or_award_eligibility_publication_year"
@@ -4102,7 +4102,7 @@
           "Position": 18,
           "AwardYear": 1971,
           "TitleOriginal": "Ringworld",
-          "TitleSpanish": "Mundo Anillo",
+          "TitleSpanish": "Mundo anillo",
           "Author": "Larry Niven",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1970,
@@ -4266,7 +4266,7 @@
           "id": 418,
           "Position": 33,
           "AwardYear": 1986,
-          "TitleOriginal": "Ender's Game",
+          "TitleOriginal": "Ender’s Game (Ender’s Saga, #1)",
           "TitleSpanish": "El juego de Ender",
           "Author": "Orson Scott Card",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -4442,7 +4442,7 @@
           "id": 434,
           "Position": 49,
           "AwardYear": 2001,
-          "TitleOriginal": "Harry Potter and the Goblet of Fire",
+          "TitleOriginal": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
           "TitleSpanish": "Harry Potter y el cáliz de fuego",
           "Author": "J. K. Rowling",
           "TitleSpanishStatus": "known_or_found_spanish_publication_title",
@@ -4607,7 +4607,7 @@
           "id": 449,
           "Position": 64,
           "AwardYear": 2015,
-          "TitleOriginal": "The Three-Body Problem",
+          "TitleOriginal": "El problema de los tres cuerpos",
           "TitleSpanish": "El problema de los tres cuerpos",
           "Author": "Cixin Liu",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -4739,7 +4739,7 @@
           "AwardYear": 1965,
           "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "TitleSpanishStatus": "known_or_found_spanish_publication_title",
           "FirstPublicationYear": 1965,
           "FirstPublicationYearStatus": "award_eligibility_or_original_publication_year"
@@ -4804,7 +4804,7 @@
           "Position": 7,
           "AwardYear": 1970,
           "TitleOriginal": "Ringworld",
-          "TitleSpanish": "Mundo Anillo",
+          "TitleSpanish": "Mundo anillo",
           "Author": "Larry Niven",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1970,
@@ -4968,7 +4968,7 @@
           "id": 481,
           "Position": 22,
           "AwardYear": 1985,
-          "TitleOriginal": "Ender's Game",
+          "TitleOriginal": "Ender’s Game (Ender’s Saga, #1)",
           "TitleSpanish": "El juego de Ender",
           "Author": "Orson Scott Card",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -5516,7 +5516,7 @@
         {
           "id": 531,
           "Position": 11,
-          "TitleOriginal": "Harry Potter and the Order of the Phoenix",
+          "TitleOriginal": "Harry Potter and the Order of the Phoenix (Harry Potter, #5)",
           "TitleSpanish": "Harry Potter y la Orden del Fénix",
           "Author": "J. K. Rowling",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -5706,7 +5706,7 @@
         {
           "id": 550,
           "Position": 30,
-          "TitleOriginal": "The Hunger Games Trilogy",
+          "TitleOriginal": "The Hunger Games (The Hunger Games, #1)",
           "TitleSpanish": "Los juegos del hambre",
           "Author": "Suzanne Collins",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -5875,9 +5875,9 @@
         {
           "id": 566,
           "Position": 6,
-          "TitleOriginal": "Anna Karenina",
-          "TitleSpanish": "Ana Karenina",
-          "Author": "León Tolstói",
+          "TitleOriginal": "Анна Каренина",
+          "TitleSpanish": "Anna Karénina",
+          "Author": "Leo Tolstoi",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1878,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -5885,9 +5885,9 @@
         {
           "id": 567,
           "Position": 7,
-          "TitleOriginal": "War and Peace",
-          "TitleSpanish": "Guerra y paz",
-          "Author": "León Tolstói",
+          "TitleOriginal": "Guerra y Paz",
+          "TitleSpanish": "Guerra y Paz",
+          "Author": "Leo Tolstoi",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1869,
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -5955,7 +5955,7 @@
         {
           "id": 574,
           "Position": 14,
-          "TitleOriginal": "Mrs Dalloway",
+          "TitleOriginal": "Mrs. Dalloway",
           "TitleSpanish": "La señora Dalloway",
           "Author": "Virginia Woolf",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -5975,7 +5975,7 @@
         {
           "id": 576,
           "Position": 16,
-          "TitleOriginal": "Nineteen Eighty-Four",
+          "TitleOriginal": "1984",
           "TitleSpanish": "1984",
           "Author": "George Orwell",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6045,7 +6045,7 @@
         {
           "id": 583,
           "Position": 23,
-          "TitleOriginal": "Midnight's Children",
+          "TitleOriginal": "Midnight’s Children",
           "TitleSpanish": "Hijos de la medianoche",
           "Author": "Salman Rushdie",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6075,7 +6075,7 @@
         {
           "id": 586,
           "Position": 26,
-          "TitleOriginal": "Don Quixote",
+          "TitleOriginal": "Don Quijote de la Mancha",
           "TitleSpanish": "Don Quijote de la Mancha",
           "Author": "Miguel de Cervantes Saavedra",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6095,7 +6095,7 @@
         {
           "id": 588,
           "Position": 28,
-          "TitleOriginal": "The Brothers Karamazov",
+          "TitleOriginal": "Bratya Karamazovy",
           "TitleSpanish": "Los hermanos Karamázov",
           "Author": "Fiódor Dostoievski",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6175,7 +6175,7 @@
         {
           "id": 596,
           "Position": 36,
-          "TitleOriginal": "The Handmaid's Tale",
+          "TitleOriginal": "The Handmaid’s Tale (The Handmaid’s Tale, #1)",
           "TitleSpanish": "El cuento de la criada",
           "Author": "Margaret Atwood",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6276,7 +6276,7 @@
           "id": 606,
           "Position": 46,
           "TitleOriginal": "Il Gattopardo",
-          "TitleSpanish": "El gatopardo",
+          "TitleSpanish": "El Gatopardo",
           "Author": "Giuseppe Tomasi di Lampedusa",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1958,
@@ -6355,7 +6355,7 @@
         {
           "id": 614,
           "Position": 54,
-          "TitleOriginal": "Orlando",
+          "TitleOriginal": "Orlando: A Biography",
           "TitleSpanish": "Orlando",
           "Author": "Virginia Woolf",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6475,7 +6475,7 @@
         {
           "id": 626,
           "Position": 66,
-          "TitleOriginal": "Мастер и Маргарита",
+          "TitleOriginal": "Master i Margarita",
           "TitleSpanish": "El maestro y Margarita",
           "Author": "Mijaíl Bulgákov",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6505,7 +6505,7 @@
         {
           "id": 629,
           "Position": 69,
-          "TitleOriginal": "Crime and Punishment",
+          "TitleOriginal": "Prestupléniye i nakazániye",
           "TitleSpanish": "Crimen y castigo",
           "Author": "Fiódor Dostoievski",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6525,7 +6525,7 @@
         {
           "id": 631,
           "Position": 71,
-          "TitleOriginal": "L’Étranger",
+          "TitleOriginal": "The Stranger",
           "TitleSpanish": "El extranjero",
           "Author": "Albert Camus",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6615,7 +6615,7 @@
         {
           "id": 640,
           "Position": 80,
-          "TitleOriginal": "A House for Mr Biswas",
+          "TitleOriginal": "A House for Mr. Biswas",
           "TitleSpanish": "Una casa para el señor Biswas",
           "Author": "V. S. Naipaul",
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -6795,8 +6795,8 @@
         {
           "id": 658,
           "Position": 98,
-          "TitleOriginal": "Pedro Páramo",
-          "TitleSpanish": "Pedro Páramo",
+          "TitleOriginal": "Pedro Páramo",
+          "TitleSpanish": "Pedro Páramo",
           "Author": "Juan Rulfo",
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYear": 1955,
@@ -7072,7 +7072,7 @@
         {
           "id": 683,
           "Position": 1,
-          "TitleOriginal": "Alf Layla wa-Layla",
+          "TitleOriginal": "Alf Laylah wa-Laylah",
           "TitleSpanish": "Las mil y una noches",
           "Author": "Anónimo / tradición árabe y persa",
           "FirstPublicationYear": null,
@@ -7092,8 +7092,8 @@
         {
           "id": 685,
           "Position": 3,
-          "TitleOriginal": "Alice’s Adventures in Wonderland",
-          "TitleSpanish": "Alicia en el país de las maravillas",
+          "TitleOriginal": "Alice's Adventures in Wonderland",
+          "TitleSpanish": "Las aventuras de Alicia en el país de las maravillas",
           "Author": "Lewis Carroll",
           "FirstPublicationYear": 1865,
           "TitleSpanishStatus": "known_spanish_publication_title",
@@ -7174,7 +7174,7 @@
           "Position": 11,
           "TitleOriginal": "The Fellowship of the Ring",
           "TitleSpanish": "La comunidad del anillo",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954,
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -7194,7 +7194,7 @@
           "Position": 13,
           "TitleOriginal": "The Two Towers",
           "TitleSpanish": "Las dos torres",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954,
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -7203,8 +7203,8 @@
           "id": 696,
           "Position": 14,
           "TitleOriginal": "The Return of the King",
-          "TitleSpanish": "El retorno del rey",
-          "Author": "J. R. R. Tolkien",
+          "TitleSpanish": "El retorno del Rey",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1955,
           "TitleSpanishStatus": "known_spanish_publication_title",
           "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
@@ -7212,7 +7212,7 @@
         {
           "id": 697,
           "Position": 15,
-          "TitleOriginal": "射雕英雄传",
+          "TitleOriginal": "Shediao Yingxiong Zhuan 1",
           "TitleSpanish": "El nacimiento de un héroe",
           "Author": "Jin Yong",
           "FirstPublicationYear": 1957,
@@ -7252,7 +7252,7 @@
         {
           "id": 701,
           "Position": 19,
-          "TitleOriginal": "A Wrinkle in Time",
+          "TitleOriginal": "A Wrinkle in Time (Time Quintet, #1)",
           "TitleSpanish": "Una arruga en el tiempo",
           "Author": "Madeleine L’Engle",
           "FirstPublicationYear": 1962,
@@ -7322,7 +7322,7 @@
         {
           "id": 708,
           "Position": 26,
-          "TitleOriginal": "Watership Down",
+          "TitleOriginal": "Watership Down (Watership Down, #1)",
           "TitleSpanish": "La colina de Watership",
           "Author": "Richard Adams",
           "FirstPublicationYear": 1972,
@@ -7472,7 +7472,7 @@
         {
           "id": 723,
           "Position": 41,
-          "TitleOriginal": "Outlander",
+          "TitleOriginal": "Outlander (Outlander, #1)",
           "TitleSpanish": "Forastera",
           "Author": "Diana Gabaldon",
           "FirstPublicationYear": 1991,
@@ -7492,7 +7492,7 @@
         {
           "id": 725,
           "Position": 43,
-          "TitleOriginal": "Northern Lights",
+          "TitleOriginal": "The Golden Compass (His Dark Materials, #1)",
           "TitleSpanish": "Luces del norte",
           "Author": "Philip Pullman",
           "FirstPublicationYear": 1995,
@@ -7542,7 +7542,7 @@
         {
           "id": 730,
           "Position": 48,
-          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban",
+          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
           "TitleSpanish": "Harry Potter y el prisionero de Azkaban",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 1999,
@@ -8083,16 +8083,16 @@
         {
           "id": 783,
           "Position": 1,
-          "TitleOriginal": "The Lord of the Rings",
-          "TitleSpanish": "El Señor de los Anillos",
-          "Author": "J. R. R. Tolkien",
+          "TitleOriginal": "The Fellowship of the Ring",
+          "TitleSpanish": "La comunidad del anillo",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954,
           "Notes": "NPR listed the trilogy/series; WWEnd displays the first or representative volume when a series is involved."
         },
         {
           "id": 784,
           "Position": 2,
-          "TitleOriginal": "The Hitchhiker's Guide to the Galaxy",
+          "TitleOriginal": "The Hitchhiker Guide To The Galaxy",
           "TitleSpanish": "Guía del autoestopista galáctico",
           "Author": "Douglas Adams",
           "FirstPublicationYear": 1979,
@@ -8101,7 +8101,7 @@
         {
           "id": 785,
           "Position": 3,
-          "TitleOriginal": "Ender's Game",
+          "TitleOriginal": "Ender’s Game (Ender’s Saga, #1)",
           "TitleSpanish": "El juego de Ender",
           "Author": "Orson Scott Card",
           "FirstPublicationYear": 1985,
@@ -8112,14 +8112,14 @@
           "Position": 4,
           "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "FirstPublicationYear": 1965,
           "Notes": "NPR listed The Dune Chronicles; WWEnd displays Dune."
         },
         {
           "id": 787,
           "Position": 5,
-          "TitleOriginal": "A Game of Thrones",
+          "TitleOriginal": "A Game of Thrones (A Song of Ice and Fire, #1)",
           "TitleSpanish": "Juego de tronos",
           "Author": "George R. R. Martin",
           "FirstPublicationYear": 1996,
@@ -8128,7 +8128,7 @@
         {
           "id": 788,
           "Position": 6,
-          "TitleOriginal": "Nineteen Eighty-Four",
+          "TitleOriginal": "1984",
           "TitleSpanish": "1984",
           "Author": "George Orwell",
           "FirstPublicationYear": 1949,
@@ -8146,8 +8146,8 @@
         {
           "id": 790,
           "Position": 8,
-          "TitleOriginal": "The Foundation Trilogy",
-          "TitleSpanish": "Trilogía de la Fundación",
+          "TitleOriginal": "Foundation",
+          "TitleSpanish": "Fundación",
           "Author": "Isaac Asimov",
           "FirstPublicationYear": 1974,
           "Notes": null
@@ -8156,7 +8156,7 @@
           "id": 791,
           "Position": 9,
           "TitleOriginal": "Brave New World",
-          "TitleSpanish": "Un mundo feliz",
+          "TitleSpanish": "Un Mundo Feliz",
           "Author": "Aldous Huxley",
           "FirstPublicationYear": 1932,
           "Notes": null
@@ -8211,7 +8211,7 @@
           "Position": 15,
           "TitleOriginal": "Watchmen",
           "TitleSpanish": "Watchmen",
-          "Author": "Alan Moore and Dave Gibbons",
+          "Author": "Alan Moore y Dave Gibbons",
           "FirstPublicationYear": 1987,
           "Notes": null
         },
@@ -8245,9 +8245,9 @@
         {
           "id": 801,
           "Position": 19,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
-          "Author": "Kurt Vonnegut",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
+          "Author": "Kurt Vonnegut Jr.",
           "FirstPublicationYear": 1969,
           "Notes": null
         },
@@ -8264,7 +8264,7 @@
           "id": 803,
           "Position": 21,
           "TitleOriginal": "Do Androids Dream of Electric Sheep?",
-          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "TitleSpanish": "¿Sueñan Los Androides con Ovejas Eléctricas?",
           "Author": "Philip K. Dick",
           "FirstPublicationYear": 1968,
           "Notes": null
@@ -8272,7 +8272,7 @@
         {
           "id": 804,
           "Position": 22,
-          "TitleOriginal": "The Handmaid's Tale",
+          "TitleOriginal": "The Handmaid’s Tale (The Handmaid’s Tale, #1)",
           "TitleSpanish": "El cuento de la criada",
           "Author": "Margaret Atwood",
           "FirstPublicationYear": 1985,
@@ -8290,8 +8290,8 @@
         {
           "id": 806,
           "Position": 24,
-          "TitleOriginal": "2001: A Space Odyssey",
-          "TitleSpanish": "2001: Una odisea espacial",
+          "TitleOriginal": "2001. A Space Odyssey",
+          "TitleSpanish": "2001",
           "Author": "Arthur C. Clarke",
           "FirstPublicationYear": 1968,
           "Notes": null
@@ -8318,7 +8318,7 @@
           "id": 809,
           "Position": 27,
           "TitleOriginal": "The Martian Chronicles",
-          "TitleSpanish": "Crónicas marcianas",
+          "TitleSpanish": "Crónicas Marcianas",
           "Author": "Ray Bradbury",
           "FirstPublicationYear": 1950,
           "Notes": null
@@ -8362,7 +8362,7 @@
         {
           "id": 814,
           "Position": 32,
-          "TitleOriginal": "Watership Down",
+          "TitleOriginal": "Watership Down (Watership Down, #1)",
           "TitleSpanish": "La colina de Watership",
           "Author": "Richard Adams",
           "FirstPublicationYear": 1972,
@@ -8461,7 +8461,7 @@
         {
           "id": 825,
           "Position": 43,
-          "TitleOriginal": "Mistborn",
+          "TitleOriginal": "Mistborn: The Final Empire",
           "TitleSpanish": "El imperio final",
           "Author": "Brandon Sanderson",
           "FirstPublicationYear": 2006,
@@ -8471,7 +8471,7 @@
           "id": 826,
           "Position": 44,
           "TitleOriginal": "Ringworld",
-          "TitleSpanish": "Mundo Anillo",
+          "TitleSpanish": "Mundo anillo",
           "Author": "Larry Niven",
           "FirstPublicationYear": 1970,
           "Notes": null
@@ -8490,7 +8490,7 @@
           "Position": 46,
           "TitleOriginal": "The Silmarillion",
           "TitleSpanish": "El Silmarillion",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1977,
           "Notes": null
         },
@@ -8704,7 +8704,7 @@
         {
           "id": 852,
           "Position": 70,
-          "TitleOriginal": "The Time Traveler's Wife",
+          "TitleOriginal": "The Time Traveler’s Wife",
           "TitleSpanish": "La mujer del viajero en el tiempo",
           "Author": "Audrey Niffenegger",
           "FirstPublicationYear": 2003,
@@ -8875,7 +8875,7 @@
         {
           "id": 871,
           "Position": 89,
-          "TitleOriginal": "Outlander",
+          "TitleOriginal": "Outlander (Outlander, #1)",
           "TitleSpanish": "Forastera",
           "Author": "Diana Gabaldon",
           "FirstPublicationYear": 1991,
@@ -8911,7 +8911,7 @@
         {
           "id": 875,
           "Position": 93,
-          "TitleOriginal": "A Fire Upon the Deep",
+          "TitleOriginal": "A Deepness in the Sky",
           "TitleSpanish": "Un abismo en el cielo",
           "Author": "Vernor Vinge",
           "FirstPublicationYear": 1992,
@@ -8993,7 +8993,7 @@
         {
           "id": 883,
           "Position": 1,
-          "TitleOriginal": "The Pillars of the Earth",
+          "TitleOriginal": "The Pillars of the Earth (Kingsbridge, #1)",
           "TitleSpanish": "Los pilares de la Tierra",
           "Author": "Ken Follett",
           "FirstPublicationYear": 1989,
@@ -9426,7 +9426,7 @@
         {
           "id": 930,
           "Position": 16,
-          "TitleOriginal": "The City & The City",
+          "TitleOriginal": "The City & the City",
           "TitleSpanish": "La ciudad y la ciudad",
           "Author": "China Miéville",
           "FirstPublicationYear": 2009,
@@ -9490,7 +9490,7 @@
           "id": 937,
           "Position": 23,
           "TitleOriginal": "Do Androids Dream of Electric Sheep?",
-          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "TitleSpanish": "¿Sueñan Los Androides con Ovejas Eléctricas?",
           "Author": "Philip K. Dick",
           "FirstPublicationYear": 1968,
           "Notes": null
@@ -9518,7 +9518,7 @@
           "Position": 26,
           "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "FirstPublicationYear": 1965,
           "Notes": null
         },
@@ -9552,7 +9552,7 @@
         {
           "id": 944,
           "Position": 30,
-          "TitleOriginal": "The Hitchhiker's Guide to the Galaxy",
+          "TitleOriginal": "The Hitchhiker Guide To The Galaxy",
           "TitleSpanish": "Guía del autoestopista galáctico",
           "Author": "Douglas Adams",
           "FirstPublicationYear": 1979,
@@ -9678,9 +9678,9 @@
         {
           "id": 958,
           "Position": 44,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
-          "Author": "Kurt Vonnegut",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
+          "Author": "Kurt Vonnegut Jr.",
           "FirstPublicationYear": 1969,
           "Notes": null
         },
@@ -9759,7 +9759,7 @@
         {
           "id": 966,
           "Position": 1,
-          "TitleOriginal": "My Brilliant Friend",
+          "TitleOriginal": "L’amica geniale",
           "TitleSpanish": "La amiga estupenda",
           "Author": "Elena Ferrante",
           "FirstPublicationYear": 2011
@@ -10143,7 +10143,7 @@
         {
           "id": 1014,
           "Position": 49,
-          "TitleOriginal": "The Vegetarian",
+          "TitleOriginal": "채식주의자",
           "TitleSpanish": "La vegetariana",
           "Author": "Han Kang",
           "FirstPublicationYear": 2007
@@ -10759,7 +10759,7 @@
           "Position": 1,
           "TitleOriginal": "Dune",
           "TitleSpanish": "Dune",
-          "Author": "Frank Herbert",
+          "Author": "Frank Patrick Herbert",
           "FirstPublicationYear": 1965
         },
         {
@@ -10774,7 +10774,7 @@
           "id": 1088,
           "Position": 3,
           "TitleOriginal": "Do Androids Dream of Electric Sheep?",
-          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "TitleSpanish": "¿Sueñan Los Androides con Ovejas Eléctricas?",
           "Author": "Philip K. Dick",
           "FirstPublicationYear": 1968
         },
@@ -10830,7 +10830,7 @@
           "id": 1095,
           "Position": 10,
           "TitleOriginal": "The Martian Chronicles",
-          "TitleSpanish": "Crónicas marcianas",
+          "TitleSpanish": "Crónicas Marcianas",
           "Author": "Ray Bradbury",
           "FirstPublicationYear": 1950
         },
@@ -10845,7 +10845,7 @@
         {
           "id": 1097,
           "Position": 12,
-          "TitleOriginal": "The Dispossessed: An Ambiguous Utopia",
+          "TitleOriginal": "The Dispossessed",
           "TitleSpanish": "Los desposeídos",
           "Author": "Ursula K. Le Guin",
           "FirstPublicationYear": 1974
@@ -10977,7 +10977,7 @@
           "id": 1112,
           "Position": 1,
           "TitleOriginal": "To Kill a Mockingbird",
-          "TitleSpanish": "Matar a un ruiseñor",
+          "TitleSpanish": "Matar Un Ruisenor",
           "Author": "Harper Lee",
           "FirstPublicationYear": 1960
         },
@@ -10992,7 +10992,7 @@
         {
           "id": 1114,
           "Position": 3,
-          "TitleOriginal": "The Adventures of Huckleberry Finn",
+          "TitleOriginal": "The Adventures of Huckleberry Finn (Adventures of Tom and Huck, #2)",
           "TitleSpanish": "Las aventuras de Huckleberry Finn",
           "Author": "Mark Twain",
           "FirstPublicationYear": 1884
@@ -11024,7 +11024,7 @@
         {
           "id": 1118,
           "Position": 7,
-          "TitleOriginal": "Moby-Dick; or, The Whale",
+          "TitleOriginal": "Moby-Dick",
           "TitleSpanish": "Moby Dick",
           "Author": "Herman Melville",
           "FirstPublicationYear": 1851
@@ -11040,8 +11040,8 @@
         {
           "id": 1120,
           "Position": 9,
-          "TitleOriginal": "Slaughterhouse-Five",
-          "TitleSpanish": "Matadero cinco",
+          "TitleOriginal": "Slaughterhouse - Five",
+          "TitleSpanish": "Matadero Cinco",
           "Author": "Kurt Vonnegut Jr.",
           "FirstPublicationYear": 1969
         },
@@ -11064,7 +11064,7 @@
         {
           "id": 1123,
           "Position": 12,
-          "TitleOriginal": "Blood Meridian; or, The Evening Redness in the West",
+          "TitleOriginal": "Blood Meridian",
           "TitleSpanish": "Meridiano de sangre",
           "Author": "Cormac McCarthy",
           "FirstPublicationYear": 1985
@@ -11104,7 +11104,7 @@
         {
           "id": 1128,
           "Position": 17,
-          "TitleOriginal": "One Flew Over the Cuckoo's Nest",
+          "TitleOriginal": "One Flew Over the Cuckoo’s Nest",
           "TitleSpanish": "Alguien voló sobre el nido del cuco",
           "Author": "Ken Kesey",
           "FirstPublicationYear": 1962
@@ -11144,7 +11144,7 @@
         {
           "id": 1133,
           "Position": 22,
-          "TitleOriginal": "A Confederacy of Dunces",
+          "TitleOriginal": "A confederacy of dunces",
           "TitleSpanish": "La conjura de los necios",
           "Author": "John Kennedy Toole",
           "FirstPublicationYear": 1980
@@ -11202,7 +11202,7 @@
         {
           "id": 1139,
           "Position": 3,
-          "TitleOriginal": "The Pillars of the Earth",
+          "TitleOriginal": "The Pillars of the Earth (Kingsbridge, #1)",
           "TitleSpanish": "Los pilares de la Tierra",
           "Author": "Ken Follett",
           "FirstPublicationYear": 1989
@@ -11274,7 +11274,7 @@
         {
           "id": 1148,
           "Position": 12,
-          "TitleOriginal": "The Name of the Rose",
+          "TitleOriginal": "Il nome della rosa",
           "TitleSpanish": "El nombre de la rosa",
           "Author": "Umberto Eco",
           "FirstPublicationYear": 1980
@@ -11406,13 +11406,13 @@
           "Position": 2,
           "TitleOriginal": "The Fellowship of the Ring",
           "TitleSpanish": "La comunidad del anillo",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954
         },
         {
           "id": 1164,
           "Position": 3,
-          "TitleOriginal": "A Game of Thrones",
+          "TitleOriginal": "A Game of Thrones (A Song of Ice and Fire, #1)",
           "TitleSpanish": "Juego de tronos",
           "Author": "George R. R. Martin",
           "FirstPublicationYear": 1996
@@ -11420,15 +11420,15 @@
         {
           "id": 1165,
           "Position": 4,
-          "TitleOriginal": "The Hobbit, or There and Back Again",
-          "TitleSpanish": "El hobbit",
-          "Author": "J. R. R. Tolkien",
+          "TitleOriginal": "The Hobbit",
+          "TitleSpanish": "El Hobbit",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1937
         },
         {
           "id": 1166,
           "Position": 5,
-          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban",
+          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
           "TitleSpanish": "Harry Potter y el prisionero de Azkaban",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 1999
@@ -11436,7 +11436,7 @@
         {
           "id": 1167,
           "Position": 6,
-          "TitleOriginal": "Harry Potter and the Philosopher's Stone",
+          "TitleOriginal": "Harry Potter and the Philosopher’s Stone (Harry Potter, #1)",
           "TitleSpanish": "Harry Potter y la piedra filosofal",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 1997
@@ -11444,7 +11444,7 @@
         {
           "id": 1168,
           "Position": 7,
-          "TitleOriginal": "Harry Potter and the Deathly Hallows",
+          "TitleOriginal": "Harry Potter and the Deathly Hallows (Harry Potter, #7)",
           "TitleSpanish": "Harry Potter y las reliquias de la Muerte",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 2007
@@ -11460,7 +11460,7 @@
         {
           "id": 1170,
           "Position": 9,
-          "TitleOriginal": "Harry Potter and the Goblet of Fire",
+          "TitleOriginal": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
           "TitleSpanish": "Harry Potter y el cáliz de fuego",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 2000
@@ -11469,8 +11469,8 @@
           "id": 1171,
           "Position": 10,
           "TitleOriginal": "The Return of the King",
-          "TitleSpanish": "El retorno del rey",
-          "Author": "J. R. R. Tolkien",
+          "TitleSpanish": "El retorno del Rey",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1955
         },
         {
@@ -11494,7 +11494,7 @@
           "Position": 13,
           "TitleOriginal": "The Two Towers",
           "TitleSpanish": "Las dos torres",
-          "Author": "J. R. R. Tolkien",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954
         },
         {
@@ -11508,7 +11508,7 @@
         {
           "id": 1176,
           "Position": 15,
-          "TitleOriginal": "Harry Potter and the Order of the Phoenix",
+          "TitleOriginal": "Harry Potter and the Order of the Phoenix (Harry Potter, #5)",
           "TitleSpanish": "Harry Potter y la Orden del Fénix",
           "Author": "J. K. Rowling",
           "FirstPublicationYear": 2003
@@ -11548,9 +11548,9 @@
         {
           "id": 1181,
           "Position": 20,
-          "TitleOriginal": "The Lord of the Rings",
-          "TitleSpanish": "El Señor de los Anillos",
-          "Author": "J. R. R. Tolkien",
+          "TitleOriginal": "The Fellowship of the Ring",
+          "TitleSpanish": "La comunidad del anillo",
+          "Author": "J.R.R. Tolkien",
           "FirstPublicationYear": 1954
         },
         {
@@ -11564,7 +11564,7 @@
         {
           "id": 1183,
           "Position": 22,
-          "TitleOriginal": "The Golden Compass",
+          "TitleOriginal": "The Golden Compass (His Dark Materials, #1)",
           "TitleSpanish": "Luces del norte",
           "Author": "Philip Pullman",
           "FirstPublicationYear": 1995
@@ -11572,9 +11572,9 @@
         {
           "id": 1184,
           "Position": 23,
-          "TitleOriginal": "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch",
+          "TitleOriginal": "Good Omens",
           "TitleSpanish": "Buenos presagios",
-          "Author": "Terry Pratchett and Neil Gaiman",
+          "Author": "Terry Pratchett y Neil Gaiman",
           "FirstPublicationYear": 1990
         },
         {
