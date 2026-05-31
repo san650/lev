@@ -479,6 +479,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 69,
+      "name": "Albert Camus",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -1621,7 +1628,13 @@
         "order": 2
       },
       "score": 4,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 32
+        }
+      ]
     },
     {
       "id": 39,
@@ -2701,13 +2714,7 @@
         "order": 1
       },
       "score": 5,
-      "review": "",
-      "in_lists": [
-        {
-          "list": "Goodreads (Best Books Ever)",
-          "position": 32
-        }
-      ]
+      "review": ""
     },
     {
       "id": 77,
@@ -2758,6 +2765,10 @@
       "score": 7,
       "review": "",
       "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 53
+        },
         {
           "list": "Goodreads (Best Books Ever)",
           "position": 83
@@ -2814,13 +2825,7 @@
         "order": 3
       },
       "score": 7,
-      "review": "",
-      "in_lists": [
-        {
-          "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 53
-        }
-      ]
+      "review": ""
     },
     {
       "id": 81,
@@ -3536,6 +3541,46 @@
       "saga": null,
       "score": 5,
       "review": ""
+    },
+    {
+      "id": 107,
+      "title": "El extranjero",
+      "subtitle": "",
+      "original_title": "The Stranger",
+      "first_publishing_date": "1942",
+      "author_ids": [
+        69
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9780742512412"
+        }
+      ],
+      "covers": [
+        {
+          "file": "covers/107-el-extranjero.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 8,
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 8
+        },
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 51
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 71
+        }
+      ]
     }
   ],
   "publishers": [
