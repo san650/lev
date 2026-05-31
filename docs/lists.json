@@ -6368,6 +6368,912 @@
       ],
       "Confidence": 4,
       "ConfidenceReason": "La fuente periodística y la metodología son identificables, y la lista es cerrada. La confianza no es 5 porque la encuesta fue a estudiantes universitarios y no a un panel crítico o bibliográfico especializado."
+    },
+    {
+      "Source": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+      "Notes": "Elegida como lista de fantasía más famosa o canónica para este JSON por ser una lista específica de fantasía, publicada por un medio generalista internacional de alta visibilidad y seleccionada con un panel de autores del género junto con editores de TIME. NPR tiene una lista muy conocida, pero combina ciencia ficción y fantasía.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "Alf Layla wa-Layla",
+          "TitleSpanish": "Las mil y una noches",
+          "Author": "Anónimo / tradición árabe y persa",
+          "FirstPublicationYear": null,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "no_single_first_publication_year; oral_and_textual_tradition"
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "Le Morte d’Arthur",
+          "TitleSpanish": "La muerte de Arturo",
+          "Author": "Thomas Malory",
+          "FirstPublicationYear": 1485,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Alice’s Adventures in Wonderland",
+          "TitleSpanish": "Alicia en el país de las maravillas",
+          "Author": "Lewis Carroll",
+          "FirstPublicationYear": 1865,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "Through the Looking-Glass",
+          "TitleSpanish": "A través del espejo y lo que Alicia encontró allí",
+          "Author": "Lewis Carroll",
+          "FirstPublicationYear": 1871,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Five Children and It",
+          "TitleSpanish": "Cinco niños y eso",
+          "Author": "E. Nesbit",
+          "FirstPublicationYear": 1902,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "Ozma of Oz",
+          "TitleSpanish": "Ozma de Oz",
+          "Author": "L. Frank Baum",
+          "FirstPublicationYear": 1907,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Mary Poppins",
+          "TitleSpanish": "Mary Poppins",
+          "Author": "P. L. Travers",
+          "FirstPublicationYear": 1934,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "The Lion, the Witch and the Wardrobe",
+          "TitleSpanish": "El león, la bruja y el armario",
+          "Author": "C. S. Lewis",
+          "FirstPublicationYear": 1950,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "The Palm-Wine Drinkard and His Dead Palm-Wine Tapster in the Dead’s Town",
+          "TitleSpanish": "El bebedor de vino de palma",
+          "Author": "Amos Tutuola",
+          "FirstPublicationYear": 1952,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Voyage of the Dawn Treader",
+          "TitleSpanish": "La travesía del Viajero del Alba",
+          "Author": "C. S. Lewis",
+          "FirstPublicationYear": 1952,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Fellowship of the Ring",
+          "TitleSpanish": "La comunidad del anillo",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "My Life in the Bush of Ghosts",
+          "TitleSpanish": "Mi vida en la maleza de los fantasmas",
+          "Author": "Amos Tutuola",
+          "FirstPublicationYear": 1954,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "The Two Towers",
+          "TitleSpanish": "Las dos torres",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "The Return of the King",
+          "TitleSpanish": "El retorno del rey",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1955,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "射雕英雄传",
+          "TitleSpanish": "El nacimiento de un héroe",
+          "Author": "Jin Yong",
+          "FirstPublicationYear": 1957,
+          "TitleSpanishStatus": "variant_spanish_titles_attested",
+          "FirstPublicationYearStatus": "original_serial_publication_year"
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Once and Future King",
+          "TitleSpanish": "Camelot / El rey que fue y será",
+          "Author": "T. H. White",
+          "FirstPublicationYear": 1958,
+          "TitleSpanishStatus": "variant_spanish_titles_attested",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "James and the Giant Peach",
+          "TitleSpanish": "James y el melocotón gigante",
+          "Author": "Roald Dahl",
+          "FirstPublicationYear": 1961,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "The Phantom Tollbooth",
+          "TitleSpanish": "La cabina mágica",
+          "Author": "Norton Juster",
+          "FirstPublicationYear": 1961,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "A Wrinkle in Time",
+          "TitleSpanish": "Una arruga en el tiempo",
+          "Author": "Madeleine L’Engle",
+          "FirstPublicationYear": 1962,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "El unicornio",
+          "TitleSpanish": "El unicornio",
+          "Author": "Manuel Mujica Lainez",
+          "FirstPublicationYear": 1965,
+          "TitleSpanishStatus": "same_as_original_spanish_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "Dragonflight",
+          "TitleSpanish": "El vuelo del dragón",
+          "Author": "Anne McCaffrey",
+          "FirstPublicationYear": 1968,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "The Last Unicorn",
+          "TitleSpanish": "El último unicornio",
+          "Author": "Peter S. Beagle",
+          "FirstPublicationYear": 1968,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "A Wizard of Earthsea",
+          "TitleSpanish": "Un mago de Terramar",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1968,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "The Crystal Cave",
+          "TitleSpanish": "La cueva de cristal",
+          "Author": "Mary Stewart",
+          "FirstPublicationYear": 1970,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "The Tombs of Atuan",
+          "TitleSpanish": "Las tumbas de Atuan",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1971,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 26,
+          "TitleOriginal": "Watership Down",
+          "TitleSpanish": "La colina de Watership",
+          "Author": "Richard Adams",
+          "FirstPublicationYear": 1972,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 27,
+          "TitleOriginal": "The Dark Is Rising",
+          "TitleSpanish": "Los seis signos de la luz",
+          "Author": "Susan Cooper",
+          "FirstPublicationYear": 1973,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 28,
+          "TitleOriginal": "The Princess Bride",
+          "TitleSpanish": "La princesa prometida",
+          "Author": "William Goldman",
+          "FirstPublicationYear": 1973,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 29,
+          "TitleOriginal": "Tuck Everlasting",
+          "TitleSpanish": "Tuck para siempre",
+          "Author": "Natalie Babbitt",
+          "FirstPublicationYear": 1975,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 30,
+          "TitleOriginal": "A Swiftly Tilting Planet",
+          "TitleSpanish": "Un planeta a la deriva",
+          "Author": "Madeleine L’Engle",
+          "FirstPublicationYear": 1978,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 31,
+          "TitleOriginal": "The Bloody Chamber",
+          "TitleSpanish": "La cámara sangrienta",
+          "Author": "Angela Carter",
+          "FirstPublicationYear": 1979,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 32,
+          "TitleOriginal": "The BFG",
+          "TitleSpanish": "El gran gigante bonachón",
+          "Author": "Roald Dahl",
+          "FirstPublicationYear": 1982,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 33,
+          "TitleOriginal": "Alanna: The First Adventure",
+          "TitleSpanish": "Alanna: la primera aventura",
+          "Author": "Tamora Pierce",
+          "FirstPublicationYear": 1983,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 34,
+          "TitleOriginal": "Howl’s Moving Castle",
+          "TitleSpanish": "El castillo ambulante",
+          "Author": "Diana Wynne Jones",
+          "FirstPublicationYear": 1986,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 35,
+          "TitleOriginal": "Redwall",
+          "TitleSpanish": "Redwall",
+          "Author": "Brian Jacques",
+          "FirstPublicationYear": 1986,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 36,
+          "TitleOriginal": "Swordspoint",
+          "TitleSpanish": null,
+          "Author": "Ellen Kushner",
+          "FirstPublicationYear": 1987,
+          "TitleSpanishStatus": "no_reliable_spanish_publication_title_found",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 37,
+          "TitleOriginal": "The Lives of Christopher Chant",
+          "TitleSpanish": "Las vidas de Christopher Chant",
+          "Author": "Diana Wynne Jones",
+          "FirstPublicationYear": 1988,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 38,
+          "TitleOriginal": "The Eye of the World",
+          "TitleSpanish": "El ojo del mundo",
+          "Author": "Robert Jordan",
+          "FirstPublicationYear": 1990,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 39,
+          "TitleOriginal": "Good Omens",
+          "TitleSpanish": "Buenos presagios",
+          "Author": "Terry Pratchett y Neil Gaiman",
+          "FirstPublicationYear": 1990,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 40,
+          "TitleOriginal": "Haroun and the Sea of Stories",
+          "TitleSpanish": "Harún y el mar de las historias",
+          "Author": "Salman Rushdie",
+          "FirstPublicationYear": 1990,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 41,
+          "TitleOriginal": "Outlander",
+          "TitleSpanish": "Forastera",
+          "Author": "Diana Gabaldon",
+          "FirstPublicationYear": 1991,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 42,
+          "TitleOriginal": "Tigana",
+          "TitleSpanish": "Tigana",
+          "Author": "Guy Gavriel Kay",
+          "FirstPublicationYear": 1990,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 43,
+          "TitleOriginal": "Northern Lights",
+          "TitleSpanish": "Luces del norte",
+          "Author": "Philip Pullman",
+          "FirstPublicationYear": 1995,
+          "TitleSpanishStatus": "spanish_title_of_original_uk_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 44,
+          "TitleOriginal": "Neverwhere",
+          "TitleSpanish": "Neverwhere",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 1996,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 45,
+          "TitleOriginal": "Ella Enchanted",
+          "TitleSpanish": "Ella encantada",
+          "Author": "Gail Carson Levine",
+          "FirstPublicationYear": 1997,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 46,
+          "TitleOriginal": "The Subtle Knife",
+          "TitleSpanish": "La daga",
+          "Author": "Philip Pullman",
+          "FirstPublicationYear": 1997,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 47,
+          "TitleOriginal": "Brown Girl in the Ring",
+          "TitleSpanish": null,
+          "Author": "Nalo Hopkinson",
+          "FirstPublicationYear": 1998,
+          "TitleSpanishStatus": "no_reliable_spanish_publication_title_found",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 48,
+          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban",
+          "TitleSpanish": "Harry Potter y el prisionero de Azkaban",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 1999,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 49,
+          "TitleOriginal": "Spindle’s End",
+          "TitleSpanish": null,
+          "Author": "Robin McKinley",
+          "FirstPublicationYear": 2000,
+          "TitleSpanishStatus": "no_reliable_spanish_publication_title_found",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 50,
+          "TitleOriginal": "A Storm of Swords",
+          "TitleSpanish": "Tormenta de espadas",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 2000,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 51,
+          "TitleOriginal": "American Gods",
+          "TitleSpanish": "American Gods",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 2001,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 52,
+          "TitleOriginal": "The Wee Free Men",
+          "TitleSpanish": "Los pequeños hombres libres",
+          "Author": "Terry Pratchett",
+          "FirstPublicationYear": 2003,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 53,
+          "TitleOriginal": "Harry Potter and the Half-Blood Prince",
+          "TitleSpanish": "Harry Potter y el misterio del príncipe",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 2005,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 54,
+          "TitleOriginal": "Mistborn: The Final Empire",
+          "TitleSpanish": "El imperio final",
+          "Author": "Brandon Sanderson",
+          "FirstPublicationYear": 2006,
+          "TitleSpanishStatus": "spanish_title_of_first_volume",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 55,
+          "TitleOriginal": "The Name of the Wind",
+          "TitleSpanish": "El nombre del viento",
+          "Author": "Patrick Rothfuss",
+          "FirstPublicationYear": 2007,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 56,
+          "TitleOriginal": "City of Glass",
+          "TitleSpanish": "Ciudad de cristal",
+          "Author": "Cassandra Clare",
+          "FirstPublicationYear": 2009,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 57,
+          "TitleOriginal": "Where the Mountain Meets the Moon",
+          "TitleSpanish": "Donde la montaña se encuentra con la luna",
+          "Author": "Grace Lin",
+          "FirstPublicationYear": 2009,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 58,
+          "TitleOriginal": "The Hundred Thousand Kingdoms",
+          "TitleSpanish": "Los cien mil reinos",
+          "Author": "N. K. Jemisin",
+          "FirstPublicationYear": 2010,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 59,
+          "TitleOriginal": "Who Fears Death",
+          "TitleSpanish": "¿Quién teme a la muerte?",
+          "Author": "Nnedi Okorafor",
+          "FirstPublicationYear": 2010,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 60,
+          "TitleOriginal": "Akata Witch",
+          "TitleSpanish": "Akata Witch",
+          "Author": "Nnedi Okorafor",
+          "FirstPublicationYear": 2011,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 61,
+          "TitleOriginal": "The Night Circus",
+          "TitleSpanish": "El circo de la noche",
+          "Author": "Erin Morgenstern",
+          "FirstPublicationYear": 2011,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 62,
+          "TitleOriginal": "The Song of Achilles",
+          "TitleSpanish": "La canción de Aquiles",
+          "Author": "Madeline Miller",
+          "FirstPublicationYear": 2011,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 63,
+          "TitleOriginal": "Angelfall",
+          "TitleSpanish": "Ángeles caídos",
+          "Author": "Susan Ee",
+          "FirstPublicationYear": 2011,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 64,
+          "TitleOriginal": "A Stranger in Olondria",
+          "TitleSpanish": "Un extraño en Olondria",
+          "Author": "Sofia Samatar",
+          "FirstPublicationYear": 2013,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 65,
+          "TitleOriginal": "The Bone Clocks",
+          "TitleSpanish": "Relojes de hueso",
+          "Author": "David Mitchell",
+          "FirstPublicationYear": 2014,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 66,
+          "TitleOriginal": "The Buried Giant",
+          "TitleSpanish": "El gigante enterrado",
+          "Author": "Kazuo Ishiguro",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 67,
+          "TitleOriginal": "An Ember in the Ashes",
+          "TitleSpanish": "Una llama entre cenizas",
+          "Author": "Sabaa Tahir",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 68,
+          "TitleOriginal": "The Fifth Season",
+          "TitleSpanish": "La quinta estación",
+          "Author": "N. K. Jemisin",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 69,
+          "TitleOriginal": "Get in Trouble",
+          "TitleSpanish": "A mí no me engañas",
+          "Author": "Kelly Link",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 70,
+          "TitleOriginal": "The Grace of Kings",
+          "TitleSpanish": "La gracia de los reyes",
+          "Author": "Ken Liu",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 71,
+          "TitleOriginal": "Shadowshaper",
+          "TitleSpanish": "Shadowshaper",
+          "Author": "Daniel José Older",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 72,
+          "TitleOriginal": "Six of Crows",
+          "TitleSpanish": "Seis de cuervos",
+          "Author": "Leigh Bardugo",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 73,
+          "TitleOriginal": "The Wrath & the Dawn",
+          "TitleSpanish": "La ira y el amanecer",
+          "Author": "Renée Ahdieh",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 74,
+          "TitleOriginal": "All the Birds in the Sky",
+          "TitleSpanish": "Todos los pájaros del cielo",
+          "Author": "Charlie Jane Anders",
+          "FirstPublicationYear": 2016,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 75,
+          "TitleOriginal": "A Torch Against the Night",
+          "TitleSpanish": "Una antorcha en las tinieblas",
+          "Author": "Sabaa Tahir",
+          "FirstPublicationYear": 2016,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 76,
+          "TitleOriginal": "The Wall of Storms",
+          "TitleSpanish": "El muro de las tormentas",
+          "Author": "Ken Liu",
+          "FirstPublicationYear": 2016,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 77,
+          "TitleOriginal": "Beasts Made of Night",
+          "TitleSpanish": "Bestias hechas de noche",
+          "Author": "Tochi Onyebuchi",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 78,
+          "TitleOriginal": "The Black Tides of Heaven",
+          "TitleSpanish": null,
+          "Author": "Neon Yang",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "no_reliable_spanish_publication_title_found",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 79,
+          "TitleOriginal": "The Changeling",
+          "TitleSpanish": "El cambiazo",
+          "Author": "Victor LaValle",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 80,
+          "TitleOriginal": "Jade City",
+          "TitleSpanish": "Ciudad de jade",
+          "Author": "Fonda Lee",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 81,
+          "TitleOriginal": "The Stone Sky",
+          "TitleSpanish": "El cielo de piedra",
+          "Author": "N. K. Jemisin",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 82,
+          "TitleOriginal": "Aru Shah and the End of Time",
+          "TitleSpanish": "Aru Shah y el fin del tiempo",
+          "Author": "Roshani Chokshi",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 83,
+          "TitleOriginal": "Blanca & Roja",
+          "TitleSpanish": "Blanca y Roja",
+          "Author": "Anna-Marie McLemore",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 84,
+          "TitleOriginal": "Children of Blood and Bone",
+          "TitleSpanish": "Hijos de sangre y hueso",
+          "Author": "Tomi Adeyemi",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 85,
+          "TitleOriginal": "Circe",
+          "TitleSpanish": "Circe",
+          "Author": "Madeline Miller",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 86,
+          "TitleOriginal": "Empire of Sand",
+          "TitleSpanish": "El imperio de arena",
+          "Author": "Tasha Suri",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 87,
+          "TitleOriginal": "The Poppy War",
+          "TitleSpanish": "La guerra de la amapola",
+          "Author": "R. F. Kuang",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 88,
+          "TitleOriginal": "Song of Blood & Stone",
+          "TitleSpanish": "Canción de sangre y piedra",
+          "Author": "L. Penelope",
+          "FirstPublicationYear": 2015,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "first_self_published_year; trade_republication_2018"
+        },
+        {
+          "Position": 89,
+          "TitleOriginal": "Trail of Lightning",
+          "TitleSpanish": "El rastro del rayo",
+          "Author": "Rebecca Roanhorse",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 90,
+          "TitleOriginal": "Witchmark",
+          "TitleSpanish": "Witchmark",
+          "Author": "C. L. Polk",
+          "FirstPublicationYear": 2018,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 91,
+          "TitleOriginal": "Black Leopard, Red Wolf",
+          "TitleSpanish": "Leopardo negro, lobo rojo",
+          "Author": "Marlon James",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 92,
+          "TitleOriginal": "Children of Virtue and Vengeance",
+          "TitleSpanish": "Hijos de virtud y venganza",
+          "Author": "Tomi Adeyemi",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 93,
+          "TitleOriginal": "The Dragon Republic",
+          "TitleSpanish": "La república del dragón",
+          "Author": "R. F. Kuang",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 94,
+          "TitleOriginal": "Gods of Jade and Shadow",
+          "TitleSpanish": "Dioses de jade y sombra",
+          "Author": "Silvia Moreno-Garcia",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 95,
+          "TitleOriginal": "Pet",
+          "TitleSpanish": "Mascota",
+          "Author": "Akwaeke Emezi",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 96,
+          "TitleOriginal": "Queen of the Conquered",
+          "TitleSpanish": null,
+          "Author": "Kacen Callender",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "no_reliable_spanish_publication_title_found",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 97,
+          "TitleOriginal": "The Rage of Dragons",
+          "TitleSpanish": "La furia de los dragones",
+          "Author": "Evan Winter",
+          "FirstPublicationYear": 2017,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "first_self_published_year; trade_republication_2019"
+        },
+        {
+          "Position": 98,
+          "TitleOriginal": "We Hunt the Flame",
+          "TitleSpanish": "Cazamos la llama",
+          "Author": "Hafsah Faizal",
+          "FirstPublicationYear": 2019,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 99,
+          "TitleOriginal": "Elatsoe",
+          "TitleSpanish": "Elatsoe",
+          "Author": "Darcie Little Badger",
+          "FirstPublicationYear": 2020,
+          "TitleSpanishStatus": "same_as_original_or_listed_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        },
+        {
+          "Position": 100,
+          "TitleOriginal": "Woven in Moonlight",
+          "TitleSpanish": "Tejida en la luz de luna",
+          "Author": "Isabel Ibañez",
+          "FirstPublicationYear": 2020,
+          "TitleSpanishStatus": "known_spanish_publication_title",
+          "FirstPublicationYearStatus": "known_or_widely_attested_publication_year"
+        }
+      ]
     }
   ],
   "SourcesConsulted": [

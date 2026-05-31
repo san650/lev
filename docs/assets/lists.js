@@ -12,14 +12,6 @@ const [db, listsData] = await Promise.all([
 
 const allBooks = Array.isArray(db?.books) ? db.books : [];
 
-// (listName, position) -> bookId
-const entryToBook = new Map();
-for (const book of allBooks) {
-  for (const m of book.in_lists ?? []) {
-    if (m.list && m.position != null) entryToBook.set(`${m.list}##${m.position}`, book.id);
-  }
-}
-
 const normalize = (str) => (str ?? '')
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g, '')
@@ -27,10 +19,24 @@ const normalize = (str) => (str ?? '')
   .replace(/[^a-z0-9\u4e00-\u9fff]+/g, ' ')
   .trim();
 
+// (listName, position, normalizedTitle) -> bookId. The title component
+// disambiguates list rows that share a Position (publication ties), so a
+// non-matching row no longer inherits the bookId of its neighbour.
+const entryKey = (list, position, title) =>
+  `${list}##${position}##${normalize(title)}`;
+
+const entryToBook = new Map();
+for (const book of allBooks) {
+  for (const m of book.in_lists ?? []) {
+    if (m.list && m.position != null) entryToBook.set(entryKey(m.list, m.position, m.title), book.id);
+  }
+}
+
 // --- Build display model ---
 const model = (listsData.Lists ?? []).map((list) => {
   const entries = (list['Books/Stories'] ?? []).map((entry) => {
-    const bookId = entryToBook.get(`${list.Source}##${entry.Position}`) ?? null;
+    const primary = entry.TitleSpanish || entry.TitleOriginal || '';
+    const bookId = entryToBook.get(entryKey(list.Source, entry.Position, primary)) ?? null;
     const year = entry.FirstPublicationYear ?? null;
     const haystack = normalize([
       entry.TitleSpanish, entry.TitleOriginal, entry.Author,

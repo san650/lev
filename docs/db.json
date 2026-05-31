@@ -573,6 +573,13 @@
       "review": "",
       "author_ids": [
         10
+      ],
+      "in_lists": [
+        {
+          "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 15,
+          "title": "El nacimiento de un héroe"
+        }
       ]
     },
     {
@@ -606,11 +613,18 @@
       "in_lists": [
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 18
+          "position": 18,
+          "title": "Mundo Anillo"
         },
         {
           "list": "Nebula Award (Best Novel winners)",
-          "position": 7
+          "position": 7,
+          "title": "Mundo Anillo"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 44,
+          "title": "Mundo Anillo"
         }
       ]
     },
@@ -833,11 +847,18 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 21
+          "position": 21,
+          "title": "La naranja mecánica"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 75
+          "position": 75,
+          "title": "La naranja mecánica"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 30,
+          "title": "La naranja mecánica"
         }
       ]
     },
@@ -895,7 +916,8 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 28
+          "position": 28,
+          "title": "El alquimista"
         }
       ]
     },
@@ -953,7 +975,8 @@
       "in_lists": [
         {
           "list": "El Observador (Los diez mejores libros uruguayos del siglo XXI)",
-          "position": 8
+          "position": 8,
+          "title": "Carlota podrida"
         }
       ]
     },
@@ -1037,15 +1060,18 @@
       "in_lists": [
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 6
+          "position": 6,
+          "title": "Ana Karenina"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 84
+          "position": 84,
+          "title": "Anna Karénina"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 6
+          "position": 6,
+          "title": "Ana Karenina"
         }
       ]
     },
@@ -1100,7 +1126,8 @@
       "in_lists": [
         {
           "list": "El Observador (Los diez mejores libros uruguayos del siglo XXI)",
-          "position": 4
+          "position": 4,
+          "title": "Las arañas de Marte"
         }
       ]
     },
@@ -1161,15 +1188,28 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 59
+          "position": 59,
+          "title": "Dune"
         },
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 12
+          "position": 12,
+          "title": "Dune"
         },
         {
           "list": "Nebula Award (Best Novel winners)",
-          "position": 1
+          "position": 1,
+          "title": "Dune"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 4,
+          "title": "Dune"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 26,
+          "title": "Dune"
         }
       ]
     },
@@ -1230,11 +1270,18 @@
       "in_lists": [
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 21
+          "position": 21,
+          "title": "Cita con Rama"
         },
         {
           "list": "Nebula Award (Best Novel winners)",
-          "position": 10
+          "position": 10,
+          "title": "Cita con Rama"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 76,
+          "title": "Cita con Rama"
         }
       ]
     },
@@ -1408,23 +1455,28 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 2
+          "position": 2,
+          "title": "Lolita"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 51
+          "position": 51,
+          "title": "Lolita"
         },
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 24
+          "position": 24,
+          "title": "Lolita"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 65
+          "position": 65,
+          "title": "Lolita"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 25
+          "position": 25,
+          "title": "Lolita"
         }
       ]
     },
@@ -1482,11 +1534,13 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 1
+          "position": 1,
+          "title": "En el camino"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 66
+          "position": 66,
+          "title": "En el camino"
         }
       ]
     },
@@ -1596,15 +1650,28 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 4
+          "position": 4,
+          "title": "Matadero cinco"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 82
+          "position": 82,
+          "title": "Matadero cinco"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 67
+          "position": 67,
+          "title": "Matadero cinco"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 19,
+          "title": "Matadero cinco"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 44,
+          "title": "Matadero cinco"
         }
       ]
     },
@@ -1635,13 +1702,7 @@
         "order": 2
       },
       "score": 4,
-      "review": "",
-      "in_lists": [
-        {
-          "list": "Goodreads (Best Books Ever)",
-          "position": 32
-        }
-      ]
+      "review": ""
     },
     {
       "id": 39,
@@ -1693,7 +1754,14 @@
       "publisher": "Minotauro",
       "saga": null,
       "score": 4,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 27,
+          "title": "Crónicas marcianas"
+        }
+      ]
     },
     {
       "id": 41,
@@ -1808,11 +1876,13 @@
       "in_lists": [
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 4
+          "position": 4,
+          "title": "El proceso"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 27
+          "position": 27,
+          "title": "El proceso"
         }
       ]
     },
@@ -2042,7 +2112,14 @@
       "publisher": "DeBolsillo",
       "saga": null,
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 24,
+          "title": "2001: Una odisea espacial"
+        }
+      ]
     },
     {
       "id": 54,
@@ -2072,15 +2149,18 @@
       "in_lists": [
         {
           "list": "Jorge Luis Borges (Biblioteca Personal Jorge Luis Borges)",
-          "position": 45
+          "position": 45,
+          "title": "Pedro Páramo"
         },
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 16
+          "position": 16,
+          "title": "Pedro Páramo"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 98
+          "position": 98,
+          "title": "Pedro Páramo"
         }
       ]
     },
@@ -2138,7 +2218,8 @@
       "in_lists": [
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 64
+          "position": 64,
+          "title": "El problema de los tres cuerpos"
         }
       ]
     },
@@ -2167,15 +2248,28 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 63
+          "position": 63,
+          "title": "Neuromante"
         },
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 32
+          "position": 32,
+          "title": "Neuromante"
         },
         {
           "list": "Nebula Award (Best Novel winners)",
-          "position": 21
+          "position": 21,
+          "title": "Neuromante"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 14,
+          "title": "Neuromante"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 37,
+          "title": "Neuromante"
         }
       ]
     },
@@ -2230,23 +2324,28 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 5
+          "position": 5,
+          "title": "El guardián entre el centeno"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 20
+          "position": 20,
+          "title": "El guardián entre el centeno"
         },
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 32
+          "position": 32,
+          "title": "El guardián entre el centeno"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 41
+          "position": 41,
+          "title": "El guardián entre el centeno"
         },
         {
           "list": "Rolling Stone US (When Holden Met Katniss: The 40 Best YA Novels)",
-          "position": 8
+          "position": 8,
+          "title": "El guardián entre el centeno"
         }
       ]
     },
@@ -2353,7 +2452,13 @@
       "in_lists": [
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 80
+          "position": 80,
+          "title": "Alicia en el país de las maravillas"
+        },
+        {
+          "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 3,
+          "title": "Alicia en el país de las maravillas"
         }
       ]
     },
@@ -2408,11 +2513,18 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 5
+          "position": 5,
+          "title": "Rebelión en la granja"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 7
+          "position": 7,
+          "title": "Rebelión en la granja"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 13,
+          "title": "Rebelión en la granja"
         }
       ]
     },
@@ -2490,15 +2602,28 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 65
+          "position": 65,
+          "title": "1984"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 34
+          "position": 34,
+          "title": "1984"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 16
+          "position": 16,
+          "title": "1984"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 6,
+          "title": "1984"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 3,
+          "title": "1984"
         }
       ]
     },
@@ -2530,7 +2655,8 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 46
+          "position": 46,
+          "title": "Yo, Claudio"
         }
       ]
     },
@@ -2608,11 +2734,13 @@
       "in_lists": [
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 9
+          "position": 9,
+          "title": "Guerra y paz"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 7
+          "position": 7,
+          "title": "Guerra y paz"
         }
       ]
     },
@@ -2637,7 +2765,19 @@
       "publisher": "",
       "saga": null,
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 21,
+          "title": "¿Sueñan los androides con ovejas eléctricas?"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 23,
+          "title": "¿Sueñan los androides con ovejas eléctricas?"
+        }
+      ]
     },
     {
       "id": 74,
@@ -2664,7 +2804,8 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 94
+          "position": 94,
+          "title": "Ubik"
         }
       ]
     },
@@ -2693,7 +2834,13 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 31
+          "position": 31,
+          "title": "Un mundo feliz"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 9,
+          "title": "Un mundo feliz"
         }
       ]
     },
@@ -2721,7 +2868,24 @@
         "order": 1
       },
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 32,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 2,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 30,
+          "title": "Guía del autoestopista galáctico"
+        }
+      ]
     },
     {
       "id": 77,
@@ -2773,12 +2937,14 @@
       "review": "",
       "in_lists": [
         {
-          "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 53
+          "list": "Goodreads (Best Books Ever)",
+          "position": 83,
+          "title": "La comunidad del anillo"
         },
         {
-          "list": "Goodreads (Best Books Ever)",
-          "position": 83
+          "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 11,
+          "title": "La comunidad del anillo"
         }
       ]
     },
@@ -2806,7 +2972,14 @@
         "order": 2
       },
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 13,
+          "title": "Las dos torres"
+        }
+      ]
     },
     {
       "id": 80,
@@ -2832,7 +3005,24 @@
         "order": 3
       },
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 53,
+          "title": "El señor de los anillos"
+        },
+        {
+          "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 14,
+          "title": "El retorno del rey"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 1,
+          "title": "El Señor de los Anillos"
+        }
+      ]
     },
     {
       "id": 81,
@@ -2859,7 +3049,8 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 8
+          "position": 8,
+          "title": "El hobbit y El señor de los anillos"
         }
       ]
     },
@@ -2884,7 +3075,14 @@
       "publisher": "",
       "saga": null,
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 46,
+          "title": "El Silmarillion"
+        }
+      ]
     },
     {
       "id": 83,
@@ -2934,15 +3132,28 @@
       "in_lists": [
         {
           "list": "Hugo Award (Best Novel winners)",
-          "position": 17
+          "position": 17,
+          "title": "La mano izquierda de la oscuridad"
         },
         {
           "list": "Nebula Award (Best Novel winners)",
-          "position": 6
+          "position": 6,
+          "title": "La mano izquierda de la oscuridad"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 91
+          "position": 91,
+          "title": "La mano izquierda de la oscuridad"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 45,
+          "title": "La mano izquierda de la oscuridad"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 35,
+          "title": "La mano izquierda de la oscuridad"
         }
       ]
     },
@@ -2994,11 +3205,13 @@
       "in_lists": [
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 52
+          "position": 52,
+          "title": "El señor de las moscas"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 29
+          "position": 29,
+          "title": "El señor de las moscas"
         }
       ]
     },
@@ -3174,19 +3387,23 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 9
+          "position": 9,
+          "title": "Matar a un ruiseñor"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 91
+          "position": 91,
+          "title": "Matar a un ruiseñor"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 3
+          "position": 3,
+          "title": "Matar a un ruiseñor"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 89
+          "position": 89,
+          "title": "Matar a un ruiseñor"
         }
       ]
     },
@@ -3215,7 +3432,8 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 6
+          "position": 6,
+          "title": "La conjura de los necios"
         }
       ]
     },
@@ -3246,7 +3464,19 @@
         "order": 1
       },
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 8,
+          "title": "Trilogía de la Fundación"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 28,
+          "title": "Fundación"
+        }
+      ]
     },
     {
       "id": 96,
@@ -3360,7 +3590,13 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 37
+          "position": 37,
+          "title": "Fahrenheit 451"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 7,
+          "title": "Fahrenheit 451"
         }
       ]
     },
@@ -3467,7 +3703,8 @@
       "in_lists": [
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 17
+          "position": 17,
+          "title": "El principito"
         }
       ]
     },
@@ -3577,15 +3814,18 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 8
+          "position": 8,
+          "title": "El extranjero"
         },
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 51
+          "position": 51,
+          "title": "El extranjero"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 71
+          "position": 71,
+          "title": "El extranjero"
         }
       ]
     },
@@ -3614,23 +3854,28 @@
       "in_lists": [
         {
           "list": "Lista anónima",
-          "position": 10
+          "position": 10,
+          "title": "El gran Gatsby"
         },
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
-          "position": 39
+          "position": 39,
+          "title": "El gran Gatsby"
         },
         {
           "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
-          "position": 85
+          "position": 85,
+          "title": "El gran Gatsby"
         },
         {
           "list": "Goodreads (Best Books Ever)",
-          "position": 20
+          "position": 20,
+          "title": "El gran Gatsby"
         },
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
-          "position": 11
+          "position": 11,
+          "title": "El gran Gatsby"
         }
       ]
     }

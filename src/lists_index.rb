@@ -157,8 +157,13 @@ module ListsIndex
     nil
   end
 
-  # Build per-book reverse index: book_id => [{ list:, position: }, ...].
-  # Preserves list order and entry order so the modal renders in source order.
+  # Build per-book reverse index: book_id => [{ list:, position:, title: }, ...].
+  # `title` carries the entry's primary title so the frontend can re-key
+  # the lookup by (list, position, title) — without it, two list rows that
+  # share the same Position (ties in published rankings, eg. "Mugre rosa"
+  # and "Las arañas de Marte" both at El Observador #4) would collide on
+  # the lookup key and the unmatched row would inherit the matched row's
+  # bookId, falsely showing as read.
   def build_membership(db, lists_data = load_lists_data)
     title_idx = build_title_index(db)
     saga_idx = build_saga_index(db)
@@ -168,7 +173,12 @@ module ListsIndex
       (list["Books/Stories"] || []).each do |entry|
         id = match_entry(entry, title_idx, saga_idx)
         next unless id
-        membership[id] << { "list" => list_name, "position" => entry["Position"] }
+        primary_title = entry["TitleSpanish"].to_s.empty? ? entry["TitleOriginal"] : entry["TitleSpanish"]
+        membership[id] << {
+          "list" => list_name,
+          "position" => entry["Position"],
+          "title" => primary_title
+        }
       end
     end
     membership

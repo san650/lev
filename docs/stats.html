@@ -31,67 +31,142 @@
   <div class="bg-orange accent-strip"></div>
 </div>
 
-<!-- Hero -->
-<section class="bg-deep color-white py-6 px-3 max-w-app mx-auto w-full">
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <p class="hero-num" id="hero-books"></p>
-      <p class="hero-label">Books read</p>
+<main class="stats-main max-w-app mx-auto w-full">
+
+  <!-- HERO -->
+  <section class="hero-section bg-deep color-white">
+    <span class="hero-eyebrow">Library</span>
+    <p class="hero-mega" id="hero-books"></p>
+    <p class="hero-mega-label">Books read</p>
+    <div class="hero-divider"></div>
+    <div class="hero-substats">
+      <div class="hero-substat">
+        <p class="hero-sub-num" id="hero-authors"></p>
+        <p class="hero-sub-label">Authors</p>
+      </div>
+      <div class="hero-substat">
+        <p class="hero-sub-num" id="hero-span"></p>
+        <p class="hero-sub-label">Years span</p>
+      </div>
+      <div class="hero-substat">
+        <p class="hero-sub-num" id="hero-avg"></p>
+        <p class="hero-sub-label">Avg score</p>
+      </div>
     </div>
-    <div class="hero-stat">
-      <p class="hero-num" id="hero-authors"></p>
-      <p class="hero-label">Authors</p>
+  </section>
+
+  <!-- ── TASTE ───────────────────────────────────────── -->
+  <header class="section-divider bg-purple">
+    <span class="section-divider-number">01</span>
+    <span class="section-divider-name">Taste</span>
+    <span class="section-divider-sub">How you score &amp; who you favor</span>
+  </header>
+
+  <!-- Score distribution: brand label + inline mean callout -->
+  <section class="bg-white">
+    <div class="panel-header">
+      <h2 class="panel-label">Score distribution</h2>
+      <p id="score-stats" class="panel-callout"></p>
     </div>
-    <div class="hero-stat">
-      <p class="hero-num" id="hero-span"></p>
-      <p class="hero-label">Years span</p>
+    <div id="score-chart" class="px-5 pb-5"></div>
+  </section>
+
+  <!-- Perfect 10s -->
+  <section class="bg-surface">
+    <div class="panel-header">
+      <h2 class="panel-label">Perfect 10s</h2>
+      <p class="panel-callout panel-callout-muted">The keepers</p>
     </div>
-  </div>
-</section>
+    <ul id="perfect-tens" class="trophy-list"></ul>
+  </section>
 
-<!-- Perfect 10s -->
-<section class="bg-white max-w-app mx-auto w-full">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Perfect 10s</h2>
-  <ul id="perfect-tens" class="trophy-list"></ul>
-</section>
+  <!-- Authors: two stacked sub-sections -->
+  <section class="bg-white">
+    <div class="panel-header">
+      <h2 class="panel-label">Highest-ranked authors</h2>
+      <p class="panel-callout-formula">mean × (1 − e<sup>−n/3</sup>)</p>
+    </div>
+    <ol id="ranked-authors" class="ranked-list"></ol>
+  </section>
 
-<!-- Score distribution -->
-<section class="bg-surface max-w-app mx-auto w-full">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Score distribution</h2>
-  <p id="score-stats" class="font-mono text-xs color-mid px-5 pb-2"></p>
-  <div id="score-chart" class="px-5 pb-5"></div>
-</section>
+  <section class="bg-surface">
+    <div class="panel-header">
+      <h2 class="panel-label">Most-read authors</h2>
+      <p class="panel-callout panel-callout-muted">By volume</p>
+    </div>
+    <ol id="read-authors" class="ranked-list"></ol>
+  </section>
 
-<!-- TASTE -->
-<header class="bg-purple py-4 px-5 text-center max-w-app mx-auto w-full">
-  <span class="font-brand text-sm fw-700 uppercase tracking-wider color-yellow">Taste</span>
-</header>
+  <!-- ── ERAS ────────────────────────────────────────── -->
+  <header class="section-divider bg-purple">
+    <span class="section-divider-number">02</span>
+    <span class="section-divider-name">Eras</span>
+    <span class="section-divider-sub">When the books were written</span>
+  </header>
 
-<section class="bg-white max-w-app mx-auto w-full">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Highest-ranked authors</h2>
-  <p class="font-mono text-xs color-mid px-5 pb-2">mean × (1 − e<sup>−n/3</sup>)</p>
-  <ol id="ranked-authors" class="ranked-list"></ol>
-</section>
+  <section class="bg-white">
+    <div class="panel-header">
+      <h2 class="panel-label">Books per decade</h2>
+    </div>
+    <div id="decade-chart" class="px-5 pb-5"></div>
+  </section>
 
-<section class="bg-surface max-w-app mx-auto w-full">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Most-read authors</h2>
-  <ol id="read-authors" class="ranked-list"></ol>
-</section>
+  <section class="bg-surface pb-5">
+    <div class="panel-header">
+      <h2 class="panel-label">Best book per decade</h2>
+    </div>
+    <div id="decade-list"></div>
+  </section>
 
-<!-- ERAS -->
-<header class="bg-purple py-4 px-5 text-center max-w-app mx-auto w-full">
-  <span class="font-brand text-sm fw-700 uppercase tracking-wider color-yellow">Eras</span>
-</header>
+  <!-- ── LISTS ───────────────────────────────────────── -->
+  <header class="section-divider bg-purple">
+    <span class="section-divider-number">03</span>
+    <span class="section-divider-name">Lists</span>
+    <span class="section-divider-sub">What the world recommends</span>
+  </header>
 
-<section class="bg-surface max-w-app mx-auto w-full">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Books per decade</h2>
-  <div id="decade-chart" class="px-5 pb-5"></div>
-</section>
+  <section class="bg-deep color-white lists-stats-section">
+    <div class="lists-stats-grid">
+      <div class="lists-stat">
+        <p class="lists-stat-num" id="lists-stat-lists"></p>
+        <p class="lists-stat-label">Lists</p>
+      </div>
+      <div class="lists-stat">
+        <p class="lists-stat-num" id="lists-stat-books"></p>
+        <p class="lists-stat-label">Books</p>
+      </div>
+      <div class="lists-stat">
+        <p class="lists-stat-num" id="lists-stat-authors"></p>
+        <p class="lists-stat-label">Authors</p>
+      </div>
+      <div class="lists-stat">
+        <p class="lists-stat-num" id="lists-stat-books-read"></p>
+        <p class="lists-stat-label">Books read</p>
+      </div>
+      <div class="lists-stat">
+        <p class="lists-stat-num" id="lists-stat-authors-read"></p>
+        <p class="lists-stat-label">Authors read</p>
+      </div>
+    </div>
+  </section>
 
-<section class="bg-white max-w-app mx-auto w-full pb-5">
-  <h2 class="font-brand text-xs fw-700 uppercase tracking-wider color-orange px-5 py-3 section-label">Best book per decade</h2>
-  <div id="decade-list"></div>
-</section>
+  <section class="bg-white">
+    <div class="panel-header">
+      <h2 class="panel-label">Most-listed books</h2>
+      <p class="panel-callout panel-callout-muted">Top 10</p>
+    </div>
+    <ol id="most-listed" class="most-listed"></ol>
+  </section>
+
+  <section class="bg-surface pb-5">
+    <div class="panel-header">
+      <h2 class="panel-label">Most-listed authors</h2>
+      <p class="panel-callout panel-callout-muted">Top 10</p>
+    </div>
+    <ol id="most-listed-authors" class="most-listed-authors"></ol>
+  </section>
+
+</main>
 
 <!-- Footer -->
 <footer class="bg-purple flex items-center justify-between flex-wrap gap-2 px-5 py-3 max-w-app mx-auto w-full">
