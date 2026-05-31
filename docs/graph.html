@@ -49,7 +49,38 @@
       <p class="font-brand text-xs fw-700 uppercase tracking-wider color-yellow mb-3">↓ Pick a node below ↓</p>
       <p class="font-body text-sm color-white-65 leading-relaxed">Each book is connected to other books it shares lists with. The thicker the line, the more lists they share.</p>
     </div>
-    <svg id="stage" class="stage-svg" viewBox="-260 -260 520 520" preserveAspectRatio="xMidYMid meet" hidden aria-hidden="true">
+    <svg id="stage" class="stage-svg" viewBox="-320 -320 640 640" preserveAspectRatio="xMidYMid meet" hidden aria-hidden="true">
+      <defs>
+        <radialGradient id="stage-bg" cx="50%" cy="50%" r="65%">
+          <stop offset="0%"   stop-color="#2a1768"/>
+          <stop offset="55%"  stop-color="#1E104E"/>
+          <stop offset="100%" stop-color="#170c3a"/>
+        </radialGradient>
+        <radialGradient id="center-fill" cx="35%" cy="30%" r="80%">
+          <stop offset="0%"  stop-color="#FFE08A"/>
+          <stop offset="100%" stop-color="#FFC85C"/>
+        </radialGradient>
+        <linearGradient id="edge-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#FFC85C" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#FF653F" stop-opacity="0.75"/>
+        </linearGradient>
+        <filter id="center-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <rect class="stage-bg-rect" x="-320" y="-320" width="640" height="640" fill="url(#stage-bg)"/>
+      <g id="stage-rings" class="stage-rings"></g>
       <g id="stage-edges"></g>
       <g id="stage-labels"></g>
       <g id="stage-nodes"></g>

@@ -7,16 +7,10 @@
 // URL state: `graph.html#book/<id>` or `graph.html#author/<id>` so a
 // focused view is shareable and survives history navigation.
 
-import { loadCached } from './idb-cache.js';
-
-// Stale-while-revalidate: payloads come from IndexedDB on warm starts
-// (instant), then a background fetch refreshes the cache and triggers a
-// reload if the upstream copy has changed.
-const onRefresh = () => location.reload();
 const [graph, db, listsData] = await Promise.all([
-  loadCached('graph.json', { onRefresh }),
-  loadCached('db.json',    { onRefresh }).catch(() => ({ authors: [], books: [] })),
-  loadCached('lists.json', { onRefresh }).catch(() => ({ Lists: [] })),
+  fetch('graph.json').then(r => r.json()),
+  fetch('db.json').then(r => r.json()).catch(() => ({ authors: [], books: [] })),
+  fetch('lists.json').then(r => r.json()).catch(() => ({ Lists: [] })),
 ]);
 if (!graph) throw new Error('graph.json failed to load');
 
@@ -152,6 +146,7 @@ const stage         = document.getElementById('stage');
 const stageEdges    = document.getElementById('stage-edges');
 const stageLabels   = document.getElementById('stage-labels');
 const stageNodes    = document.getElementById('stage-nodes');
+const stageRings    = document.getElementById('stage-rings');
 const stageControls = document.getElementById('stage-controls');
 const stageMeta     = document.getElementById('stage-meta');
 const toggleWeak    = document.getElementById('toggle-weak');
@@ -343,6 +338,13 @@ function renderFocused() {
   stageEdges.replaceChildren();
   stageLabels.replaceChildren();
   stageNodes.replaceChildren();
+  if (stageRings) stageRings.replaceChildren();
+  // Drop any per-edge gradient defs we created last render so they don't
+  // accumulate (the static defs in HTML stay; we only purge generated ones).
+  const defs = stage.querySelector('defs');
+  if (defs) {
+    defs.querySelectorAll('[id^="edge-grad-"]').forEach(e => e.remove());
+  }
   detailBody.replaceChildren();
 
   if (!node) {
@@ -384,91 +386,241 @@ function svg(tag, attrs = {}) {
   return el;
 }
 
+// Layout constants. The viewBox is 600×600 (-300..300) so labels at the
+// rim never clip even when wide.
+const R_INNER = 165;
+const R_OUTER = 235;
+const INNER_RING_CAP = 6;
+
 function drawFocusedGraph(center, neighbors) {
-  const W_MAX = Math.max(...neighbors.map(t => t[1]), 1);
-  const W_MIN = Math.min(...neighbors.map(t => t[1]), W_MAX);
-  const idx = currentIndex();
-  const R_INNER = 100;
-  const R_OUTER = 200;
-  const N = neighbors.length;
+  const sorted = [...neighbors].sort((a, b) => b[1] - a[1] || a[0] - b[0]);
+  const N = sorted.length;
+  if (N === 0) {
+    appendNodeCard(center, 0, 0, true, 0);
+    return;
+  }
 
-  neighbors.forEach((tuple, i) => {
-    const [peerId, w] = tuple;
-    const peer = idx.get(peerId);
+  // Two interleaved rings: heaviest neighbors close on the inner ring,
+  // lighter ones on the outer. Outer ring is angle-offset by half the
+  // inner step so labels stagger and don't share an angular column.
+  const inner = sorted.slice(0, Math.min(INNER_RING_CAP, N));
+  const outer = sorted.slice(Math.min(INNER_RING_CAP, N));
+
+  const layouts = [];
+  inner.forEach((tuple, i) => {
+    const theta = (-Math.PI / 2) + (2 * Math.PI * i / inner.length);
+    layouts.push({ tuple, theta, r: R_INNER, ring: 'inner', index: i });
+  });
+  outer.forEach((tuple, i) => {
+    const step = outer.length > 0 ? (2 * Math.PI / outer.length) : 0;
+    const theta = (-Math.PI / 2) + (i + 0.5) * step;
+    layouts.push({ tuple, theta, r: R_OUTER, ring: 'outer', index: i });
+  });
+
+  // Render order matters: ring guides, then edges, then nodes (so nodes
+  // sit on top of the lines that connect them).
+  drawRings(layouts);
+  layouts.forEach((L, i) => drawEdge(L, i));
+
+  appendNodeCard(center, 0, 0, true, 0);
+  layouts.forEach((L, i) => {
+    const peer = currentIndex().get(L.tuple[0]);
     if (!peer) return;
-    const theta = (-Math.PI / 2) + (2 * Math.PI * i / Math.max(N, 1));
-    const t = (W_MAX === W_MIN) ? 0.25 : (1 - (w - W_MIN) / (W_MAX - W_MIN));
-    const r = R_INNER + (R_OUTER - R_INNER) * t;
-    const x = Math.cos(theta) * r;
-    const y = Math.sin(theta) * r;
+    const x = Math.cos(L.theta) * L.r;
+    const y = Math.sin(L.theta) * L.r;
     peer.__pos = { x, y };
-
-    const line = svg('line', {
-      x1: 0, y1: 0, x2: x, y2: y,
-      'stroke-width': Math.min(w, 6),
-    });
-    line.classList.add('edge', 'edge-strong');
-    stageEdges.appendChild(line);
-
-    const label = svg('text', { x: x * 0.55, y: y * 0.55 });
-    label.classList.add('edge-label');
-    label.textContent = String(w);
-    stageLabels.appendChild(label);
+    appendNodeCard(peer, x, y, false, i + 1);
   });
 
-  appendNodeLabel(center, 0, 0, true);
-
-  neighbors.forEach(tuple => {
-    const peer = idx.get(tuple[0]);
-    if (!peer || !peer.__pos) return;
-    appendNodeLabel(peer, peer.__pos.x, peer.__pos.y, false);
-  });
+  // After all cards are in the DOM and the browser has measured them,
+  // nudge any pair that physically overlaps along its radial line.
+  requestAnimationFrame(() => resolveCollisions());
 }
 
-function appendNodeLabel(node, x, y, isCenter) {
+function drawRings(layouts) {
+  // Faint concentric guide rings — they imply the orbital structure
+  // without competing with the labels for attention.
+  const radii = [...new Set(layouts.map(L => L.r))];
+  for (const r of radii) {
+    const c = svg('circle', { cx: 0, cy: 0, r });
+    c.classList.add('orbit-ring');
+    stageRings.appendChild(c);
+  }
+}
+
+function drawEdge(L, i) {
+  const [, w] = L.tuple;
+  const x = Math.cos(L.theta) * L.r;
+  const y = Math.sin(L.theta) * L.r;
+
+  // Each edge carries its own linear gradient so the line starts in the
+  // center's yellow tone and lands in the orange of the orbit. Defining
+  // it inline lets us aim the gradient along the edge direction without
+  // a global transform.
+  const gradId = `edge-grad-${i}`;
+  const grad = svg('linearGradient', {
+    id: gradId,
+    gradientUnits: 'userSpaceOnUse',
+    x1: 0, y1: 0, x2: x, y2: y,
+  });
+  const s1 = svg('stop', { offset: '0%',   'stop-color': '#FFD37A', 'stop-opacity': 0.95 });
+  const s2 = svg('stop', { offset: '100%', 'stop-color': '#FF7A50', 'stop-opacity': 0.55 });
+  grad.appendChild(s1);
+  grad.appendChild(s2);
+  stage.querySelector('defs').appendChild(grad);
+
+  const line = svg('line', {
+    x1: 0, y1: 0, x2: x, y2: y,
+    stroke: `url(#${gradId})`,
+    'stroke-width': edgeWidth(w),
+    'stroke-linecap': 'round',
+  });
+  line.classList.add('edge');
+  line.style.setProperty('--i', i);
+  stageEdges.appendChild(line);
+
+  // Weight label as a small filled pill on the edge midpoint, offset
+  // slightly perpendicular to the line so adjacent edges don't collide
+  // on each other's numbers.
+  const mx = x * 0.5;
+  const my = y * 0.5;
+  const perp = { x: -Math.sin(L.theta), y: Math.cos(L.theta) };
+  const off = 0;
+  const cx = mx + perp.x * off;
+  const cy = my + perp.y * off;
+
+  const pillR = 11;
+  const pillG = svg('g', { transform: `translate(${cx} ${cy})` });
+  pillG.classList.add('edge-pill');
+  pillG.style.setProperty('--i', i);
+  const circle = svg('circle', { r: pillR });
+  circle.classList.add('edge-pill-bg');
+  const tx = svg('text', { 'text-anchor': 'middle', y: 4 });
+  tx.classList.add('edge-pill-text');
+  tx.textContent = String(w);
+  pillG.appendChild(circle);
+  pillG.appendChild(tx);
+  stageLabels.appendChild(pillG);
+}
+
+function edgeWidth(w) {
+  // Discrete steps so edges read as ranks not analog values. Clamp.
+  return Math.max(1.5, Math.min(w - 1.5, 5));
+}
+
+// Build a refined "card" for one node: a rounded pill sized from the
+// actual text measurements (not character-count guesswork).
+function appendNodeCard(node, x, y, isCenter, animIndex) {
   const p = project(state.mode, node);
   const labelText = p.kind === 'book' ? p.title : p.name;
-  const display = isCenter ? labelText : truncate(labelText, 22);
   const subText = p.kind === 'book'
-    ? (p.author ? truncate(p.author, 22) : '')
-    : (p.list_count ? `${p.list_count} lists` : '');
+    ? (p.author || '')
+    : (p.list_count ? `${p.list_count} lists · ${(p.dbBooks || []).length} in library` : '');
+
+  // Allow more glyphs at the center; tighten in the orbit so the rings
+  // remain visually balanced and rim cards don't clip the viewBox.
+  const TITLE_CAP = isCenter ? 36 : 22;
+  const SUB_CAP   = isCenter ? 40 : 24;
+  const titleStr = truncate(labelText, TITLE_CAP);
+  const subStr   = truncate(subText,   SUB_CAP);
 
   const g = svg('g', { transform: `translate(${x}, ${y})`, tabindex: 0, role: 'button', 'data-node-id': node.id });
-  g.classList.add('node-label', isCenter ? 'node-center' : 'node-orbit');
+  g.classList.add('node-card', isCenter ? 'node-center' : 'node-orbit');
+  if (isCenter) g.setAttribute('filter', 'url(#center-glow)');
   if (p.kind === 'book' && p.read) g.classList.add('node-read');
   g.setAttribute('aria-label', `${labelText}${subText ? ` · ${subText}` : ''}`);
+  g.style.setProperty('--i', animIndex);
 
-  const w = (isCenter ? display.length * 9 : display.length * 5.4) + 18;
-  const h = isCenter ? 56 : 30;
-  const rect = svg('rect', { x: -w / 2, y: -h / 2, width: w, height: h });
-  rect.classList.add('node-rect');
+  // Insert text first so we can measure, then size the rect to fit. We
+  // build a placeholder rect, append text, measure, then resize. This is
+  // the only reliable way to get the rendered text width across browsers.
+  const rect = svg('rect', { rx: isCenter ? 18 : 14, ry: isCenter ? 18 : 14 });
+  rect.classList.add('node-bg');
   g.appendChild(rect);
 
-  const title = svg('text', { 'text-anchor': 'middle', y: subText ? -2 : 5 });
+  const title = svg('text', { 'text-anchor': 'middle' });
   title.classList.add('node-title');
-  title.textContent = display;
+  title.textContent = titleStr;
   g.appendChild(title);
 
-  if (subText) {
-    const sub = svg('text', { 'text-anchor': 'middle', y: 14 });
+  let sub = null;
+  if (subStr) {
+    sub = svg('text', { 'text-anchor': 'middle' });
     sub.classList.add('node-sub');
-    sub.textContent = subText;
+    sub.textContent = subStr;
     g.appendChild(sub);
   }
 
-  if (isCenter) {
-    g.addEventListener('click', () => openCanonical(p));
-    g.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCanonical(p); }
-    });
-  } else {
-    g.addEventListener('click', () => focusNode(node.id));
-    g.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focusNode(node.id); }
-    });
-  }
-
   stageNodes.appendChild(g);
+
+  // Now measure. Title and sub each get their own row; the rect spans
+  // both with generous padding.
+  const titleBox = title.getBBox();
+  const subBox   = sub ? sub.getBBox() : { width: 0, height: 0 };
+  const padX = isCenter ? 22 : 16;
+  const padY = isCenter ? 18 : 12;
+  const gap  = subStr ? (isCenter ? 6 : 4) : 0;
+
+  const w = Math.max(titleBox.width, subBox.width) + padX * 2;
+  const h = titleBox.height + gap + subBox.height + padY * 2;
+
+  rect.setAttribute('x', -w / 2);
+  rect.setAttribute('y', -h / 2);
+  rect.setAttribute('width', w);
+  rect.setAttribute('height', h);
+
+  // Center text vertically inside the pill. Browsers position SVG <text>
+  // by its baseline so we offset by an empirical fraction of the height.
+  const titleY = -h / 2 + padY + titleBox.height * 0.78;
+  title.setAttribute('y', titleY);
+  if (sub) sub.setAttribute('y', titleY + gap + subBox.height);
+
+  // Stash measured bbox + radial vector on the group so collision
+  // resolution can nudge along the line out from center.
+  g.__layout = { x, y, w, h, vx: x, vy: y };
+
+  const onActivate = () => isCenter ? openCanonical(p) : focusNode(node.id);
+  g.addEventListener('click', onActivate);
+  g.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onActivate(); }
+  });
+}
+
+// Pairwise nudge any cards whose AABBs overlap. The lighter-weight (later)
+// card slides outward along its radial vector until clear, or until it
+// hits the safe-area cap. With a 600×600 viewBox we have ~70px of slack
+// past R_OUTER before clipping.
+function resolveCollisions() {
+  const cards = Array.from(stageNodes.querySelectorAll('.node-orbit'));
+  const MAX_PUSH = 70;
+  const ITERS = 4;
+  for (let iter = 0; iter < ITERS; iter++) {
+    let moved = false;
+    for (let i = 0; i < cards.length; i++) {
+      for (let j = i + 1; j < cards.length; j++) {
+        const a = cards[i].__layout, b = cards[j].__layout;
+        if (!a || !b) continue;
+        if (!aabbOverlap(a, b)) continue;
+        // Push the latter card outward by 8px along its radial line,
+        // capped so it doesn't fly past the viewBox.
+        const len = Math.hypot(b.vx, b.vy);
+        if (len === 0) continue;
+        const dx = (b.vx / len) * 10;
+        const dy = (b.vy / len) * 10;
+        const nx = b.x + dx, ny = b.y + dy;
+        if (Math.hypot(nx, ny) - len > MAX_PUSH) continue;
+        b.x = nx; b.y = ny;
+        cards[j].setAttribute('transform', `translate(${nx}, ${ny})`);
+        moved = true;
+      }
+    }
+    if (!moved) break;
+  }
+}
+
+function aabbOverlap(a, b) {
+  return Math.abs(a.x - b.x) * 2 < (a.w + b.w + 8)
+      && Math.abs(a.y - b.y) * 2 < (a.h + b.h + 8);
 }
 
 function truncate(s, n) {

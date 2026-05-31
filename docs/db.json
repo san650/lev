@@ -1734,24 +1734,7 @@
         "order": 2
       },
       "score": 4,
-      "review": "",
-      "in_lists": [
-        {
-          "list": "Goodreads (Best Books Ever)",
-          "position": 32,
-          "title": "Guía del autoestopista galáctico"
-        },
-        {
-          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
-          "position": 2,
-          "title": "Guía del autoestopista galáctico"
-        },
-        {
-          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
-          "position": 30,
-          "title": "Guía del autoestopista galáctico"
-        }
-      ]
+      "review": ""
     },
     {
       "id": 39,
@@ -2927,7 +2910,7 @@
     },
     {
       "id": 76,
-      "title": "El autoestopista galáctico",
+      "title": "Guía del autoestopista galáctico",
       "subtitle": "",
       "original_title": "The Hitchhiker Guide To The Galaxy",
       "first_publishing_date": "1979",
@@ -2949,7 +2932,24 @@
         "order": 1
       },
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 32,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
+          "position": 2,
+          "title": "Guía del autoestopista galáctico"
+        },
+        {
+          "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
+          "position": 30,
+          "title": "Guía del autoestopista galáctico"
+        }
+      ]
     },
     {
       "id": 77,
