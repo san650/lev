@@ -486,6 +486,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 70,
+      "name": "F. Scott Fitzgerald",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3579,6 +3586,51 @@
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
           "position": 71
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "title": "El gran Gatsby",
+      "subtitle": "",
+      "original_title": "The Great Gatsby",
+      "first_publishing_date": "1925",
+      "author_ids": [
+        70
+      ],
+      "identifiers": [
+
+      ],
+      "covers": [
+        {
+          "file": "covers/108-el-gran-gatsby.jpg",
+          "default": true
+        }
+      ],
+      "publisher": "",
+      "saga": null,
+      "score": 5,
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 10
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 39
+        },
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 85
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 20
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 11
         }
       ]
     }
