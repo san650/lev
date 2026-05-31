@@ -8,11 +8,11 @@ require_relative "../src/graph"
 
 payload = Graph.build_and_save!
 
-books = payload["books"]
-authors = payload["authors"]
+books = payload["bk"]
+authors = payload["au"]
 puts "Wrote docs/graph.json."
-puts "  Books:   #{books['nodes'].length} nodes, #{books['edges'].length} edges"
-puts "  Authors: #{authors['nodes'].length} nodes, #{authors['edges'].length} edges"
+puts "  Books:   #{books['ns'].length} nodes, #{books['es'].length} edges"
+puts "  Authors: #{authors['ns'].length} nodes, #{authors['es'].length} edges"
 
 w_counts = ->(edges) {
   buckets = Hash.new(0)
@@ -20,6 +20,6 @@ w_counts = ->(edges) {
   edges.each { |e| buckets[e[2]] += 1 }
   buckets.sort.reverse.map { |w, c| "w=#{w}:#{c}" }.join(" ")
 }
-puts "  Book edge weights:   #{w_counts.call(books['edges'])}"
-puts "  Author edge weights: #{w_counts.call(authors['edges'])}"
+puts "  Book edge weights:   #{w_counts.call(books['es'])}"
+puts "  Author edge weights: #{w_counts.call(authors['es'])}"
 puts "  graph.json size:     #{(File.size('docs/graph.json') / 1024.0).round(1)} KB"

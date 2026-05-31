@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Lev — book & author similarity graph">
-<title>Lev — Graph</title>
+<meta name="description" content="Lev — find similar books & authors">
+<title>Lev — Similar</title>
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icon-192.png">
@@ -28,7 +28,7 @@
     <div class="flex items-center gap-3 shrink-0">
       <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Stats</a>
       <a href="lists.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Lists</a>
-      <a href="graph.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Graph</a>
+      <a href="graph.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Similar</a>
     </div>
   </nav>
   <div class="bg-orange accent-strip"></div>
@@ -82,7 +82,6 @@
       <rect class="stage-bg-rect" x="-320" y="-320" width="640" height="640" fill="url(#stage-bg)"/>
       <g id="stage-rings" class="stage-rings"></g>
       <g id="stage-edges"></g>
-      <g id="stage-labels"></g>
       <g id="stage-nodes"></g>
     </svg>
     <div id="stage-controls" class="stage-controls px-3 py-2 flex items-center justify-between gap-3" hidden>
@@ -127,7 +126,7 @@
         <p class="node-row-title font-title text-base leading-tight color-deep" data-slot="title"></p>
         <p class="node-row-sub font-body text-xs color-mid" data-slot="sub" hidden></p>
       </div>
-      <data class="node-row-count font-mono text-xs fw-700" data-slot="count" title="Lists where this appears"></data>
+      <data class="node-row-count font-mono text-xs fw-700" data-slot="count" title="Number of related items"></data>
     </button>
   </li>
 </template>

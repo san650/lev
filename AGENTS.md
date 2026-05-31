@@ -183,17 +183,48 @@ This is mathematically the same as the unnormalized intersection of the two node
 
 ### graph.json shape
 
+The file is **fully derived** from `db.json` + `lists.json` and never edited by hand, so it uses 2-character field codes and compact (no-whitespace) JSON to minimize on-wire size. Current size after `make graph`: ~130 KB.
+
 ```json
 {
-  "generated_at": "...",
-  "books":   { "nodes": [...], "edges": [[a, b, w], ...], "isolated_db_book_ids": [...] },
-  "authors": { "nodes": [...], "edges": [[a, b, w], ...] }
+  "gt": "2026-05-31",
+  "bk": { "ns": [<book nodes>], "es": [[a, b, w], ...], "ib": [<isolated db book ids>] },
+  "au": { "ns": [<author nodes>], "es": [[a, b, w], ...] }
 }
 ```
 
-Each node: `{ id, entry_ids, list_ids, list_count, db_book_id?, top_neighbors: [[id, w], ...], neighbor_count }`. Edges are compact `[a, b, w]` tuples (~50% smaller than object literals) sorted by weight descending.
+**Top level**
+- `gt` — `generated_at` (build date)
+- `bk` — book graph
+- `au` — author graph
 
-The file is compact-printed (no pretty whitespace) because it's a fully-derived artifact — `make graph` rewrites it from scratch, so diff-friendliness adds no value.
+**Subgraph**
+- `ns` — `nodes`
+- `es` — `edges`, each a compact `[a, b, w]` tuple (~50% smaller than object literals), sorted by weight descending. Floor: `w >= 3`.
+- `ib` — `isolated_db_book_ids` (books in the user's library that aren't in any list)
+
+**Book node**
+
+```json
+{ "id": 313, "ei": [344, 397, ...], "li": [5, 6, 7, ...], "lc": 6,
+  "bi": 23, "nc": 315, "tn": [[138, 5], [364, 5], ...] }
+```
+
+- `id` — synthetic int node id, stable within one build
+- `ei` — `entry_ids` referencing entries in `lists.json`
+- `li` — `list_ids` (denormalized — same data as `ei` rolled up to lists)
+- `lc` — `list_count`, length of `li`
+- `bi` — `db_book_id` if matched (else null)
+- `nc` — `neighbor_count` (total across all weights)
+- `tn` — `top_neighbors`, array of `[id, w]` pairs sorted by weight desc, capped at 30
+
+**Author node**
+
+Same shape as book node, plus:
+- `nm` — `name` (canonicalized from db when matched, else the list-side spelling)
+- `ai` — `db_author_id` if matched
+
+The client at `docs/assets/graph.js` carries a decode comment block at the top mirroring this table. Update both sides together if you change a field code.
 
 ## PWA / Service Worker
 

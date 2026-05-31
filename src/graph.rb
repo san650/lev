@@ -42,11 +42,21 @@ module Graph
     payload
   end
 
+  # Short field codes in the emitted graph.json. The file is fully derived
+  # from db.json + lists.json, never edited by hand, and shipped to the
+  # client over the wire — so we minimize byte count over readability.
+  # Decode reference (kept in sync with docs/assets/graph.js):
+  #   gt  generated_at
+  #   bk  books          au  authors
+  #   ns  nodes          es  edges          ib  isolated_db_book_ids
+  #   ei  entry_ids      li  list_ids       lc  list_count
+  #   bi  db_book_id     ai  db_author_id   nm  name
+  #   tn  top_neighbors  nc  neighbor_count
   def build_payload(db, lists_data)
     {
-      "generated_at" => Time.now.strftime("%Y-%m-%d"),
-      "books" => build_book_graph(db, lists_data),
-      "authors" => build_author_graph(db, lists_data)
+      "gt" => Time.now.strftime("%Y-%m-%d"),
+      "bk" => build_book_graph(db, lists_data),
+      "au" => build_author_graph(db, lists_data)
     }
   end
 
@@ -92,19 +102,19 @@ module Graph
     finalize_top_neighbors!(node_by_key.values, edges_full)
 
     {
-      "nodes" => node_by_key.values.map { |n|
+      "ns" => node_by_key.values.map { |n|
         {
           "id" => n["id"],
-          "entry_ids" => n["entry_ids"],
-          "list_ids" => n["list_ids"],
-          "list_count" => n["list_ids"].length,
-          "db_book_id" => n["db_book_id"],
-          "neighbor_count" => n["neighbor_count"],
-          "top_neighbors" => n["top_neighbors"]
+          "ei" => n["entry_ids"],
+          "li" => n["list_ids"],
+          "lc" => n["list_ids"].length,
+          "bi" => n["db_book_id"],
+          "nc" => n["neighbor_count"],
+          "tn" => n["top_neighbors"]
         }
-      }.sort_by { |n| -n["list_count"] },
-      "edges" => filter_edges_for_global(edges_full),
-      "isolated_db_book_ids" => isolated_db_book_ids.sort
+      }.sort_by { |n| -n["lc"] },
+      "es" => filter_edges_for_global(edges_full),
+      "ib" => isolated_db_book_ids.sort
     }
   end
 
@@ -199,19 +209,19 @@ module Graph
     finalize_top_neighbors!(node_by_key.values, edges_full)
 
     {
-      "nodes" => node_by_key.values.map { |n|
+      "ns" => node_by_key.values.map { |n|
         {
           "id" => n["id"],
-          "name" => n["name"],
-          "db_author_id" => n["db_author_id"],
-          "entry_ids" => n["entry_ids"],
-          "list_ids" => n["list_ids"],
-          "list_count" => n["list_ids"].length,
-          "neighbor_count" => n["neighbor_count"],
-          "top_neighbors" => n["top_neighbors"]
+          "nm" => n["name"],
+          "ai" => n["db_author_id"],
+          "ei" => n["entry_ids"],
+          "li" => n["list_ids"],
+          "lc" => n["list_ids"].length,
+          "nc" => n["neighbor_count"],
+          "tn" => n["top_neighbors"]
         }
-      }.sort_by { |n| -n["list_count"] },
-      "edges" => filter_edges_for_global(edges_full)
+      }.sort_by { |n| -n["lc"] },
+      "es" => filter_edges_for_global(edges_full)
     }
   end
 

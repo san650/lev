@@ -27,9 +27,17 @@ for (const list of (listsData.Lists || [])) {
   }
 }
 
+// graph.json uses 2-char field codes to keep the payload tiny. Decode
+// reference (mirror of src/graph.rb):
+//   gt  generated_at
+//   bk  books          au  authors
+//   ns  nodes          es  edges          ib  isolated_db_book_ids
+//   ei  entry_ids      li  list_ids       lc  list_count
+//   bi  db_book_id     ai  db_author_id   nm  name
+//   tn  top_neighbors  nc  neighbor_count
 const NODE_INDEX = {
-  book:   new Map(graph.books.nodes.map(n => [n.id, n])),
-  author: new Map(graph.authors.nodes.map(n => [n.id, n])),
+  book:   new Map(graph.bk.ns.map(n => [n.id, n])),
+  author: new Map(graph.au.ns.map(n => [n.id, n])),
 };
 
 // --- Display projections ---------------------------------------------------
@@ -39,14 +47,14 @@ const PROJECTIONS = { book: new Map(), author: new Map() };
 
 function projectBook(node) {
   if (PROJECTIONS.book.has(node.id)) return PROJECTIONS.book.get(node.id);
-  const firstEntry = (node.entry_ids || []).map(id => ENTRIES_BY_ID.get(id)).find(Boolean);
-  const dbBook = node.db_book_id != null ? BOOKS_BY_ID.get(node.db_book_id) : null;
+  const firstEntry = (node.ei || []).map(id => ENTRIES_BY_ID.get(id)).find(Boolean);
+  const dbBook = node.bi != null ? BOOKS_BY_ID.get(node.bi) : null;
   const e = firstEntry ? firstEntry.entry : null;
   const title = (dbBook && dbBook.title) || (e && (e.TitleSpanish || e.TitleOriginal)) || '(unknown)';
   const originalTitle = (dbBook && dbBook.original_title) || (e && e.TitleOriginal) || '';
   const author = dbBook ? authorsForBook(dbBook) : (e ? e.Author : '');
   const year = (e && e.FirstPublicationYear) ?? (dbBook && dbBook.first_publishing_date) ?? null;
-  const lists = (node.entry_ids || [])
+  const lists = (node.ei || [])
     .map(id => ENTRIES_BY_ID.get(id))
     .filter(Boolean)
     .map(({ list }) => list.Source);
@@ -59,12 +67,12 @@ function projectBook(node) {
     author,
     year,
     lists,
-    list_count: node.list_count || 0,
+    list_count: node.lc || 0,
     read,
     score: dbBook ? dbBook.score : null,
-    book_id: node.db_book_id,
-    top_neighbors: node.top_neighbors || [],
-    neighbor_count: node.neighbor_count || 0,
+    book_id: node.bi,
+    top_neighbors: node.tn || [],
+    neighbor_count: node.nc || 0,
   };
   PROJECTIONS.book.set(node.id, projected);
   return projected;
@@ -72,11 +80,11 @@ function projectBook(node) {
 
 function projectAuthor(node) {
   if (PROJECTIONS.author.has(node.id)) return PROJECTIONS.author.get(node.id);
-  const dbAuthor = node.db_author_id != null ? AUTHORS_BY_ID.get(node.db_author_id) : null;
+  const dbAuthor = node.ai != null ? AUTHORS_BY_ID.get(node.ai) : null;
   const aliases = dbAuthor ? (dbAuthor.aliases || []) : [];
   const listBooks = []; // [{list, books: [titles]}]
   const byList = new Map();
-  for (const eid of (node.entry_ids || [])) {
+  for (const eid of (node.ei || [])) {
     const rec = ENTRIES_BY_ID.get(eid);
     if (!rec) continue;
     const title = rec.entry.TitleSpanish || rec.entry.TitleOriginal || '';
@@ -89,14 +97,14 @@ function projectAuthor(node) {
   const projected = {
     kind: 'author',
     id: node.id,
-    name: node.name,
+    name: node.nm,
     aliases,
     listBooks,
     dbBooks,
-    list_count: node.list_count || 0,
-    author_id: node.db_author_id,
-    top_neighbors: node.top_neighbors || [],
-    neighbor_count: node.neighbor_count || 0,
+    list_count: node.lc || 0,
+    author_id: node.ai,
+    top_neighbors: node.tn || [],
+    neighbor_count: node.nc || 0,
   };
   PROJECTIONS.author.set(node.id, projected);
   return projected;
@@ -144,7 +152,6 @@ const stageSection  = document.getElementById('stage-section');
 const stageEmpty    = document.getElementById('stage-empty');
 const stage         = document.getElementById('stage');
 const stageEdges    = document.getElementById('stage-edges');
-const stageLabels   = document.getElementById('stage-labels');
 const stageNodes    = document.getElementById('stage-nodes');
 const stageRings    = document.getElementById('stage-rings');
 const stageControls = document.getElementById('stage-controls');
@@ -190,7 +197,7 @@ function haystack(mode, node) {
   return h;
 }
 
-const currentNodes = () => state.mode === 'book' ? graph.books.nodes : graph.authors.nodes;
+const currentNodes = () => state.mode === 'book' ? graph.bk.ns : graph.au.ns;
 const currentIndex = () => NODE_INDEX[state.mode];
 
 // --- Hash routing ----------------------------------------------------------
@@ -231,7 +238,12 @@ for (const btn of modeButtons) {
 // --- List rendering --------------------------------------------------------
 function renderList() {
   const q = normalize(state.filter);
-  const all = currentNodes();
+  // Sort by neighbor count desc: high-edge nodes are the most-connected
+  // ones, which doubles as a "what to read next" indicator for books
+  // (lots of strong co-occurrences with the rest of the canon).
+  const all = [...currentNodes()].sort((a, b) =>
+    (b.nc || 0) - (a.nc || 0) || (b.lc || 0) - (a.lc || 0)
+  );
   const matched = q ? all.filter(n => haystack(state.mode, n).includes(q)) : all;
   nodeList.replaceChildren();
 
@@ -254,7 +266,7 @@ function renderList() {
     : `${matched.length}`;
 
   const total = all.length;
-  const totalEdges = (state.mode === 'book' ? graph.books.edges : graph.authors.edges).length;
+  const totalEdges = (state.mode === 'book' ? graph.bk.es : graph.au.es).length;
   overview.textContent = `${total} ${state.mode === 'book' ? 'books' : 'authors'} · ${totalEdges} edges (w≥3)`;
 }
 
@@ -292,8 +304,10 @@ function buildRow(node, rank) {
   }
 
   const countEl = slot(frag, 'count');
-  countEl.textContent = p.list_count || 0;
-  countEl.classList.add(p.list_count >= 4 ? 'count-strong' : p.list_count >= 2 ? 'count-mid' : 'count-weak');
+  const nc = p.neighbor_count || 0;
+  countEl.textContent = nc;
+  countEl.setAttribute('title', 'Related books');
+  countEl.classList.add(nc >= 10 ? 'count-strong' : nc >= 3 ? 'count-mid' : 'count-weak');
 
   if (state.focusId === node.id) btn.classList.add('focused');
 
@@ -336,7 +350,6 @@ function scrollStageIntoView() {
 function renderFocused() {
   const node = state.focusId != null ? currentIndex().get(state.focusId) : null;
   stageEdges.replaceChildren();
-  stageLabels.replaceChildren();
   stageNodes.replaceChildren();
   if (stageRings) stageRings.replaceChildren();
   // Drop any per-edge gradient defs we created last render so they don't
@@ -364,7 +377,7 @@ function renderFocused() {
   stageControls.hidden = false;
   detail.hidden = false;
 
-  const all = node.top_neighbors || []; // already w >= 3 only
+  const all = node.tn || []; // already w >= 3 only
   const visible = all.slice(0, 12);
   drawFocusedGraph(node, visible);
   renderDetail(node);
@@ -386,10 +399,12 @@ function svg(tag, attrs = {}) {
   return el;
 }
 
-// Layout constants. The viewBox is 600×600 (-300..300) so labels at the
-// rim never clip even when wide.
-const R_INNER = 165;
-const R_OUTER = 235;
+// Floor for the inner ring radius — we'll grow past this whenever the
+// focused node has a long title that needs more clearance.
+const R_INNER_FLOOR = 165;
+const RING_GAP = 26;
+const CENTER_GAP = 28;
+const VIEWBOX_PAD = 48;
 const INNER_RING_CAP = 6;
 
 function drawFocusedGraph(center, neighbors) {
@@ -397,76 +412,168 @@ function drawFocusedGraph(center, neighbors) {
   const N = sorted.length;
   if (N === 0) {
     appendNodeCard(center, 0, 0, true, 0);
+    fitStageViewBox(0);
     return;
   }
 
-  // Two interleaved rings: heaviest neighbors close on the inner ring,
-  // lighter ones on the outer. Outer ring is angle-offset by half the
-  // inner step so labels stagger and don't share an angular column.
-  const inner = sorted.slice(0, Math.min(INNER_RING_CAP, N));
-  const outer = sorted.slice(Math.min(INNER_RING_CAP, N));
+  const centerGroup = appendNodeCard(center, 0, 0, true, 0);
+  const centerHalfW = centerGroup.__layout.w / 2;
+  const centerHalfH = centerGroup.__layout.h / 2;
 
-  const layouts = [];
-  inner.forEach((tuple, i) => {
-    const theta = (-Math.PI / 2) + (2 * Math.PI * i / inner.length);
-    layouts.push({ tuple, theta, r: R_INNER, ring: 'inner', index: i });
-  });
-  outer.forEach((tuple, i) => {
-    const step = outer.length > 0 ? (2 * Math.PI / outer.length) : 0;
-    const theta = (-Math.PI / 2) + (i + 0.5) * step;
-    layouts.push({ tuple, theta, r: R_OUTER, ring: 'outer', index: i });
-  });
+  // Build all orbit cards offstage so getBBox can return real dimensions
+  // — we'll size the rings and the viewBox to actually clear those.
+  const cards = sorted.map((tuple, i) => {
+    const peer = currentIndex().get(tuple[0]);
+    if (!peer) return null;
+    const g = appendNodeCard(peer, -10000, -10000, false, i + 1);
+    return {
+      tuple,
+      group: g,
+      w: g.__layout.w,
+      h: g.__layout.h,
+      i,
+    };
+  }).filter(Boolean);
 
-  // Render order matters: ring guides, then edges, then nodes (so nodes
-  // sit on top of the lines that connect them).
-  drawRings(layouts);
-  layouts.forEach((L, i) => drawEdge(L, i));
+  const splitAt = Math.min(INNER_RING_CAP, cards.length);
+  const inner = cards.slice(0, splitAt);
+  const outer = cards.slice(splitAt);
 
-  appendNodeCard(center, 0, 0, true, 0);
-  layouts.forEach((L, i) => {
-    const peer = currentIndex().get(L.tuple[0]);
-    if (!peer) return;
-    const x = Math.cos(L.theta) * L.r;
-    const y = Math.sin(L.theta) * L.r;
-    peer.__pos = { x, y };
-    appendNodeCard(peer, x, y, false, i + 1);
-  });
+  const innerMaxHalfW = inner.length ? Math.max(...inner.map(c => c.w / 2)) : 0;
+  const innerMaxHalfH = inner.length ? Math.max(...inner.map(c => c.h / 2)) : 0;
+  const outerMaxHalfW = outer.length ? Math.max(...outer.map(c => c.w / 2)) : 0;
+  const outerMaxHalfH = outer.length ? Math.max(...outer.map(c => c.h / 2)) : 0;
 
-  // After all cards are in the DOM and the browser has measured them,
-  // nudge any pair that physically overlaps along its radial line.
+  // Pick radii large enough that no orbit card can ever overlap the
+  // center, regardless of angle. Center is widest in W and shortest in H,
+  // orbit cards likewise — so the binding constraint is whichever sum
+  // (centerHalf* + orbitHalf*) is larger.
+  const rInner = Math.max(
+    R_INNER_FLOOR,
+    centerHalfW + innerMaxHalfW + CENTER_GAP,
+    centerHalfH + innerMaxHalfH + CENTER_GAP
+  );
+  // Outer ring sits a full inner-card-width past the inner ring so the
+  // two rings have a clean visual gap.
+  const rOuter = rInner
+    + Math.max(innerMaxHalfW, innerMaxHalfH)
+    + Math.max(outerMaxHalfW, outerMaxHalfH)
+    + RING_GAP;
+
+  distributeRing(inner, rInner, -Math.PI / 2);
+  const outerOffset = outer.length ? Math.PI / outer.length : 0;
+  distributeRing(outer, rOuter, -Math.PI / 2 + outerOffset);
+
+  for (const c of cards) {
+    const x = Math.cos(c.theta) * c.r;
+    const y = Math.sin(c.theta) * c.r;
+    c.x = x; c.y = y;
+    c.group.setAttribute('transform', `translate(${x}, ${y})`);
+    Object.assign(c.group.__layout, { x, y, vx: x, vy: y });
+  }
+
+  // Grow the viewBox to enclose every card's furthest corner.
+  const maxExtent = rOuter
+    + Math.max(outerMaxHalfW, outerMaxHalfH)
+    + VIEWBOX_PAD;
+  fitStageViewBox(maxExtent);
+
+  drawRings([rInner, rOuter]);
+  cards.forEach((c) => drawEdge(c));
+
   requestAnimationFrame(() => resolveCollisions());
 }
 
-function drawRings(layouts) {
+// Resize the SVG viewBox + the rendered (CSS-px) dimensions of the SVG
+// so the focused graph renders at 1:1 scale — every 1 user-unit in the
+// viewBox is one CSS pixel on screen. Text reads at its declared
+// font-size regardless of how wide the graph turned out to be. When the
+// SVG is wider than the section, the section scrolls.
+function fitStageViewBox(extent) {
+  const e = Math.max(extent, 280);
+  const size = e * 2;
+  stage.setAttribute('viewBox', `${-e} ${-e} ${size} ${size}`);
+  stage.setAttribute('width', size);
+  stage.setAttribute('height', size);
+  const bg = stage.querySelector('.stage-bg-rect');
+  if (bg) {
+    bg.setAttribute('x', -e);
+    bg.setAttribute('y', -e);
+    bg.setAttribute('width', size);
+    bg.setAttribute('height', size);
+  }
+  // Center the SVG inside its scroll container on initial render so the
+  // focused node lands in the middle of the viewport, not at top-left.
+  requestAnimationFrame(() => {
+    if (stageSection) {
+      stageSection.scrollLeft = Math.max(0, (size - stageSection.clientWidth) / 2);
+      stageSection.scrollTop  = Math.max(0, (size - stageSection.clientHeight) / 2);
+    }
+  });
+}
+
+// Allocate angular space around a ring proportional to each card's
+// measured width. The angular footprint of card i = (w_i + gap) / r.
+// When totals fit in 2π we sprinkle the surplus evenly so cards still
+// breathe; when they overflow we scale all footprints down so everything
+// still appears.
+function distributeRing(cards, r, startAngle) {
+  if (!cards.length) return;
+  const GAP_PX = 18;
+  const footprints = cards.map(c => (c.w + GAP_PX) / r);
+  const total = footprints.reduce((s, f) => s + f, 0);
+  const TWO_PI = 2 * Math.PI;
+
+  let angle = startAngle;
+  if (total >= TWO_PI) {
+    const scale = TWO_PI / total;
+    for (let i = 0; i < cards.length; i++) {
+      const a = footprints[i] * scale;
+      angle += a / 2;
+      cards[i].theta = angle;
+      cards[i].r = r;
+      angle += a / 2;
+    }
+  } else {
+    const extra = (TWO_PI - total) / cards.length;
+    for (let i = 0; i < cards.length; i++) {
+      const a = footprints[i] + extra;
+      angle += a / 2;
+      cards[i].theta = angle;
+      cards[i].r = r;
+      angle += a / 2;
+    }
+  }
+}
+
+function drawRings(radii) {
   // Faint concentric guide rings — they imply the orbital structure
   // without competing with the labels for attention.
-  const radii = [...new Set(layouts.map(L => L.r))];
-  for (const r of radii) {
+  for (const r of [...new Set(radii)]) {
     const c = svg('circle', { cx: 0, cy: 0, r });
     c.classList.add('orbit-ring');
     stageRings.appendChild(c);
   }
 }
 
-function drawEdge(L, i) {
-  const [, w] = L.tuple;
-  const x = Math.cos(L.theta) * L.r;
-  const y = Math.sin(L.theta) * L.r;
+function drawEdge(card) {
+  const { tuple, i, x, y } = card;
+  const [, w] = tuple;
 
-  // Each edge carries its own linear gradient so the line starts in the
-  // center's yellow tone and lands in the orange of the orbit. Defining
-  // it inline lets us aim the gradient along the edge direction without
-  // a global transform.
+  // Each edge carries its own linear gradient aimed along the line so
+  // we can fade from a warm yellow near the center to deeper orange at
+  // the orbit. Inline-defining lets us aim the gradient without a
+  // global transform.
   const gradId = `edge-grad-${i}`;
   const grad = svg('linearGradient', {
     id: gradId,
     gradientUnits: 'userSpaceOnUse',
     x1: 0, y1: 0, x2: x, y2: y,
   });
-  const s1 = svg('stop', { offset: '0%',   'stop-color': '#FFD37A', 'stop-opacity': 0.95 });
-  const s2 = svg('stop', { offset: '100%', 'stop-color': '#FF7A50', 'stop-opacity': 0.55 });
-  grad.appendChild(s1);
-  grad.appendChild(s2);
+  // Heavier weights get a brighter end-color and a fuller-opacity start.
+  const tier = edgeTier(w);
+  grad.appendChild(svg('stop', { offset: '0%',   'stop-color': tier.start, 'stop-opacity': tier.startOpacity }));
+  grad.appendChild(svg('stop', { offset: '100%', 'stop-color': tier.end,   'stop-opacity': tier.endOpacity }));
   stage.querySelector('defs').appendChild(grad);
 
   const line = svg('line', {
@@ -478,34 +585,25 @@ function drawEdge(L, i) {
   line.classList.add('edge');
   line.style.setProperty('--i', i);
   stageEdges.appendChild(line);
+}
 
-  // Weight label as a small filled pill on the edge midpoint, offset
-  // slightly perpendicular to the line so adjacent edges don't collide
-  // on each other's numbers.
-  const mx = x * 0.5;
-  const my = y * 0.5;
-  const perp = { x: -Math.sin(L.theta), y: Math.cos(L.theta) };
-  const off = 0;
-  const cx = mx + perp.x * off;
-  const cy = my + perp.y * off;
-
-  const pillR = 11;
-  const pillG = svg('g', { transform: `translate(${cx} ${cy})` });
-  pillG.classList.add('edge-pill');
-  pillG.style.setProperty('--i', i);
-  const circle = svg('circle', { r: pillR });
-  circle.classList.add('edge-pill-bg');
-  const tx = svg('text', { 'text-anchor': 'middle', y: 4 });
-  tx.classList.add('edge-pill-text');
-  tx.textContent = String(w);
-  pillG.appendChild(circle);
-  pillG.appendChild(tx);
-  stageLabels.appendChild(pillG);
+// Map edge weight (3..6 in current data) to a visual tier. Heavier
+// weights get a bolder hue and higher opacity so the eye reads relative
+// strength at a glance without any numeric label.
+function edgeTier(w) {
+  if (w >= 6) return { start: '#FFE08A', end: '#FF4C1A', startOpacity: 1.0, endOpacity: 0.95 };
+  if (w === 5) return { start: '#FFD37A', end: '#FF6B40', startOpacity: 0.95, endOpacity: 0.85 };
+  if (w === 4) return { start: '#FFC85C', end: '#FF7A50', startOpacity: 0.85, endOpacity: 0.7  };
+  return                  { start: '#E0B065', end: '#B45A40', startOpacity: 0.65, endOpacity: 0.5 };
 }
 
 function edgeWidth(w) {
-  // Discrete steps so edges read as ranks not analog values. Clamp.
-  return Math.max(1.5, Math.min(w - 1.5, 5));
+  // Discrete steps tuned so a glance distinguishes w=3 from w=6 even
+  // before color reads in.
+  if (w >= 6) return 9;
+  if (w === 5) return 7;
+  if (w === 4) return 5;
+  return 3;
 }
 
 // Build a refined "card" for one node: a rounded pill sized from the
@@ -534,7 +632,7 @@ function appendNodeCard(node, x, y, isCenter, animIndex) {
   // Insert text first so we can measure, then size the rect to fit. We
   // build a placeholder rect, append text, measure, then resize. This is
   // the only reliable way to get the rendered text width across browsers.
-  const rect = svg('rect', { rx: isCenter ? 18 : 14, ry: isCenter ? 18 : 14 });
+  const rect = svg('rect');
   rect.classList.add('node-bg');
   g.appendChild(rect);
 
@@ -552,6 +650,7 @@ function appendNodeCard(node, x, y, isCenter, animIndex) {
   }
 
   stageNodes.appendChild(g);
+  // Return the group so callers can stash measured dimensions.
 
   // Now measure. Title and sub each get their own row; the rect spans
   // both with generous padding.
@@ -584,6 +683,8 @@ function appendNodeCard(node, x, y, isCenter, animIndex) {
   g.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onActivate(); }
   });
+
+  return g;
 }
 
 // Pairwise nudge any cards whose AABBs overlap. The lighter-weight (later)

@@ -1346,14 +1346,18 @@
   }
   .stage-svg {
     display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-height: 70dvh;
-    /* Background is painted by the radial gradient <rect> inside the SVG;
-       this CSS background is the fallback for when defs haven't loaded. */
+    /* JS sets width/height attributes to match the dynamic viewBox so the
+       SVG renders at 1:1 scale — text CSS px equal screen px. On small
+       viewports this overflows; the section below scrolls. */
     background: var(--c-deep);
     user-select: none;
     -webkit-user-select: none;
+    margin-inline: auto;
+  }
+  #stage-section {
+    overflow: auto;
+    max-height: 78dvh;
+    -webkit-overflow-scrolling: touch;
   }
   .stage-controls {
     background: var(--c-deep);
@@ -1397,29 +1401,8 @@
     to   { opacity: 0.9; stroke-dasharray: 600; stroke-dashoffset: 0; }
   }
 
-  .edge-pill {
-    opacity: 0;
-    animation: lev-graph-pill-in 240ms ease-out forwards;
-    animation-delay: calc(280ms + var(--i, 0) * 25ms);
-  }
-  @keyframes lev-graph-pill-in {
-    from { opacity: 0; transform-box: fill-box; transform-origin: center; }
-    to   { opacity: 1; }
-  }
-  .edge-pill-bg {
-    fill: #2a1768;
-    stroke: rgba(255, 200, 92, 0.55);
-    stroke-width: 1;
-  }
-  .edge-pill-text {
-    fill: var(--c-yellow);
-    font-family: var(--f-mono);
-    font-weight: 700;
-    font-size: 11px;
-    text-anchor: middle;
-    pointer-events: none;
-    user-select: none;
-  }
+  /* Edge weight is encoded purely by line thickness + color tier now —
+     no numeric pill. Keeps the graph quieter and lets typography breathe. */
 
   .node-card {
     cursor: pointer;
@@ -1446,16 +1429,20 @@
     stroke: rgba(255, 230, 160, 0.9);
     stroke-width: 1.5;
   }
+  /* Font sizes balance readability against viewBox bloat — bigger cards
+     force a larger viewBox which makes everything shrink on small screens
+     (the SVG scales to fit). These values keep titles legible without
+     blowing the orbit out past comfortable on-screen scale. */
   .node-center .node-title {
     font-family: var(--f-title);
-    font-size: 22px;
+    font-size: 26px;
     fill: var(--c-deep);
     letter-spacing: 0.005em;
   }
   .node-center .node-sub {
     font-family: var(--f-body);
     font-weight: 600;
-    font-size: 12px;
+    font-size: 16px;
     fill: rgba(30, 16, 78, 0.75);
   }
 
@@ -1467,12 +1454,12 @@
   }
   .node-orbit .node-title {
     font-family: var(--f-title);
-    font-size: 15px;
+    font-size: 18px;
     fill: var(--c-white);
   }
   .node-orbit .node-sub {
     font-family: var(--f-body);
-    font-size: 11px;
+    font-size: 14px;
     fill: rgba(255, 255, 255, 0.78);
   }
 
