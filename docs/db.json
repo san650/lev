@@ -493,6 +493,13 @@
       "aliases": [
 
       ]
+    },
+    {
+      "id": 71,
+      "name": "Ryûnosuke Akutagawa",
+      "aliases": [
+
+      ]
     }
   ],
   "books": [
@@ -3878,6 +3885,29 @@
           "title": "El gran Gatsby"
         }
       ]
+    },
+    {
+      "id": 109,
+      "title": "Rashômon / En el bosque",
+      "subtitle": "",
+      "original_title": "羅生門",
+      "first_publishing_date": "1915",
+      "author_ids": [
+        71
+      ],
+      "identifiers": [
+        {
+          "type": "ISBN_13",
+          "value": "9789915965116"
+        }
+      ],
+      "covers": [
+
+      ],
+      "publisher": "Septimo Sello",
+      "saga": null,
+      "score": 9,
+      "review": ""
     }
   ],
   "publishers": [
@@ -3915,6 +3945,7 @@
     "Rayo",
     "Salamandra",
     "Seix Barral",
+    "Septimo Sello",
     "Sudamericana",
     "Tusquets"
   ]
