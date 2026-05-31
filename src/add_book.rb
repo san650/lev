@@ -7,6 +7,7 @@ require_relative "authors"
 require_relative "text"
 require_relative "git"
 require_relative "http_client"
+require_relative "lists_index"
 require_relative "lookup/lookup"
 require_relative "book_form/flatten"
 require_relative "book_form/build_options"
@@ -168,6 +169,7 @@ def add_book(db:, query:, http: DEFAULT_HTTP, picker: CLIPicker.new, save: true,
 
   if save
     books << book
+    ListsIndex.recompute_all!(db)
     save_db(db)
   end
 

@@ -9,9 +9,20 @@ export function registerServiceWorker(onDbUpdated) {
   if (document.readyState === 'complete') register();
   else window.addEventListener('load', register, { once: true });
 
-  if (typeof onDbUpdated === 'function') {
-    navigator.serviceWorker.addEventListener('message', (event) => {
-      if (event.data?.type === 'db-updated') onDbUpdated(event.data);
-    });
-  }
+  // `sw-update-reload` fires once when a NEW SW activates over a prior
+  // shell. Reload immediately so the user sees the deploy on the same
+  // launch instead of needing a second manual refresh. Guard against
+  // duplicate messages with a one-shot flag.
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    const type = event.data?.type;
+    if (type === 'sw-update-reload' && !reloading) {
+      reloading = true;
+      location.reload();
+      return;
+    }
+    if (type === 'db-updated' && typeof onDbUpdated === 'function') {
+      onDbUpdated(event.data);
+    }
+  });
 }

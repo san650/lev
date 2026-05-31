@@ -6,6 +6,7 @@ require_relative "authors"
 require_relative "interactive_select"
 require_relative "prompts"
 require_relative "constants"
+require_relative "lists_index"
 
 def format_author_line(author, index, db)
   count = author_book_count(db, author)
@@ -167,6 +168,7 @@ def edit_author_cli
               end
 
     if changed
+      ListsIndex.recompute_all!(db)
       save_db(db)
       UI.current.say "  Changes saved."
       system("git", "add", DB_PATH)

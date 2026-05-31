@@ -8,6 +8,7 @@ require_relative "text"
 require_relative "git"
 require_relative "display"
 require_relative "http_client"
+require_relative "lists_index"
 require_relative "lookup/lookup"
 require_relative "book_form/flatten"
 require_relative "book_form/build_options"
@@ -127,7 +128,10 @@ def edit_book(db:, book:, http: DEFAULT_HTTP, picker: CLIPicker.new, save: true,
 
   return { book: book, saved: false } unless picker.confirm_save
 
-  save_db(db) if save
+  if save
+    ListsIndex.recompute_all!(db)
+    save_db(db)
+  end
 
   { book: book, saved: save }
 end

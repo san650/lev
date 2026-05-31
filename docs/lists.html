@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Lev — recommended book lists">
+<title>Lev — Lists</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<meta name="theme-color" content="#1E104E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+<!-- Toolbar -->
+<div class="toolbar-sticky bg-deep">
+  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full">
+    <a href="/" class="flex items-center gap-3 shrink-0" style="text-decoration:none">
+      <img src="assets/logo.svg" alt="" class="w-6 h-6">
+      <mark class="font-brand text-lg fw-700 uppercase tracking-wide color-white bg-deep">Lev</mark>
+    </a>
+    <search class="flex-1">
+      <input id="filter" type="search" placeholder="Filter title, author, year..." class="w-full bg-white color-deep font-body text-sm py-2 px-3 search-input">
+    </search>
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Stats</a>
+      <a href="lists.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Lists</a>
+    </div>
+  </nav>
+  <div class="bg-orange accent-strip"></div>
+  <div class="list-meta bg-surface-alt flex items-center justify-between flex-wrap gap-3 px-3 py-2 max-w-app mx-auto w-full">
+    <output id="lists-overview" class="color-mid font-mono text-xs fw-700 tracking-wide uppercase"></output>
+    <output id="lists-filtered" class="color-mid font-mono text-xs fw-700 tracking-wide uppercase"></output>
+  </div>
+
+</div>
+
+<!-- List sections -->
+<main class="bg-white max-w-app mx-auto flex-1 w-full">
+  <nav id="lists-toc" class="lists-toc" aria-label="Lists table of contents">
+    <h2 class="lists-toc-label font-brand text-xs fw-700 uppercase tracking-wider color-orange px-4 py-3">Lists</h2>
+    <ol id="lists-toc-row" class="lists-toc-row"></ol>
+  </nav>
+  <div id="lists-root"></div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-purple flex items-center justify-between flex-wrap gap-2 px-5 py-3 max-w-app mx-auto w-full">
+  <small class="font-mono text-xs fw-700 color-white-50 tracking-sm">&copy; <time datetime="2026">2026</time> Santiago Ferreira &mdash; MIT License</small>
+  <a href="https://github.com/san650/books.42.uy" target="_blank" rel="noopener" class="font-mono text-xs fw-700 color-yellow tracking-sm footer-link">GitHub</a>
+</footer>
+
+<!-- Templates -->
+<template id="tpl-list-section">
+  <section class="list-section" data-slot="section">
+    <header class="list-header bg-purple px-4 py-3 flex items-baseline justify-between gap-3">
+      <div class="min-w-0 flex-1">
+        <h2 class="font-brand text-sm fw-700 uppercase tracking-wide color-yellow leading-tight" data-slot="name"></h2>
+      </div>
+      <data class="list-count font-mono text-sm fw-700 color-yellow shrink-0" data-slot="count"></data>
+    </header>
+    <p class="list-notes font-body text-xs italic color-mid bg-surface-alt px-4 py-2" data-slot="notes" hidden></p>
+    <div class="bg-orange accent-strip-2"></div>
+    <ol class="list-rows" data-slot="rows"></ol>
+  </section>
+</template>
+
+<template id="tpl-toc-item">
+  <li>
+    <a class="lists-toc-link font-mono text-xs fw-700 uppercase tracking-wide" data-slot="link">
+      <span data-slot="name"></span>
+      <span class="lists-toc-count" data-slot="count"></span>
+    </a>
+  </li>
+</template>
+
+<template id="tpl-list-row">
+  <li class="list-row">
+    <span class="list-pos font-mono text-xs fw-700 color-mid" data-slot="pos"></span>
+    <span class="list-check" data-slot="check" aria-hidden="true"></span>
+    <time class="list-year font-mono text-xs fw-700 color-mid" data-slot="year"></time>
+    <div class="list-title-block min-w-0">
+      <p class="list-title font-title text-base leading-tight color-deep" data-slot="title"></p>
+      <p class="list-original font-body text-xs color-mid" data-slot="original" hidden></p>
+    </div>
+    <p class="list-author font-body text-sm color-mid" data-slot="author"></p>
+  </li>
+</template>
+
+<script type="module" src="assets/lists.js"></script>
+</body>
+</html>

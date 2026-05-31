@@ -32,6 +32,8 @@
   const detailScore = document.getElementById('detail-score');
   const detailReviewSection = document.getElementById('detail-review-section');
   const detailReview = document.getElementById('detail-review');
+  const detailListsSection = document.getElementById('detail-lists-section');
+  const detailLists = document.getElementById('detail-lists');
 
   // --- State ---
   const SORT_MODE_STORAGE_KEY = 'lev.sortMode';
@@ -252,6 +254,10 @@
       img.src = defaultCover.file;
       img.alt = '';
       img.className = `${cls} ${fit}`;
+      // Defer off-screen covers so the initial paint doesn't block on 100+
+      // image decodes — the main cause of sluggish scroll on long lists.
+      img.loading = 'lazy';
+      img.decoding = 'async';
       img.onerror = () => img.replaceWith(buildPlaceholder(book, cls));
       return img;
     }
@@ -483,8 +489,35 @@
       detailReviewSection.classList.add('hidden');
     }
 
+    // Appears-in section: deep-link each list back to lists.html with a
+    // ?book=<id> param so lists.js can scroll to the matching row.
+    detailLists.replaceChildren();
+    const inLists = Array.isArray(book.in_lists) ? book.in_lists : [];
+    if (inLists.length > 0) {
+      for (const entry of inLists) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `lists.html?book=${book.id}`;
+        const pos = document.createElement('span');
+        pos.className = 'detail-list-pos';
+        pos.textContent = entry.position != null ? `#${entry.position}` : '–';
+        const name = document.createElement('span');
+        name.className = 'detail-list-name';
+        name.textContent = entry.list;
+        a.append(pos, name);
+        li.appendChild(a);
+        detailLists.appendChild(li);
+      }
+      detailListsSection.hidden = false;
+    } else {
+      detailListsSection.hidden = true;
+    }
+
     updateDetailNav();
     detailDialog.showModal();
+    // Worst-case modal can be tall (long review + many lists). Reset scroll
+    // to the top each time it opens so the user always sees the title first.
+    detailDialog.scrollTop = 0;
 
     // Reflect the open book in the URL hash so it can be deep-linked.
     if (book.id != null && location.hash !== `#${book.id}`) {

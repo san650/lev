@@ -46,7 +46,7 @@
       "id": 7,
       "name": "Frank Patrick Herbert",
       "aliases": [
-
+        "Frank Herbert"
       ]
     },
     {
@@ -196,7 +196,7 @@
       "id": 28,
       "name": "Kurt Vonnegut Jr.",
       "aliases": [
-
+        "Kurt Vonnegut"
       ]
     },
     {
@@ -588,6 +588,16 @@
       "review": "Típica novela de ciencia ficción de la década de los 70. Entretenida pero no envejeción bien. El final es abrupto ya que es parte de una saga.",
       "author_ids": [
         12
+      ],
+      "in_lists": [
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 18
+        },
+        {
+          "list": "Nebula Award (Best Novel winners)",
+          "position": 7
+        }
       ]
     },
     {
@@ -805,6 +815,16 @@
       "review": "",
       "author_ids": [
         1
+      ],
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 21
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 75
+        }
       ]
     },
     {
@@ -857,6 +877,12 @@
       "review": "",
       "author_ids": [
         16
+      ],
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 28
+        }
       ]
     },
     {
@@ -909,6 +935,12 @@
       "review": "",
       "author_ids": [
         8
+      ],
+      "in_lists": [
+        {
+          "list": "El Observador (Los diez mejores libros uruguayos del siglo XXI)",
+          "position": 8
+        }
       ]
     },
     {
@@ -987,6 +1019,20 @@
       "review": "",
       "author_ids": [
         13
+      ],
+      "in_lists": [
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 6
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 84
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 6
+        }
       ]
     },
     {
@@ -1036,6 +1082,12 @@
       "review": "",
       "author_ids": [
         8
+      ],
+      "in_lists": [
+        {
+          "list": "El Observador (Los diez mejores libros uruguayos del siglo XXI)",
+          "position": 4
+        }
       ]
     },
     {
@@ -1091,6 +1143,20 @@
       "review": "",
       "author_ids": [
         7
+      ],
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 59
+        },
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 12
+        },
+        {
+          "list": "Nebula Award (Best Novel winners)",
+          "position": 1
+        }
       ]
     },
     {
@@ -1146,6 +1212,16 @@
       "review": "",
       "author_ids": [
         3
+      ],
+      "in_lists": [
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 21
+        },
+        {
+          "list": "Nebula Award (Best Novel winners)",
+          "position": 10
+        }
       ]
     },
     {
@@ -1314,7 +1390,29 @@
       "publisher": "Anagrama",
       "saga": null,
       "score": 8,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 2
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 51
+        },
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 24
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 65
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 25
+        }
+      ]
     },
     {
       "id": 32,
@@ -1366,7 +1464,17 @@
       "publisher": "Anagrama",
       "saga": null,
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 1
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 66
+        }
+      ]
     },
     {
       "id": 34,
@@ -1470,7 +1578,21 @@
       "publisher": "Anagrama",
       "saga": null,
       "score": 3,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 4
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 82
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 67
+        }
+      ]
     },
     {
       "id": 38,
@@ -1662,7 +1784,17 @@
       "publisher": "Alianza",
       "saga": null,
       "score": 8,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 4
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 27
+        }
+      ]
     },
     {
       "id": 45,
@@ -1916,7 +2048,21 @@
       "publisher": "Cátedra",
       "saga": null,
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Jorge Luis Borges (Biblioteca Personal Jorge Luis Borges)",
+          "position": 45
+        },
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 16
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 98
+        }
+      ]
     },
     {
       "id": 55,
@@ -1968,7 +2114,13 @@
         "order": 1
       },
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 64
+        }
+      ]
     },
     {
       "id": 57,
@@ -1991,7 +2143,21 @@
       "publisher": "Minotauro",
       "saga": null,
       "score": 6,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 63
+        },
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 32
+        },
+        {
+          "list": "Nebula Award (Best Novel winners)",
+          "position": 21
+        }
+      ]
     },
     {
       "id": 58,
@@ -2040,7 +2206,29 @@
       "publisher": "Alianza",
       "saga": null,
       "score": 6,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 5
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 20
+        },
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 32
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 41
+        },
+        {
+          "list": "Rolling Stone US (When Holden Met Katniss: The 40 Best YA Novels)",
+          "position": 8
+        }
+      ]
     },
     {
       "id": 60,
@@ -2141,7 +2329,13 @@
       "publisher": "Mestas Ediciones",
       "saga": null,
       "score": 6,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 80
+        }
+      ]
     },
     {
       "id": 64,
@@ -2190,7 +2384,17 @@
       "publisher": "Booket",
       "saga": null,
       "score": 10,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 5
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 7
+        }
+      ]
     },
     {
       "id": 66,
@@ -2262,7 +2466,21 @@
       "publisher": "",
       "saga": null,
       "score": 9,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 65
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 34
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 16
+        }
+      ]
     },
     {
       "id": 69,
@@ -2288,7 +2506,13 @@
         "order": 1
       },
       "score": 10,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 46
+        }
+      ]
     },
     {
       "id": 70,
@@ -2360,7 +2584,17 @@
       "publisher": "",
       "saga": null,
       "score": 10,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "El País Semanal (Cien escritores en español eligen los 100 libros que cambiaron su vida)",
+          "position": 9
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 7
+        }
+      ]
     },
     {
       "id": 73,
@@ -2406,7 +2640,13 @@
       "publisher": "",
       "saga": null,
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 94
+        }
+      ]
     },
     {
       "id": 75,
@@ -2429,7 +2669,13 @@
       "publisher": "",
       "saga": null,
       "score": 9,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 31
+        }
+      ]
     },
     {
       "id": 76,
@@ -2455,7 +2701,13 @@
         "order": 1
       },
       "score": 5,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 32
+        }
+      ]
     },
     {
       "id": 77,
@@ -2504,7 +2756,13 @@
         "order": 1
       },
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 83
+        }
+      ]
     },
     {
       "id": 79,
@@ -2556,7 +2814,13 @@
         "order": 3
       },
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 53
+        }
+      ]
     },
     {
       "id": 81,
@@ -2579,7 +2843,13 @@
       "publisher": "",
       "saga": null,
       "score": 3,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 8
+        }
+      ]
     },
     {
       "id": 82,
@@ -2648,7 +2918,21 @@
       "publisher": "Minotauro",
       "saga": null,
       "score": 4,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Hugo Award (Best Novel winners)",
+          "position": 17
+        },
+        {
+          "list": "Nebula Award (Best Novel winners)",
+          "position": 6
+        },
+        {
+          "list": "The Guardian (The 100 best novels of all time, 2026)",
+          "position": 91
+        }
+      ]
     },
     {
       "id": 85,
@@ -2694,7 +2978,17 @@
       "publisher": "",
       "saga": null,
       "score": 9,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 52
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 29
+        }
+      ]
     },
     {
       "id": 87,
@@ -2864,7 +3158,25 @@
       "publisher": "",
       "saga": null,
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 9
+        },
+        {
+          "list": "TIME Magazine (All-TIME 100 Novels)",
+          "position": 91
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 3
+        },
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 89
+        }
+      ]
     },
     {
       "id": 94,
@@ -2887,7 +3199,13 @@
       "publisher": "",
       "saga": null,
       "score": 10,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Lista anónima",
+          "position": 6
+        }
+      ]
     },
     {
       "id": 95,
@@ -3026,7 +3344,13 @@
       "publisher": "",
       "saga": null,
       "score": 8,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 37
+        }
+      ]
     },
     {
       "id": 100,
@@ -3127,7 +3451,13 @@
       "publisher": "",
       "saga": null,
       "score": 4,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads (Best Books Ever)",
+          "position": 17
+        }
+      ]
     },
     {
       "id": 104,

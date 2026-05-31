@@ -1,18 +1,22 @@
-const VERSION = 'v10'
+const VERSION = 'v17'
 const CACHE_NAME = `lev-${VERSION}`
 
 const SHELL_ASSETS = [
   '/',
   '/index.html',
   '/stats.html',
-  '/manifest.json',
+  '/lists.html',
+  '/lists.json',
+  '/manifest.webmanifest',
   '/assets/main.css',
   '/assets/main.js',
   '/assets/stats.js',
+  '/assets/lists.js',
   '/assets/register-sw.js',
   '/assets/logo.svg',
   '/assets/icon-192.png',
   '/assets/icon-512.png',
+  '/assets/icon-maskable.svg',
   '/assets/space-mono-700.woff2',
   '/assets/dm-serif-display-400.woff2',
   '/assets/work-sans-400.woff2',
@@ -33,15 +37,23 @@ self.addEventListener('install', e => {
   )
 })
 
-// Activate: clean old caches
+// Activate: clean old caches and, when the cause is an UPDATE (any pre-
+// existing lev-* cache existed), broadcast a one-shot RELOAD so controlled
+// pages refresh into the new shell on the same launch — avoiding the
+// classic "deploy lands on second reload" PWA bug. First installs have no
+// prior cache, so the message is suppressed and the page just boots.
 self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-      ))
-      .then(() => self.clients.claim())
-  )
+  e.waitUntil((async () => {
+    const keys = await caches.keys()
+    const oldKeys = keys.filter(k => k.startsWith('lev-') && k !== CACHE_NAME)
+    const wasUpdate = oldKeys.length > 0
+    await Promise.all(oldKeys.map(k => caches.delete(k)))
+    await self.clients.claim()
+    if (wasUpdate) {
+      const clients = await self.clients.matchAll({ type: 'window' })
+      for (const c of clients) c.postMessage({ type: 'sw-update-reload' })
+    }
+  })())
 })
 
 // Cacheable only when the response is a successful, same-origin, basic
