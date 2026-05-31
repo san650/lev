@@ -1,4 +1,4 @@
-const VERSION = 'v24'
+const VERSION = 'v27'
 const CACHE_NAME = `lev-${VERSION}`
 
 const SHELL_ASSETS = [
@@ -6,12 +6,16 @@ const SHELL_ASSETS = [
   '/index.html',
   '/stats.html',
   '/lists.html',
+  '/graph.html',
   '/lists.json',
+  '/graph.json',
   '/manifest.webmanifest',
   '/assets/main.css',
   '/assets/main.js',
   '/assets/stats.js',
   '/assets/lists.js',
+  '/assets/graph.js',
+  '/assets/idb-cache.js',
   '/assets/register-sw.js',
   '/assets/logo.svg',
   '/assets/icon-192.png',

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Lev — book & author similarity graph">
+<title>Lev — Graph</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<meta name="theme-color" content="#1E104E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+<!-- Toolbar -->
+<div class="toolbar-sticky bg-deep">
+  <nav class="bg-deep flex items-center gap-4 px-3 py-4 w-full">
+    <a href="/" class="flex items-center gap-3 shrink-0" style="text-decoration:none">
+      <img src="assets/logo.svg" alt="" class="w-6 h-6">
+      <mark class="font-brand text-lg fw-700 uppercase tracking-wide color-white bg-deep">Lev</mark>
+    </a>
+    <search class="flex-1">
+      <input id="filter" type="search" placeholder="Filter title, author, year..." class="w-full bg-white color-deep font-body text-sm py-2 px-3 search-input">
+    </search>
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="stats.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Stats</a>
+      <a href="lists.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-white-65 nav-link">Lists</a>
+      <a href="graph.html" class="font-mono text-xs fw-700 uppercase tracking-wide color-orange nav-link" aria-current="page">Graph</a>
+    </div>
+  </nav>
+  <div class="bg-orange accent-strip"></div>
+  <div class="graph-mode bg-surface-alt flex items-center justify-between flex-wrap gap-3 px-3 py-2 max-w-app mx-auto w-full">
+    <div class="graph-mode-toggle" role="tablist" aria-label="Graph mode">
+      <button type="button" data-mode="book" class="mode-btn font-mono text-xs fw-700 uppercase tracking-wide" aria-pressed="true">Books</button>
+      <button type="button" data-mode="author" class="mode-btn font-mono text-xs fw-700 uppercase tracking-wide" aria-pressed="false">Authors</button>
+    </div>
+    <output id="graph-overview" class="color-mid font-mono text-xs fw-700 tracking-wide uppercase"></output>
+  </div>
+</div>
+
+<main class="max-w-app mx-auto flex-1 w-full flex flex-col">
+
+  <!-- Stage: focused node + 1-hop neighborhood -->
+  <section id="stage-section" class="bg-deep relative">
+    <div id="stage-empty" class="stage-empty px-5 py-8 text-center">
+      <p class="font-brand text-xs fw-700 uppercase tracking-wider color-yellow mb-3">↓ Pick a node below ↓</p>
+      <p class="font-body text-sm color-white-65 leading-relaxed">Each book is connected to other books it shares lists with. The thicker the line, the more lists they share.</p>
+    </div>
+    <svg id="stage" class="stage-svg" viewBox="-260 -260 520 520" preserveAspectRatio="xMidYMid meet" hidden aria-hidden="true">
+      <g id="stage-edges"></g>
+      <g id="stage-labels"></g>
+      <g id="stage-nodes"></g>
+    </svg>
+    <div id="stage-controls" class="stage-controls px-3 py-2 flex items-center justify-between gap-3" hidden>
+      <button id="toggle-weak" type="button" class="font-mono text-xs fw-700 uppercase tracking-wide stage-ctrl" aria-pressed="false">+ W=1 edges</button>
+      <output id="stage-meta" class="color-white-65 font-mono text-xs fw-700 tracking-wide uppercase"></output>
+      <button id="clear-focus" type="button" class="font-mono text-xs fw-700 uppercase tracking-wide stage-ctrl">Clear</button>
+    </div>
+  </section>
+
+  <!-- Detail panel: full info on focused node -->
+  <section id="detail" class="bg-surface" hidden>
+    <article id="detail-body" class="detail-card">
+      <!-- filled by JS using a template -->
+    </article>
+  </section>
+
+  <!-- List: every node, searchable, click to focus -->
+  <section id="list-section" class="bg-white">
+    <header class="list-section-header bg-purple flex items-baseline justify-between gap-3 px-4 py-3">
+      <h2 id="list-heading" class="font-brand text-sm fw-700 uppercase tracking-wide color-yellow leading-tight">All books</h2>
+      <data id="list-count" class="font-mono text-sm fw-700 color-yellow shrink-0"></data>
+    </header>
+    <div class="bg-orange accent-strip-2"></div>
+    <ol id="node-list" class="node-list"></ol>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-purple flex items-center justify-between flex-wrap gap-2 px-5 py-3 max-w-app mx-auto w-full">
+  <small class="font-mono text-xs fw-700 color-white-50 tracking-sm">&copy; <time datetime="2026">2026</time> Santiago Ferreira &mdash; MIT License</small>
+  <a href="https://github.com/san650/books.42.uy" target="_blank" rel="noopener" class="font-mono text-xs fw-700 color-yellow tracking-sm footer-link">GitHub</a>
+</footer>
+
+<!-- Templates -->
+<template id="tpl-list-row">
+  <li class="node-row">
+    <button type="button" class="node-row-btn" data-slot="btn">
+      <span class="node-row-rank font-mono text-xs fw-700 color-mid" data-slot="rank"></span>
+      <span class="node-row-check" data-slot="check" aria-hidden="true"></span>
+      <time class="node-row-year font-mono text-xs fw-700 color-mid" data-slot="year"></time>
+      <div class="node-row-text min-w-0">
+        <p class="node-row-title font-title text-base leading-tight color-deep" data-slot="title"></p>
+        <p class="node-row-sub font-body text-xs color-mid" data-slot="sub" hidden></p>
+      </div>
+      <data class="node-row-count font-mono text-xs fw-700" data-slot="count" title="Lists where this appears"></data>
+    </button>
+  </li>
+</template>
+
+<template id="tpl-detail-book">
+  <header class="detail-head bg-deep px-4 py-4">
+    <p class="font-brand text-xs fw-700 uppercase tracking-wider color-orange mb-2" data-slot="kind">Book</p>
+    <h2 class="font-title text-2xl color-white leading-tight" data-slot="title"></h2>
+    <p class="font-body text-sm color-white-65 italic mt-2" data-slot="original" hidden></p>
+    <p class="font-body text-sm color-yellow mt-2" data-slot="author"></p>
+  </header>
+  <div class="bg-orange accent-strip"></div>
+  <dl class="detail-stats grid">
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Year</dt>
+      <dd class="font-mono text-lg fw-700 color-deep" data-slot="year">–</dd>
+    </div>
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Lists</dt>
+      <dd class="font-mono text-lg fw-700 color-orange" data-slot="list-count"></dd>
+    </div>
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Score</dt>
+      <dd class="font-mono text-lg fw-700" data-slot="score">–</dd>
+    </div>
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Status</dt>
+      <dd class="font-mono text-xs fw-700 uppercase tracking-wide detail-status" data-slot="status"></dd>
+    </div>
+  </dl>
+  <div class="detail-section bg-surface-alt px-4 py-3">
+    <p class="font-mono text-xs fw-700 uppercase tracking-wide color-mid mb-2">Appears in</p>
+    <ul class="detail-list" data-slot="lists"></ul>
+  </div>
+  <div class="detail-section detail-section-thin px-4 py-3">
+    <a class="detail-link font-mono text-xs fw-700 uppercase tracking-wide" data-slot="deeplink" hidden>Open in my library →</a>
+  </div>
+</template>
+
+<template id="tpl-detail-author">
+  <header class="detail-head bg-deep px-4 py-4">
+    <p class="font-brand text-xs fw-700 uppercase tracking-wider color-orange mb-2" data-slot="kind">Author</p>
+    <h2 class="font-title text-2xl color-white leading-tight" data-slot="name"></h2>
+    <p class="font-body text-xs color-white-50 mt-2" data-slot="aliases" hidden></p>
+  </header>
+  <div class="bg-orange accent-strip"></div>
+  <dl class="detail-stats grid">
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">Lists</dt>
+      <dd class="font-mono text-lg fw-700 color-orange" data-slot="list-count"></dd>
+    </div>
+    <div class="detail-stat">
+      <dt class="font-mono text-xs fw-700 uppercase tracking-wide color-mid">In library</dt>
+      <dd class="font-mono text-lg fw-700 color-deep" data-slot="db-count"></dd>
+    </div>
+  </dl>
+  <div class="detail-section bg-surface-alt px-4 py-3">
+    <p class="font-mono text-xs fw-700 uppercase tracking-wide color-mid mb-2">Listed books</p>
+    <ul class="detail-list" data-slot="list-books"></ul>
+  </div>
+  <div class="detail-section detail-section-thin px-4 py-3">
+    <p class="font-mono text-xs fw-700 uppercase tracking-wide color-mid mb-2">In my library</p>
+    <ul class="detail-list" data-slot="db-books"></ul>
+  </div>
+</template>
+
+<script type="module" src="assets/graph.js"></script>
+</body>
+</html>

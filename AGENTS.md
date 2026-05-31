@@ -22,6 +22,8 @@ make format         # ruby scripts/precommit.rb — sort + pretty-print db.json
 make lookup         # ruby scripts/lookup.rb <ISBN-or-text-query> — fetch metadata from Open Library, Goodreads, Wikipedia (debug tool, does not mutate db.json)
 make import         # ruby scripts/import_queue.rb — batch-import books from queue/
 make reindex        # ruby scripts/rebuild_lists_index.rb — recompute per-book in_lists from docs/lists.json (pass --dry to preview)
+make graph          # ruby scripts/rebuild_graph.rb — recompute docs/graph.json (similarity edges for graph.html)
+make ingest <file>  # ruby scripts/ingest_list.rb — append new lists from a JSON file, then auto-run reindex + graph
 make test           # run test/**/*_test.rb
 ```
 
@@ -150,7 +152,7 @@ Book rows have fixed height. Title and subtitle each allow max 2 lines with elli
 
 ## Lists
 
-Recommended book lists (Goodreads, NYT, Guardian, TIME, awards, etc.) are stored in `docs/lists.json` and rendered by `docs/lists.html` + `docs/assets/lists.js`. Each list entry is `{ Source, SourceUrl?, Notes, Confidence, ConfidenceReason, "Books/Stories": [{ Position, TitleOriginal, TitleSpanish, Author, FirstPublicationYear, ... }] }`.
+Recommended book lists (Goodreads, NYT, Guardian, TIME, awards, etc.) are stored in `docs/lists.json` and rendered by `docs/lists.html` + `docs/assets/lists.js`. Top-level `next_list_id` and `next_entry_id` counters track stable int IDs assigned to each list and each entry — these IDs are the join keys consumed by the graph build and must never be re-used. Each list entry is `{ id, Position, TitleOriginal, TitleSpanish, Author, FirstPublicationYear, ... }`; each list is `{ id, Source, SourceUrl?, Notes, Confidence, ConfidenceReason, "Books/Stories": [...] }`.
 
 `src/lists_index.rb` matches list entries to db books by normalized title + author tokens (NFD strip diacritics, lowercase, ASCII alphanumerics + CJK). It also resolves sagas: a list entry that names a saga collapses to its first volume when the db contains ≥2 books in that saga.
 
@@ -158,11 +160,44 @@ Recommended book lists (Goodreads, NYT, Guardian, TIME, awards, etc.) are stored
 1. Proposes list-side author names as aliases when they token-match a db author whose book the entry already resolved to (data hygiene).
 2. Writes per-book `in_lists` arrays back into `db.json`. Pass `--dry` to preview without writing.
 
-When adding new lists, append to `docs/lists.json`'s `Lists` array, then run `make reindex`.
+`make ingest <file>` is the one-shot import path for adding new curated lists. It validates the input schema, appends new lists to `docs/lists.json` (assigning fresh int IDs to the list and its entries from the top-of-file counters), then chains `make reindex` and `make graph` so all derived indices stay coherent. Skips lists whose `Source` is already present, so it's safe to re-run.
+
+## Similarity Graph
+
+`docs/graph.html` exposes the lists corpus as two interactive 1-hop similarity graphs — one over books, one over authors. The user picks a node from a filterable list; the page centers it in an SVG stage, fans its strongest neighbors around it, and shows full metadata (title, author, year, lists membership, read status, score) in a docked detail panel.
+
+### Similarity algorithm (in plain words)
+
+For each curated list in `docs/lists.json`, take every pair of books that appear together in that list and add **1** to their similarity score. Do the same for authors (each list contributes a +1 to every pair of authors that has at least one book in it). After processing all 22 lists, each pair carries a number from 1 to 22 — its **co-occurrence weight**, which is just "how many of these recommended lists agree these two belong together."
+
+Pairs of weight 1 or 2 are coincidence and discarded. Only edges with **w ≥ 3** are written to `docs/graph.json`. In the focused view, each book/author also carries its `top_neighbors` array sorted by weight, so the radial layout is cheap to render: the heaviest connections sit closest to the center.
+
+This is mathematically the same as the unnormalized intersection of the two nodes' list-membership sets: `w(A, B) = |Lists(A) ∩ Lists(B)|`. Books that appear in many lists naturally accumulate more neighbors; books in only one or two lists have no incident edges at all (their lists likely don't overlap with enough peers to clear the w ≥ 3 floor). That's fine — the graph is a map of canon, not of coverage.
+
+### Files
+
+- `src/graph.rb` builds the graph. Emits a slim `docs/graph.json` carrying only IDs and relationships — no titles, authors, or years. The client merges with `db.json` and `lists.json` at render time.
+- `scripts/rebuild_graph.rb` is the CLI entry point used by `make graph`.
+- `scripts/migrate_list_ids.rb` is a one-shot used once to assign initial IDs to legacy lists.json — kept for reference, idempotent if re-run.
+- `docs/assets/graph.js` does the merge + SVG rendering + hash routing.
+
+### graph.json shape
+
+```json
+{
+  "generated_at": "...",
+  "books":   { "nodes": [...], "edges": [[a, b, w], ...], "isolated_db_book_ids": [...] },
+  "authors": { "nodes": [...], "edges": [[a, b, w], ...] }
+}
+```
+
+Each node: `{ id, entry_ids, list_ids, list_count, db_book_id?, top_neighbors: [[id, w], ...], neighbor_count }`. Edges are compact `[a, b, w]` tuples (~50% smaller than object literals) sorted by weight descending.
+
+The file is compact-printed (no pretty whitespace) because it's a fully-derived artifact — `make graph` rewrites it from scratch, so diff-friendliness adds no value.
 
 ## PWA / Service Worker
 
-`docs/sw.js` precaches the app shell + assets and serves `db.json` with stale-while-revalidate. **Bump `VERSION` at the top of `sw.js` whenever shell assets change** so deployed clients refresh on next launch.
+`docs/sw.js` precaches the app shell + assets and serves `db.json` with stale-while-revalidate. **Bump `VERSION` at the top of `sw.js` whenever shell assets change** so deployed clients refresh on next launch. Shell assets include the three HTML pages, their JS modules, fonts, icons, `lists.json`, and `graph.json`.
 
 ## Deployment
 
