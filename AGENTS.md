@@ -11,15 +11,21 @@ Read `PERSONA.md` file to define the Claude Code Persona
 ## Commands
 
 ```bash
-make server   # python3 -m http.server 8000 -d docs
-make add      # ruby scripts/add_book.rb — search Goodreads, scrape metadata, download cover
-make edit     # ruby scripts/edit_book.rb — refetch metadata from Goodreads, field-by-field update
-make review   # ruby scripts/add_review.rb — select book, edit review via $EDITOR
-make author   # ruby scripts/edit_author.rb — manage authors: edit name, aliases, merge, delete
-make lookup   # ruby scripts/lookup.rb <ISBN-or-text-query> — fetch metadata from Open Library, Goodreads, and Wikipedia (debug tool, does not mutate db.json)
+make server         # python3 -m http.server 8000 -d docs
+make add            # ruby scripts/add_book.rb — search Goodreads, scrape metadata, download cover
+make edit | update  # ruby scripts/edit_book.rb — refetch metadata from Goodreads, field-by-field update
+make review         # ruby scripts/add_review.rb — select book, edit review via $EDITOR
+make author         # ruby scripts/edit_author.rb — manage authors: edit name, aliases, merge, delete
+make score          # ruby scripts/score_books.rb — bulk-set scores
+make distribution   # ruby scripts/distribution.rb — print score/year/etc. distributions
+make format         # ruby scripts/precommit.rb — sort + pretty-print db.json
+make lookup         # ruby scripts/lookup.rb <ISBN-or-text-query> — fetch metadata from Open Library, Goodreads, Wikipedia (debug tool, does not mutate db.json)
+make import         # ruby scripts/import_queue.rb — batch-import books from queue/
+make reindex        # ruby scripts/rebuild_lists_index.rb — recompute per-book in_lists from docs/lists.json (pass --dry to preview)
+make test           # run test/**/*_test.rb
 ```
 
-All scripts auto-commit to git after changes: "Add/Edit/Review &lt;title&gt; - &lt;author&gt; book".
+Mutating scripts auto-commit to git after changes: "Add/Edit/Review &lt;title&gt; - &lt;author&gt; book".
 
 ## Design System
 
@@ -111,23 +117,28 @@ Global `keydown` listener with `selectedIndex` tracking. All keybindings are sup
 
 ## File Conventions
 
-- `docs/` contains all files served by GitHub Pages: `index.html`, `404.html`, `CNAME`, `assets/`, `covers/`, `db.json`.
-- `docs/db.json`: pretty-printed object with `authors` (sorted by name) and `books` (sorted by title). Saga books sort by saga name then order within the group.
+- `docs/` contains everything served by GitHub Pages: `index.html` (book list), `stats.html`, `lists.html`, `404.html`, `CNAME`, `manifest.webmanifest`, `sw.js`, `assets/`, `covers/`, `db.json`, `lists.json`.
+- `docs/db.json`: pretty-printed object with `authors` (sorted by name), `books` (sorted by title), `publishers`. Saga books sort by saga name then order within the group.
+- `docs/lists.json`: curated recommended book lists. Read-only at runtime; sourced manually.
 - Cover files: `docs/covers/<id>-<sanitized-title>.<ext>` (lowercase, hyphens, no spaces).
-- Ruby scripts live in `scripts/` and share common functionality via `common.rb` (loaded with `require_relative`).
+- Ruby code is split across two directories:
+  - `scripts/` — thin executable entry points (one per `make` target), each `require_relative`s a module from `src/`.
+  - `src/` — library modules with shared logic (`db.rb`, `authors.rb`, `lists_index.rb`, `http_client.rb`, `lookup/`, `book_form/`, etc.).
+- `test/` holds `*_test.rb` files run by `make test`.
+- `queue/` holds pending books for `make import`.
 - `specs/` holds brainstorm and planning docs (e.g. `YYYY-MM-DD-<topic>-brainstorm.md`). All design discussions, brainstorms, and implementation plans go here — never in `docs/` (which is reserved for the deployed site).
 
 ## Data Schema
 
-`db.json` is an object with two top-level collections:
+`db.json` is an object with three top-level collections:
 
 ```json
-{ "authors": [...], "books": [...] }
+{ "authors": [...], "books": [...], "publishers": [...] }
 ```
 
 **Authors** have: `id`, `name`, `aliases[]`. Sorted alphabetically by name.
 
-**Books** have: `id`, `title`, `subtitle` (optional), `original_title`, `first_publishing_date`, `publish_dates[]`, `author_ids[]` (references to author IDs), `identifiers[]` (with `type` and `value`), `covers[]` (with `file` and `default`), `publisher`, `score` (1-10, optional — null shows as "–"), `review`, `saga` (optional — `{ "name": "...", "order": 1 }` or null). Sorted alphabetically by title.
+**Books** have: `id`, `title`, `subtitle` (optional), `original_title`, `first_publishing_date`, `publish_dates[]`, `author_ids[]` (references to author IDs), `identifiers[]` (with `type` and `value`), `covers[]` (with `file` and `default`), `publisher`, `score` (1-10, optional — null shows as "–"), `review`, `saga` (optional — `{ "name": "...", "order": 1 }` or null), `in_lists` (optional — array of `{ list, position, title }` recomputed by `make reindex`). Sorted alphabetically by title.
 
 ### Saga Grouping (Option A — Group Header)
 
@@ -136,6 +147,22 @@ Books in a saga are grouped together under a colored header row (purple bg, bran
 ### Text Overflow
 
 Book rows have fixed height. Title and subtitle each allow max 2 lines with ellipsis (`-webkit-line-clamp: 2`). Original title and author are single-line with `text-overflow: ellipsis`.
+
+## Lists
+
+Recommended book lists (Goodreads, NYT, Guardian, TIME, awards, etc.) are stored in `docs/lists.json` and rendered by `docs/lists.html` + `docs/assets/lists.js`. Each list entry is `{ Source, SourceUrl?, Notes, Confidence, ConfidenceReason, "Books/Stories": [{ Position, TitleOriginal, TitleSpanish, Author, FirstPublicationYear, ... }] }`.
+
+`src/lists_index.rb` matches list entries to db books by normalized title + author tokens (NFD strip diacritics, lowercase, ASCII alphanumerics + CJK). It also resolves sagas: a list entry that names a saga collapses to its first volume when the db contains ≥2 books in that saga.
+
+`make reindex` runs `scripts/rebuild_lists_index.rb` which:
+1. Proposes list-side author names as aliases when they token-match a db author whose book the entry already resolved to (data hygiene).
+2. Writes per-book `in_lists` arrays back into `db.json`. Pass `--dry` to preview without writing.
+
+When adding new lists, append to `docs/lists.json`'s `Lists` array, then run `make reindex`.
+
+## PWA / Service Worker
+
+`docs/sw.js` precaches the app shell + assets and serves `db.json` with stale-while-revalidate. **Bump `VERSION` at the top of `sw.js` whenever shell assets change** so deployed clients refresh on next launch.
 
 ## Deployment
 

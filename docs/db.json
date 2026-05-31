@@ -866,6 +866,11 @@
           "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
           "position": 30,
           "title": "La naranja mecánica"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 7,
+          "title": "La naranja mecánica"
         }
       ]
     },
@@ -1217,6 +1222,11 @@
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 26,
           "title": "Dune"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 1,
+          "title": "Dune"
         }
       ]
     },
@@ -1484,6 +1494,11 @@
           "list": "The Guardian (The 100 best novels of all time, 2026)",
           "position": 25,
           "title": "Lolita"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 25,
+          "title": "Lolita"
         }
       ]
     },
@@ -1547,6 +1562,11 @@
         {
           "list": "TIME Magazine (All-TIME 100 Novels)",
           "position": 66,
+          "title": "En el camino"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 15,
           "title": "En el camino"
         }
       ]
@@ -1679,6 +1699,11 @@
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 44,
           "title": "Matadero cinco"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 9,
+          "title": "Matadero cinco"
         }
       ]
     },
@@ -1752,7 +1777,14 @@
       "publisher": "Lumen",
       "saga": null,
       "score": 7,
-      "review": ""
+      "review": "",
+      "in_lists": [
+        {
+          "list": "Goodreads Listopia (Best Historical Fiction)",
+          "position": 12,
+          "title": "El nombre de la rosa"
+        }
+      ]
     },
     {
       "id": 40,
@@ -1783,6 +1815,11 @@
         {
           "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
           "position": 27,
+          "title": "Crónicas marcianas"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 10,
           "title": "Crónicas marcianas"
         }
       ]
@@ -2294,6 +2331,11 @@
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 37,
           "title": "Neuromante"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 5,
+          "title": "Neuromante"
         }
       ]
     },
@@ -2369,6 +2411,11 @@
         {
           "list": "Rolling Stone US (When Holden Met Katniss: The 40 Best YA Novels)",
           "position": 8,
+          "title": "El guardián entre el centeno"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 5,
           "title": "El guardián entre el centeno"
         }
       ]
@@ -2648,6 +2695,11 @@
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 3,
           "title": "1984"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 2,
+          "title": "1984"
         }
       ]
     },
@@ -2799,6 +2851,11 @@
         {
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 23,
+          "title": "¿Sueñan los androides con ovejas eléctricas?"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 3,
           "title": "¿Sueñan los androides con ovejas eléctricas?"
         }
       ]
@@ -2962,6 +3019,16 @@
           "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
           "position": 1,
           "title": "El Señor de los Anillos"
+        },
+        {
+          "list": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
+          "position": 2,
+          "title": "La comunidad del anillo"
+        },
+        {
+          "list": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
+          "position": 20,
+          "title": "El Señor de los Anillos"
         }
       ]
     },
@@ -2993,6 +3060,11 @@
       "in_lists": [
         {
           "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
+          "position": 13,
+          "title": "Las dos torres"
+        },
+        {
+          "list": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
           "position": 13,
           "title": "Las dos torres"
         }
@@ -3028,6 +3100,11 @@
           "list": "TIME Magazine (The 100 Best Fantasy Books of All Time)",
           "position": 14,
           "title": "El retorno del rey"
+        },
+        {
+          "list": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
+          "position": 10,
+          "title": "El retorno del rey"
         }
       ]
     },
@@ -3058,6 +3135,11 @@
           "list": "Goodreads (Best Books Ever)",
           "position": 8,
           "title": "El hobbit y El señor de los anillos"
+        },
+        {
+          "list": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
+          "position": 4,
+          "title": "El hobbit"
         }
       ]
     },
@@ -3160,6 +3242,11 @@
         {
           "list": "Penguin Random House (The Best Science Fiction Books of All Time)",
           "position": 35,
+          "title": "La mano izquierda de la oscuridad"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 9,
           "title": "La mano izquierda de la oscuridad"
         }
       ]
@@ -3411,6 +3498,11 @@
           "list": "Goodreads (Best Books Ever)",
           "position": 89,
           "title": "Matar a un ruiseñor"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 1,
+          "title": "Matar a un ruiseñor"
         }
       ]
     },
@@ -3440,6 +3532,11 @@
         {
           "list": "Lista anónima",
           "position": 6,
+          "title": "La conjura de los necios"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 22,
           "title": "La conjura de los necios"
         }
       ]
@@ -3603,6 +3700,16 @@
         {
           "list": "NPR / WWEnd (Top 100 Science-Fiction, Fantasy Books)",
           "position": 7,
+          "title": "Fahrenheit 451"
+        },
+        {
+          "list": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+          "position": 8,
+          "title": "Fahrenheit 451"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 20,
           "title": "Fahrenheit 451"
         }
       ]
@@ -3882,6 +3989,11 @@
         {
           "list": "The Guardian (The 100 best novels of all time, 2026)",
           "position": 11,
+          "title": "El gran Gatsby"
+        },
+        {
+          "list": "Goodreads Listopia (The Great American Novel)",
+          "position": 2,
           "title": "El gran Gatsby"
         }
       ]

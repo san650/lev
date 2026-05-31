@@ -1,7 +1,7 @@
-.PHONY: server add edit update review author score distribution format lookup import test help
+.PHONY: server add edit update review author score distribution format lookup import reindex test help
 
 # Order matters for the help / unknown-target message — keep it readable.
-LEV_TARGETS := server add edit update review author score distribution format lookup import test
+LEV_TARGETS := server add edit update review author score distribution format lookup import reindex test
 
 help:
 	@echo "Lev — available make targets:"
@@ -36,6 +36,9 @@ lookup:
 
 import:
 	ruby scripts/import_queue.rb
+
+reindex:
+	ruby scripts/rebuild_lists_index.rb $(filter-out $@,$(MAKECMDGOALS))
 
 test:
 	@ruby -Isrc -Itest -e "Dir['test/**/*_test.rb'].sort.each { |f| load f }" 2>/dev/null

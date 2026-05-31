@@ -8766,6 +8766,1624 @@
           "Notes": null
         }
       ]
+    },
+    {
+      "Source": "The New York Times Book Review (The 100 Best Books of the 21st Century)",
+      "Notes": "Lista publicada en 2024. NYT Book Review encuestó a 503 novelistas, escritores de no ficción, poetas, críticos y otros lectores, con intervención editorial del Book Review. Es la lista NYT más alineada con el estilo de canon literario usado en este proyecto.",
+      "Confidence": 4,
+      "ConfidenceReason": "La lista base es estable y ampliamente reproducida. La confianza baja levemente por la normalización manual de títulos en español y años de primera publicación.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "My Brilliant Friend",
+          "TitleSpanish": "La amiga estupenda",
+          "Author": "Elena Ferrante",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Warmth of Other Suns",
+          "TitleSpanish": "El calor de otros soles",
+          "Author": "Isabel Wilkerson",
+          "FirstPublicationYear": 2010
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Wolf Hall",
+          "TitleSpanish": "En la corte del lobo",
+          "Author": "Hilary Mantel",
+          "FirstPublicationYear": 2009
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Known World",
+          "TitleSpanish": null,
+          "Author": "Edward P. Jones",
+          "FirstPublicationYear": 2003
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "The Corrections",
+          "TitleSpanish": "Las correcciones",
+          "Author": "Jonathan Franzen",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "2666",
+          "TitleSpanish": "2666",
+          "Author": "Roberto Bolaño",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "The Underground Railroad",
+          "TitleSpanish": "El ferrocarril subterráneo",
+          "Author": "Colson Whitehead",
+          "FirstPublicationYear": 2016
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Austerlitz",
+          "TitleSpanish": "Austerlitz",
+          "Author": "W. G. Sebald",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "Never Let Me Go",
+          "TitleSpanish": "Nunca me abandones",
+          "Author": "Kazuo Ishiguro",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "Gilead",
+          "TitleSpanish": "Gilead",
+          "Author": "Marilynne Robinson",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Brief Wondrous Life of Oscar Wao",
+          "TitleSpanish": "La maravillosa vida breve de Óscar Wao",
+          "Author": "Junot Díaz",
+          "FirstPublicationYear": 2007
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "The Year of Magical Thinking",
+          "TitleSpanish": "El año del pensamiento mágico",
+          "Author": "Joan Didion",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "The Road",
+          "TitleSpanish": "La carretera",
+          "Author": "Cormac McCarthy",
+          "FirstPublicationYear": 2006
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Outline",
+          "TitleSpanish": "A contraluz",
+          "Author": "Rachel Cusk",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "Pachinko",
+          "TitleSpanish": "Pachinko",
+          "Author": "Min Jin Lee",
+          "FirstPublicationYear": 2017
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Amazing Adventures of Kavalier & Clay",
+          "TitleSpanish": "Las asombrosas aventuras de Kavalier y Clay",
+          "Author": "Michael Chabon",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "The Sellout",
+          "TitleSpanish": "El vendido",
+          "Author": "Paul Beatty",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "Lincoln in the Bardo",
+          "TitleSpanish": "Lincoln en el Bardo",
+          "Author": "George Saunders",
+          "FirstPublicationYear": 2017
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "Say Nothing",
+          "TitleSpanish": "No digas nada",
+          "Author": "Patrick Radden Keefe",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "Erasure",
+          "TitleSpanish": "Erasure",
+          "Author": "Percival Everett",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "Evicted",
+          "TitleSpanish": "Desahuciadas",
+          "Author": "Matthew Desmond",
+          "FirstPublicationYear": 2016
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "Behind the Beautiful Forevers",
+          "TitleSpanish": "Tras las montañas bellas",
+          "Author": "Katherine Boo",
+          "FirstPublicationYear": 2012
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Hateship, Friendship, Courtship, Loveship, Marriage",
+          "TitleSpanish": "Odio, amistad, noviazgo, amor, matrimonio",
+          "Author": "Alice Munro",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "The Overstory",
+          "TitleSpanish": "El clamor de los bosques",
+          "Author": "Richard Powers",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "Random Family",
+          "TitleSpanish": null,
+          "Author": "Adrian Nicole LeBlanc",
+          "FirstPublicationYear": 2003
+        },
+        {
+          "Position": 26,
+          "TitleOriginal": "Atonement",
+          "TitleSpanish": "Expiación",
+          "Author": "Ian McEwan",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 27,
+          "TitleOriginal": "Americanah",
+          "TitleSpanish": "Americanah",
+          "Author": "Chimamanda Ngozi Adichie",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 28,
+          "TitleOriginal": "Cloud Atlas",
+          "TitleSpanish": "El atlas de las nubes",
+          "Author": "David Mitchell",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 29,
+          "TitleOriginal": "The Last Samurai",
+          "TitleSpanish": "El último samurái",
+          "Author": "Helen DeWitt",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 30,
+          "TitleOriginal": "Sing, Unburied, Sing",
+          "TitleSpanish": "La canción de los vivos y los muertos",
+          "Author": "Jesmyn Ward",
+          "FirstPublicationYear": 2017
+        },
+        {
+          "Position": 31,
+          "TitleOriginal": "White Teeth",
+          "TitleSpanish": "Dientes blancos",
+          "Author": "Zadie Smith",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 32,
+          "TitleOriginal": "The Line of Beauty",
+          "TitleSpanish": "La línea de la belleza",
+          "Author": "Alan Hollinghurst",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 33,
+          "TitleOriginal": "Salvage the Bones",
+          "TitleSpanish": "Quedan los huesos",
+          "Author": "Jesmyn Ward",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 34,
+          "TitleOriginal": "Citizen: An American Lyric",
+          "TitleSpanish": "Ciudadana",
+          "Author": "Claudia Rankine",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 35,
+          "TitleOriginal": "Fun Home",
+          "TitleSpanish": "Fun Home",
+          "Author": "Alison Bechdel",
+          "FirstPublicationYear": 2006
+        },
+        {
+          "Position": 36,
+          "TitleOriginal": "Between the World and Me",
+          "TitleSpanish": "Entre el mundo y yo",
+          "Author": "Ta-Nehisi Coates",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 37,
+          "TitleOriginal": "The Years",
+          "TitleSpanish": "Los años",
+          "Author": "Annie Ernaux",
+          "FirstPublicationYear": 2008
+        },
+        {
+          "Position": 38,
+          "TitleOriginal": "The Savage Detectives",
+          "TitleSpanish": "Los detectives salvajes",
+          "Author": "Roberto Bolaño",
+          "FirstPublicationYear": 1998
+        },
+        {
+          "Position": 39,
+          "TitleOriginal": "A Visit from the Goon Squad",
+          "TitleSpanish": "El tiempo es un canalla",
+          "Author": "Jennifer Egan",
+          "FirstPublicationYear": 2010
+        },
+        {
+          "Position": 40,
+          "TitleOriginal": "H Is for Hawk",
+          "TitleSpanish": "H de halcón",
+          "Author": "Helen Macdonald",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 41,
+          "TitleOriginal": "Small Things Like These",
+          "TitleSpanish": "Cosas pequeñas como esas",
+          "Author": "Claire Keegan",
+          "FirstPublicationYear": 2021
+        },
+        {
+          "Position": 42,
+          "TitleOriginal": "A Brief History of Seven Killings",
+          "TitleSpanish": "Breve historia de siete asesinatos",
+          "Author": "Marlon James",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 43,
+          "TitleOriginal": "Postwar",
+          "TitleSpanish": "Postguerra",
+          "Author": "Tony Judt",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 44,
+          "TitleOriginal": "The Fifth Season",
+          "TitleSpanish": "La quinta estación",
+          "Author": "N. K. Jemisin",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 45,
+          "TitleOriginal": "The Argonauts",
+          "TitleSpanish": "Los argonautas",
+          "Author": "Maggie Nelson",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 46,
+          "TitleOriginal": "The Goldfinch",
+          "TitleSpanish": "El jilguero",
+          "Author": "Donna Tartt",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 47,
+          "TitleOriginal": "A Mercy",
+          "TitleSpanish": "Una bendición",
+          "Author": "Toni Morrison",
+          "FirstPublicationYear": 2008
+        },
+        {
+          "Position": 48,
+          "TitleOriginal": "Persepolis",
+          "TitleSpanish": "Persépolis",
+          "Author": "Marjane Satrapi",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 49,
+          "TitleOriginal": "The Vegetarian",
+          "TitleSpanish": "La vegetariana",
+          "Author": "Han Kang",
+          "FirstPublicationYear": 2007
+        },
+        {
+          "Position": 50,
+          "TitleOriginal": "Trust",
+          "TitleSpanish": "Fortuna",
+          "Author": "Hernan Díaz",
+          "FirstPublicationYear": 2022
+        },
+        {
+          "Position": 51,
+          "TitleOriginal": "Life After Life",
+          "TitleSpanish": "Una y otra vez",
+          "Author": "Kate Atkinson",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 52,
+          "TitleOriginal": "Train Dreams",
+          "TitleSpanish": "Sueños de trenes",
+          "Author": "Denis Johnson",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 53,
+          "TitleOriginal": "Runaway",
+          "TitleSpanish": "Escapada",
+          "Author": "Alice Munro",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 54,
+          "TitleOriginal": "Tenth of December",
+          "TitleSpanish": "Diez de diciembre",
+          "Author": "George Saunders",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 55,
+          "TitleOriginal": "The Looming Tower",
+          "TitleSpanish": "La torre elevada",
+          "Author": "Lawrence Wright",
+          "FirstPublicationYear": 2006
+        },
+        {
+          "Position": 56,
+          "TitleOriginal": "The Flamethrowers",
+          "TitleSpanish": "Los lanzallamas",
+          "Author": "Rachel Kushner",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 57,
+          "TitleOriginal": "Nickel and Dimed",
+          "TitleSpanish": "Por cuatro duros",
+          "Author": "Barbara Ehrenreich",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 58,
+          "TitleOriginal": "Stay True",
+          "TitleSpanish": null,
+          "Author": "Hua Hsu",
+          "FirstPublicationYear": 2022
+        },
+        {
+          "Position": 59,
+          "TitleOriginal": "Middlesex",
+          "TitleSpanish": "Middlesex",
+          "Author": "Jeffrey Eugenides",
+          "FirstPublicationYear": 2002
+        },
+        {
+          "Position": 60,
+          "TitleOriginal": "Heavy",
+          "TitleSpanish": "Heavy",
+          "Author": "Kiese Laymon",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 61,
+          "TitleOriginal": "Demon Copperhead",
+          "TitleSpanish": "Demon Copperhead",
+          "Author": "Barbara Kingsolver",
+          "FirstPublicationYear": 2022
+        },
+        {
+          "Position": 62,
+          "TitleOriginal": "10:04",
+          "TitleSpanish": "10:04",
+          "Author": "Ben Lerner",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 63,
+          "TitleOriginal": "Veronica",
+          "TitleSpanish": "Verónica",
+          "Author": "Mary Gaitskill",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 64,
+          "TitleOriginal": "The Great Believers",
+          "TitleSpanish": "Los optimistas",
+          "Author": "Rebecca Makkai",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 65,
+          "TitleOriginal": "The Plot Against America",
+          "TitleSpanish": "La conjura contra América",
+          "Author": "Philip Roth",
+          "FirstPublicationYear": 2004
+        },
+        {
+          "Position": 66,
+          "TitleOriginal": "We the Animals",
+          "TitleSpanish": "Nosotros los animales",
+          "Author": "Justin Torres",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 67,
+          "TitleOriginal": "Far From the Tree",
+          "TitleSpanish": "Lejos del árbol",
+          "Author": "Andrew Solomon",
+          "FirstPublicationYear": 2012
+        },
+        {
+          "Position": 68,
+          "TitleOriginal": "The Friend",
+          "TitleSpanish": "El amigo",
+          "Author": "Sigrid Nunez",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 69,
+          "TitleOriginal": "The New Jim Crow",
+          "TitleSpanish": "El color de la justicia",
+          "Author": "Michelle Alexander",
+          "FirstPublicationYear": 2010
+        },
+        {
+          "Position": 70,
+          "TitleOriginal": "All Aunt Hagar’s Children",
+          "TitleSpanish": null,
+          "Author": "Edward P. Jones",
+          "FirstPublicationYear": 2006
+        },
+        {
+          "Position": 71,
+          "TitleOriginal": "The Copenhagen Trilogy",
+          "TitleSpanish": "Trilogía de Copenhague",
+          "Author": "Tove Ditlevsen",
+          "FirstPublicationYear": 1967
+        },
+        {
+          "Position": 72,
+          "TitleOriginal": "Secondhand Time",
+          "TitleSpanish": "El fin del Homo sovieticus",
+          "Author": "Svetlana Alexievich",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 73,
+          "TitleOriginal": "The Passage of Power",
+          "TitleSpanish": "Los años de Lyndon Johnson. El paso del poder",
+          "Author": "Robert A. Caro",
+          "FirstPublicationYear": 2012
+        },
+        {
+          "Position": 74,
+          "TitleOriginal": "Olive Kitteridge",
+          "TitleSpanish": "Olive Kitteridge",
+          "Author": "Elizabeth Strout",
+          "FirstPublicationYear": 2008
+        },
+        {
+          "Position": 75,
+          "TitleOriginal": "Exit West",
+          "TitleSpanish": "Bienvenidos a Occidente",
+          "Author": "Mohsin Hamid",
+          "FirstPublicationYear": 2017
+        },
+        {
+          "Position": 76,
+          "TitleOriginal": "Tomorrow, and Tomorrow, and Tomorrow",
+          "TitleSpanish": "Mañana, y mañana, y mañana",
+          "Author": "Gabrielle Zevin",
+          "FirstPublicationYear": 2022
+        },
+        {
+          "Position": 77,
+          "TitleOriginal": "An American Marriage",
+          "TitleSpanish": "Un matrimonio americano",
+          "Author": "Tayari Jones",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 78,
+          "TitleOriginal": "Septology",
+          "TitleSpanish": "Septología",
+          "Author": "Jon Fosse",
+          "FirstPublicationYear": 2019
+        },
+        {
+          "Position": 79,
+          "TitleOriginal": "A Manual for Cleaning Women",
+          "TitleSpanish": "Manual para mujeres de la limpieza",
+          "Author": "Lucia Berlin",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 80,
+          "TitleOriginal": "The Story of the Lost Child",
+          "TitleSpanish": "La niña perdida",
+          "Author": "Elena Ferrante",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 81,
+          "TitleOriginal": "Pulphead",
+          "TitleSpanish": "Pulphead",
+          "Author": "John Jeremiah Sullivan",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 82,
+          "TitleOriginal": "Hurricane Season",
+          "TitleSpanish": "Temporada de huracanes",
+          "Author": "Fernanda Melchor",
+          "FirstPublicationYear": 2017
+        },
+        {
+          "Position": 83,
+          "TitleOriginal": "When We Cease to Understand the World",
+          "TitleSpanish": "Un verdor terrible",
+          "Author": "Benjamín Labatut",
+          "FirstPublicationYear": 2020
+        },
+        {
+          "Position": 84,
+          "TitleOriginal": "The Emperor of All Maladies",
+          "TitleSpanish": "El emperador de todos los males",
+          "Author": "Siddhartha Mukherjee",
+          "FirstPublicationYear": 2010
+        },
+        {
+          "Position": 85,
+          "TitleOriginal": "Pastoralia",
+          "TitleSpanish": "Pastoralia",
+          "Author": "George Saunders",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 86,
+          "TitleOriginal": "Frederick Douglass: Prophet of Freedom",
+          "TitleSpanish": null,
+          "Author": "David W. Blight",
+          "FirstPublicationYear": 2018
+        },
+        {
+          "Position": 87,
+          "TitleOriginal": "Detransition, Baby",
+          "TitleSpanish": "Detransición, baby",
+          "Author": "Torrey Peters",
+          "FirstPublicationYear": 2021
+        },
+        {
+          "Position": 88,
+          "TitleOriginal": "The Collected Stories of Lydia Davis",
+          "TitleSpanish": "Cuentos completos",
+          "Author": "Lydia Davis",
+          "FirstPublicationYear": 2009
+        },
+        {
+          "Position": 89,
+          "TitleOriginal": "The Return",
+          "TitleSpanish": "El regreso",
+          "Author": "Hisham Matar",
+          "FirstPublicationYear": 2016
+        },
+        {
+          "Position": 90,
+          "TitleOriginal": "The Sympathizer",
+          "TitleSpanish": "El simpatizante",
+          "Author": "Viet Thanh Nguyen",
+          "FirstPublicationYear": 2015
+        },
+        {
+          "Position": 91,
+          "TitleOriginal": "The Human Stain",
+          "TitleSpanish": "La mancha humana",
+          "Author": "Philip Roth",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 92,
+          "TitleOriginal": "The Days of Abandonment",
+          "TitleSpanish": "Los días del abandono",
+          "Author": "Elena Ferrante",
+          "FirstPublicationYear": 2002
+        },
+        {
+          "Position": 93,
+          "TitleOriginal": "Station Eleven",
+          "TitleSpanish": "Estación Once",
+          "Author": "Emily St. John Mandel",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 94,
+          "TitleOriginal": "On Beauty",
+          "TitleSpanish": "Sobre la belleza",
+          "Author": "Zadie Smith",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 95,
+          "TitleOriginal": "Bring Up the Bodies",
+          "TitleSpanish": "Una reina en el estrado",
+          "Author": "Hilary Mantel",
+          "FirstPublicationYear": 2012
+        },
+        {
+          "Position": 96,
+          "TitleOriginal": "Wayward Lives, Beautiful Experiments",
+          "TitleSpanish": null,
+          "Author": "Saidiya Hartman",
+          "FirstPublicationYear": 2019
+        },
+        {
+          "Position": 97,
+          "TitleOriginal": "Men We Reaped",
+          "TitleSpanish": "Los hombres que segamos",
+          "Author": "Jesmyn Ward",
+          "FirstPublicationYear": 2013
+        },
+        {
+          "Position": 98,
+          "TitleOriginal": "Bel Canto",
+          "TitleSpanish": "Bel canto",
+          "Author": "Ann Patchett",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 99,
+          "TitleOriginal": "How to Be Both",
+          "TitleSpanish": "Cómo ser ambas cosas",
+          "Author": "Ali Smith",
+          "FirstPublicationYear": 2014
+        },
+        {
+          "Position": 100,
+          "TitleOriginal": "Tree of Smoke",
+          "TitleSpanish": "Árbol de humo",
+          "Author": "Denis Johnson",
+          "FirstPublicationYear": 2007
+        }
+      ]
+    },
+    {
+      "Source": "The New York Times Book Review (The 10 Best Books of 2025)",
+      "Notes": "Lista anual corta de 5 títulos de ficción y 5 de no ficción seleccionados por The New York Times Book Review.",
+      "Confidence": 4,
+      "ConfidenceReason": "Lista anual identificable y completa; la confianza baja por títulos en español todavía no consolidados para varias obras recientes.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "Angel Down",
+          "TitleSpanish": null,
+          "Author": "Daniel Kraus",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Director",
+          "TitleSpanish": "El director",
+          "Author": "Daniel Kehlmann",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "The Loneliness of Sonia and Sunny",
+          "TitleSpanish": null,
+          "Author": "Kiran Desai",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Sisters",
+          "TitleSpanish": null,
+          "Author": "Jonas Hassen Khemiri",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Stone Yard Devotional",
+          "TitleSpanish": "Devocional del patio de piedra",
+          "Author": "Charlotte Wood",
+          "FirstPublicationYear": 2023
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "A Marriage at Sea",
+          "TitleSpanish": null,
+          "Author": "Sophie Elmhirst",
+          "FirstPublicationYear": 2024
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Mother Emanuel",
+          "TitleSpanish": null,
+          "Author": "Kevin Sack",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Mother Mary Comes to Me",
+          "TitleSpanish": null,
+          "Author": "Arundhati Roy",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "There Is No Place for Us",
+          "TitleSpanish": null,
+          "Author": "Brian Goldstone",
+          "FirstPublicationYear": 2025
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "Wild Thing",
+          "TitleSpanish": null,
+          "Author": "Sue Prideaux",
+          "FirstPublicationYear": 2025
+        }
+      ]
+    },
+    {
+      "Source": "The New York Times Combined Print & E-Book Fiction Best Sellers (Most Weeks on List, 2011-2025)",
+      "Notes": "Ranking derivado de la lista NYT Combined Print & E-Book Fiction, introducida en febrero de 2011. No es una lista oficial 'all-time' del NYT; se usa como aproximación de best sellers de ficción por permanencia en la lista.",
+      "Confidence": 3,
+      "ConfidenceReason": "Los datos base proceden de una lista NYT, pero el ranking 'most weeks' es un análisis secundario publicado por Romancing the Data, no un ranking oficial NYT.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "Where the Crawdads Sing",
+          "TitleSpanish": "La chica salvaje",
+          "Author": "Delia Owens",
+          "FirstPublicationYear": 2018,
+          "WeeksOnList": 193
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "It Ends With Us",
+          "TitleSpanish": "Romper el círculo",
+          "Author": "Colleen Hoover",
+          "FirstPublicationYear": 2016,
+          "WeeksOnList": 146
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Gone Girl",
+          "TitleSpanish": "Perdida",
+          "Author": "Gillian Flynn",
+          "FirstPublicationYear": 2012,
+          "WeeksOnList": 122
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Seven Husbands of Evelyn Hugo",
+          "TitleSpanish": "Los siete maridos de Evelyn Hugo",
+          "Author": "Taylor Jenkins Reid",
+          "FirstPublicationYear": 2017,
+          "WeeksOnList": 115
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "The Housemaid",
+          "TitleSpanish": "La asistenta",
+          "Author": "Freida McFadden",
+          "FirstPublicationYear": 2022,
+          "WeeksOnList": 105
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "The Girl on the Train",
+          "TitleSpanish": "La chica del tren",
+          "Author": "Paula Hawkins",
+          "FirstPublicationYear": 2015,
+          "WeeksOnList": 102
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Fourth Wing",
+          "TitleSpanish": "Alas de sangre",
+          "Author": "Rebecca Yarros",
+          "FirstPublicationYear": 2023,
+          "WeeksOnList": 101
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Verity",
+          "TitleSpanish": "Verity",
+          "Author": "Colleen Hoover",
+          "FirstPublicationYear": 2018,
+          "WeeksOnList": 96
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "All the Light We Cannot See",
+          "TitleSpanish": "La luz que no puedes ver",
+          "Author": "Anthony Doerr",
+          "FirstPublicationYear": 2014,
+          "WeeksOnList": 91
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Nightingale",
+          "TitleSpanish": "El ruiseñor",
+          "Author": "Kristin Hannah",
+          "FirstPublicationYear": 2015,
+          "WeeksOnList": 88
+        }
+      ]
+    },
+    {
+      "Source": "Goodreads Listopia (Science Fiction: The 100 Best Novels)",
+      "SourceUrl": "https://www.goodreads.com/list/show/25621.Science_Fiction_The_100_Best_Novels",
+      "Notes": "Lista basada en Science Fiction: The 100 Best Novels. Se incluyen los primeros 25 puestos visibles/verificados de Goodreads.",
+      "Confidence": 4,
+      "ConfidenceReason": "La lista tiene alcance cerrado y descripción específica. Baja de 5 por normalización manual de títulos en español y años.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "Dune",
+          "TitleSpanish": "Dune",
+          "Author": "Frank Herbert",
+          "FirstPublicationYear": 1965
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "1984",
+          "TitleSpanish": "1984",
+          "Author": "George Orwell",
+          "FirstPublicationYear": 1949
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "Do Androids Dream of Electric Sheep?",
+          "TitleSpanish": "¿Sueñan los androides con ovejas eléctricas?",
+          "Author": "Philip K. Dick",
+          "FirstPublicationYear": 1968
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "Flowers for Algernon",
+          "TitleSpanish": "Flores para Algernon",
+          "Author": "Daniel Keyes",
+          "FirstPublicationYear": 1966
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Neuromancer",
+          "TitleSpanish": "Neuromante",
+          "Author": "William Gibson",
+          "FirstPublicationYear": 1984
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "Childhood's End",
+          "TitleSpanish": "El fin de la infancia",
+          "Author": "Arthur C. Clarke",
+          "FirstPublicationYear": 1953
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "A Clockwork Orange",
+          "TitleSpanish": "La naranja mecánica",
+          "Author": "Anthony Burgess",
+          "FirstPublicationYear": 1962
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Fahrenheit 451",
+          "TitleSpanish": "Fahrenheit 451",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1953
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "The Left Hand of Darkness",
+          "TitleSpanish": "La mano izquierda de la oscuridad",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1969
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Martian Chronicles",
+          "TitleSpanish": "Crónicas marcianas",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1950
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Day of the Triffids",
+          "TitleSpanish": "El día de los trífidos",
+          "Author": "John Wyndham",
+          "FirstPublicationYear": 1951
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "The Dispossessed: An Ambiguous Utopia",
+          "TitleSpanish": "Los desposeídos",
+          "Author": "Ursula K. Le Guin",
+          "FirstPublicationYear": 1974
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "The Man in the High Castle",
+          "TitleSpanish": "El hombre en el castillo",
+          "Author": "Philip K. Dick",
+          "FirstPublicationYear": 1962
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "A Canticle for Leibowitz",
+          "TitleSpanish": "Cántico por Leibowitz",
+          "Author": "Walter M. Miller Jr.",
+          "FirstPublicationYear": 1959
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "More Than Human",
+          "TitleSpanish": "Más que humano",
+          "Author": "Theodore Sturgeon",
+          "FirstPublicationYear": 1953
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Demolished Man",
+          "TitleSpanish": "El hombre demolido",
+          "Author": "Alfred Bester",
+          "FirstPublicationYear": 1953
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "The Stars My Destination",
+          "TitleSpanish": "Las estrellas, mi destino",
+          "Author": "Alfred Bester",
+          "FirstPublicationYear": 1956
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "Cat's Cradle",
+          "TitleSpanish": "Cuna de gato",
+          "Author": "Kurt Vonnegut Jr.",
+          "FirstPublicationYear": 1963
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "The Puppet Masters",
+          "TitleSpanish": "Amos de títeres",
+          "Author": "Robert A. Heinlein",
+          "FirstPublicationYear": 1951
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "Way Station",
+          "TitleSpanish": "Estación de tránsito",
+          "Author": "Clifford D. Simak",
+          "FirstPublicationYear": 1963
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "Alas, Babylon",
+          "TitleSpanish": "¡Ay, Babilonia!",
+          "Author": "Pat Frank",
+          "FirstPublicationYear": 1959
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "The Midwich Cuckoos",
+          "TitleSpanish": "Los cuclillos de Midwich",
+          "Author": "John Wyndham",
+          "FirstPublicationYear": 1957
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "The Three Stigmata of Palmer Eldritch",
+          "TitleSpanish": "Los tres estigmas de Palmer Eldritch",
+          "Author": "Philip K. Dick",
+          "FirstPublicationYear": 1965
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "The End of Eternity",
+          "TitleSpanish": "El fin de la eternidad",
+          "Author": "Isaac Asimov",
+          "FirstPublicationYear": 1955
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "Mission of Gravity",
+          "TitleSpanish": "Misión de gravedad",
+          "Author": "Hal Clement",
+          "FirstPublicationYear": 1954
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "The Shadow of the Torturer",
+          "TitleSpanish": "La sombra del torturador",
+          "Author": "Gene Wolfe",
+          "FirstPublicationYear": 1980,
+          "Notes": "Goodreads shows a tie at position 25."
+        }
+      ]
+    },
+    {
+      "Source": "Goodreads Listopia (The Great American Novel)",
+      "SourceUrl": "https://www.goodreads.com/list/show/730.The_Great_American_Novel",
+      "Notes": "Lista all-time de novela estadounidense votada por usuarios de Goodreads. Se incluyen los primeros 25 puestos visibles/verificados.",
+      "Confidence": 3,
+      "ConfidenceReason": "Lista real y verificable, pero dinámica y votada por usuarios.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "To Kill a Mockingbird",
+          "TitleSpanish": "Matar a un ruiseñor",
+          "Author": "Harper Lee",
+          "FirstPublicationYear": 1960
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Great Gatsby",
+          "TitleSpanish": "El gran Gatsby",
+          "Author": "F. Scott Fitzgerald",
+          "FirstPublicationYear": 1925
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "The Adventures of Huckleberry Finn",
+          "TitleSpanish": "Las aventuras de Huckleberry Finn",
+          "Author": "Mark Twain",
+          "FirstPublicationYear": 1884
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Grapes of Wrath",
+          "TitleSpanish": "Las uvas de la ira",
+          "Author": "John Steinbeck",
+          "FirstPublicationYear": 1939
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "The Catcher in the Rye",
+          "TitleSpanish": "El guardián entre el centeno",
+          "Author": "J. D. Salinger",
+          "FirstPublicationYear": 1951
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "East of Eden",
+          "TitleSpanish": "Al este del Edén",
+          "Author": "John Steinbeck",
+          "FirstPublicationYear": 1952
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Moby-Dick; or, The Whale",
+          "TitleSpanish": "Moby Dick",
+          "Author": "Herman Melville",
+          "FirstPublicationYear": 1851
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Of Mice and Men",
+          "TitleSpanish": "De ratones y hombres",
+          "Author": "John Steinbeck",
+          "FirstPublicationYear": 1937
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "Slaughterhouse-Five",
+          "TitleSpanish": "Matadero cinco",
+          "Author": "Kurt Vonnegut Jr.",
+          "FirstPublicationYear": 1969
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "Gone with the Wind",
+          "TitleSpanish": "Lo que el viento se llevó",
+          "Author": "Margaret Mitchell",
+          "FirstPublicationYear": 1936
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "Catch-22",
+          "TitleSpanish": "Trampa 22",
+          "Author": "Joseph Heller",
+          "FirstPublicationYear": 1961
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "Blood Meridian; or, The Evening Redness in the West",
+          "TitleSpanish": "Meridiano de sangre",
+          "Author": "Cormac McCarthy",
+          "FirstPublicationYear": 1985
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "The Sound and the Fury",
+          "TitleSpanish": "El ruido y la furia",
+          "Author": "William Faulkner",
+          "FirstPublicationYear": 1929
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Lonesome Dove",
+          "TitleSpanish": "Lonesome Dove",
+          "Author": "Larry McMurtry",
+          "FirstPublicationYear": 1985
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "On the Road",
+          "TitleSpanish": "En el camino",
+          "Author": "Jack Kerouac",
+          "FirstPublicationYear": 1957
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Sun Also Rises",
+          "TitleSpanish": "Fiesta",
+          "Author": "Ernest Hemingway",
+          "FirstPublicationYear": 1926
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "One Flew Over the Cuckoo's Nest",
+          "TitleSpanish": "Alguien voló sobre el nido del cuco",
+          "Author": "Ken Kesey",
+          "FirstPublicationYear": 1962
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "The Scarlet Letter",
+          "TitleSpanish": "La letra escarlata",
+          "Author": "Nathaniel Hawthorne",
+          "FirstPublicationYear": 1850
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "Beloved",
+          "TitleSpanish": "Beloved",
+          "Author": "Toni Morrison",
+          "FirstPublicationYear": 1987
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "Fahrenheit 451",
+          "TitleSpanish": "Fahrenheit 451",
+          "Author": "Ray Bradbury",
+          "FirstPublicationYear": 1953
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "The Old Man and the Sea",
+          "TitleSpanish": "El viejo y el mar",
+          "Author": "Ernest Hemingway",
+          "FirstPublicationYear": 1952
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "A Confederacy of Dunces",
+          "TitleSpanish": "La conjura de los necios",
+          "Author": "John Kennedy Toole",
+          "FirstPublicationYear": 1980
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Invisible Man",
+          "TitleSpanish": "El hombre invisible",
+          "Author": "Ralph Ellison",
+          "FirstPublicationYear": 1952
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "In Cold Blood",
+          "TitleSpanish": "A sangre fría",
+          "Author": "Truman Capote",
+          "FirstPublicationYear": 1966
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "Lolita",
+          "TitleSpanish": "Lolita",
+          "Author": "Vladimir Nabokov",
+          "FirstPublicationYear": 1955
+        }
+      ]
+    },
+    {
+      "Source": "Goodreads Listopia (Best Historical Fiction)",
+      "SourceUrl": "https://www.goodreads.com/list/show/15.Best_Historical_Fiction",
+      "Notes": "Lista all-time de ficción histórica votada por usuarios de Goodreads. Se incluyen los primeros 25 puestos visibles/verificados.",
+      "Confidence": 3,
+      "ConfidenceReason": "Lista real y verificable, pero dinámica; incluso la página contiene debate sobre qué obras califican como ficción histórica.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "Memoirs of a Geisha",
+          "TitleSpanish": "Memorias de una geisha",
+          "Author": "Arthur Golden",
+          "FirstPublicationYear": 1997
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "Gone with the Wind",
+          "TitleSpanish": "Lo que el viento se llevó",
+          "Author": "Margaret Mitchell",
+          "FirstPublicationYear": 1936
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "The Pillars of the Earth",
+          "TitleSpanish": "Los pilares de la Tierra",
+          "Author": "Ken Follett",
+          "FirstPublicationYear": 1989
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Book Thief",
+          "TitleSpanish": "La ladrona de libros",
+          "Author": "Markus Zusak",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "The Other Boleyn Girl",
+          "TitleSpanish": "La otra Bolena",
+          "Author": "Philippa Gregory",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "The Red Tent",
+          "TitleSpanish": "La tienda roja",
+          "Author": "Anita Diamant",
+          "FirstPublicationYear": 1997
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "A Tale of Two Cities",
+          "TitleSpanish": "Historia de dos ciudades",
+          "Author": "Charles Dickens",
+          "FirstPublicationYear": 1859
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Girl with a Pearl Earring",
+          "TitleSpanish": "La joven de la perla",
+          "Author": "Tracy Chevalier",
+          "FirstPublicationYear": 1999
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "Shōgun",
+          "TitleSpanish": "Shōgun",
+          "Author": "James Clavell",
+          "FirstPublicationYear": 1975
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Thorn Birds",
+          "TitleSpanish": "El pájaro canta hasta morir",
+          "Author": "Colleen McCullough",
+          "FirstPublicationYear": 1977
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Clan of the Cave Bear",
+          "TitleSpanish": "El clan del oso cavernario",
+          "Author": "Jean M. Auel",
+          "FirstPublicationYear": 1980
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "The Name of the Rose",
+          "TitleSpanish": "El nombre de la rosa",
+          "Author": "Umberto Eco",
+          "FirstPublicationYear": 1980
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "World Without End",
+          "TitleSpanish": "Un mundo sin fin",
+          "Author": "Ken Follett",
+          "FirstPublicationYear": 2007
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Snow Flower and the Secret Fan",
+          "TitleSpanish": "El abanico de seda",
+          "Author": "Lisa See",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "The Historian",
+          "TitleSpanish": "La historiadora",
+          "Author": "Elizabeth Kostova",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Color Purple",
+          "TitleSpanish": "El color púrpura",
+          "Author": "Alice Walker",
+          "FirstPublicationYear": 1982
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "Dragonfly in Amber",
+          "TitleSpanish": "Atrapada en el tiempo",
+          "Author": "Diana Gabaldon",
+          "FirstPublicationYear": 1992
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "Lonesome Dove",
+          "TitleSpanish": "Lonesome Dove",
+          "Author": "Larry McMurtry",
+          "FirstPublicationYear": 1985
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "The Shadow of the Wind",
+          "TitleSpanish": "La sombra del viento",
+          "Author": "Carlos Ruiz Zafón",
+          "FirstPublicationYear": 2001
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "The Guernsey Literary and Potato Peel Pie Society",
+          "TitleSpanish": "La sociedad literaria y el pastel de piel de patata de Guernsey",
+          "Author": "Mary Ann Shaffer and Annie Barrows",
+          "FirstPublicationYear": 2008
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "The Scarlet Letter",
+          "TitleSpanish": "La letra escarlata",
+          "Author": "Nathaniel Hawthorne",
+          "FirstPublicationYear": 1850
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "Cold Mountain",
+          "TitleSpanish": "Cold Mountain",
+          "Author": "Charles Frazier",
+          "FirstPublicationYear": 1997
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Roots: The Saga of an American Family",
+          "TitleSpanish": "Raíces",
+          "Author": "Alex Haley",
+          "FirstPublicationYear": 1976
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "The Three Musketeers",
+          "TitleSpanish": "Los tres mosqueteros",
+          "Author": "Alexandre Dumas",
+          "FirstPublicationYear": 1844
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "All the Light We Cannot See",
+          "TitleSpanish": "La luz que no puedes ver",
+          "Author": "Anthony Doerr",
+          "FirstPublicationYear": 2014
+        }
+      ]
+    },
+    {
+      "Source": "Goodreads Listopia (The Most Popular Fantasy on Goodreads)",
+      "SourceUrl": "https://www.goodreads.com/list/show/35857.The_Most_Popular_Fantasy_on_Goodreads",
+      "Notes": "Lista all-time de fantasía votada por usuarios de Goodreads. Se incluyen los primeros 25 puestos visibles/verificados.",
+      "Confidence": 3,
+      "ConfidenceReason": "Lista real y verificable, pero dinámica, votada por usuarios y con múltiples volúmenes de una misma saga.",
+      "Books/Stories": [
+        {
+          "Position": 1,
+          "TitleOriginal": "The Name of the Wind",
+          "TitleSpanish": "El nombre del viento",
+          "Author": "Patrick Rothfuss",
+          "FirstPublicationYear": 2007
+        },
+        {
+          "Position": 2,
+          "TitleOriginal": "The Fellowship of the Ring",
+          "TitleSpanish": "La comunidad del anillo",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954
+        },
+        {
+          "Position": 3,
+          "TitleOriginal": "A Game of Thrones",
+          "TitleSpanish": "Juego de tronos",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 1996
+        },
+        {
+          "Position": 4,
+          "TitleOriginal": "The Hobbit, or There and Back Again",
+          "TitleSpanish": "El hobbit",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1937
+        },
+        {
+          "Position": 5,
+          "TitleOriginal": "Harry Potter and the Prisoner of Azkaban",
+          "TitleSpanish": "Harry Potter y el prisionero de Azkaban",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 1999
+        },
+        {
+          "Position": 6,
+          "TitleOriginal": "Harry Potter and the Philosopher's Stone",
+          "TitleSpanish": "Harry Potter y la piedra filosofal",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 1997
+        },
+        {
+          "Position": 7,
+          "TitleOriginal": "Harry Potter and the Deathly Hallows",
+          "TitleSpanish": "Harry Potter y las reliquias de la Muerte",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 2007
+        },
+        {
+          "Position": 8,
+          "TitleOriginal": "Mistborn: The Final Empire",
+          "TitleSpanish": "El imperio final",
+          "Author": "Brandon Sanderson",
+          "FirstPublicationYear": 2006
+        },
+        {
+          "Position": 9,
+          "TitleOriginal": "Harry Potter and the Goblet of Fire",
+          "TitleSpanish": "Harry Potter y el cáliz de fuego",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 10,
+          "TitleOriginal": "The Return of the King",
+          "TitleSpanish": "El retorno del rey",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1955
+        },
+        {
+          "Position": 11,
+          "TitleOriginal": "The Way of Kings",
+          "TitleSpanish": "El camino de los reyes",
+          "Author": "Brandon Sanderson",
+          "FirstPublicationYear": 2010
+        },
+        {
+          "Position": 12,
+          "TitleOriginal": "Harry Potter and the Chamber of Secrets",
+          "TitleSpanish": "Harry Potter y la cámara secreta",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 1998
+        },
+        {
+          "Position": 13,
+          "TitleOriginal": "The Two Towers",
+          "TitleSpanish": "Las dos torres",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954
+        },
+        {
+          "Position": 14,
+          "TitleOriginal": "Harry Potter and the Half-Blood Prince",
+          "TitleSpanish": "Harry Potter y el misterio del príncipe",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 2005
+        },
+        {
+          "Position": 15,
+          "TitleOriginal": "Harry Potter and the Order of the Phoenix",
+          "TitleSpanish": "Harry Potter y la Orden del Fénix",
+          "Author": "J. K. Rowling",
+          "FirstPublicationYear": 2003
+        },
+        {
+          "Position": 16,
+          "TitleOriginal": "The Wise Man's Fear",
+          "TitleSpanish": "El temor de un hombre sabio",
+          "Author": "Patrick Rothfuss",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 17,
+          "TitleOriginal": "A Storm of Swords",
+          "TitleSpanish": "Tormenta de espadas",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 2000
+        },
+        {
+          "Position": 18,
+          "TitleOriginal": "The Eye of the World",
+          "TitleSpanish": "El ojo del mundo",
+          "Author": "Robert Jordan",
+          "FirstPublicationYear": 1990
+        },
+        {
+          "Position": 19,
+          "TitleOriginal": "The Lion, the Witch and the Wardrobe",
+          "TitleSpanish": "El león, la bruja y el armario",
+          "Author": "C. S. Lewis",
+          "FirstPublicationYear": 1950
+        },
+        {
+          "Position": 20,
+          "TitleOriginal": "The Lord of the Rings",
+          "TitleSpanish": "El Señor de los Anillos",
+          "Author": "J. R. R. Tolkien",
+          "FirstPublicationYear": 1954
+        },
+        {
+          "Position": 21,
+          "TitleOriginal": "A Clash of Kings",
+          "TitleSpanish": "Choque de reyes",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 1998
+        },
+        {
+          "Position": 22,
+          "TitleOriginal": "The Golden Compass",
+          "TitleSpanish": "Luces del norte",
+          "Author": "Philip Pullman",
+          "FirstPublicationYear": 1995
+        },
+        {
+          "Position": 23,
+          "TitleOriginal": "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch",
+          "TitleSpanish": "Buenos presagios",
+          "Author": "Terry Pratchett and Neil Gaiman",
+          "FirstPublicationYear": 1990
+        },
+        {
+          "Position": 24,
+          "TitleOriginal": "A Dance with Dragons",
+          "TitleSpanish": "Danza de dragones",
+          "Author": "George R. R. Martin",
+          "FirstPublicationYear": 2011
+        },
+        {
+          "Position": 25,
+          "TitleOriginal": "American Gods",
+          "TitleSpanish": "American Gods",
+          "Author": "Neil Gaiman",
+          "FirstPublicationYear": 2001
+        }
+      ]
     }
   ],
   "SourcesConsulted": [
